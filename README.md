@@ -21,7 +21,7 @@ https://dailybriefing.herokuapp.com
 **API's Used**
 
 * Google Maps: https://developers.google.com/maps/?hl=en/
-* Instagram https://www.instagram.com/developer/
+* flickr: https://www.flickr.com/services/api/misc.api_keys.html
 * Yahoo Weather: https://developer.yahoo.com/weather/
 * Gravy: https://api.findgravy.com/docs/
 
