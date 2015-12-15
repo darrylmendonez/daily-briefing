@@ -7,12 +7,12 @@
 Based on user inputted location, the web app will find the current weather, images taken around the area, and events happening around the area.
 
 **Technologies Used**
-HTML
-CSS
-Javascript
-jQuery
-AJAX
-JSON
+* HTML
+* CSS
+* Javascript
+* jQuery
+* AJAX
+* JSON
 
 **Deployed Link**
 
