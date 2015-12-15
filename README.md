@@ -1,7 +1,5 @@
 # DailyBriefing
 
-**Daily Briefing**
-
 **General Project Summary**
 
 Based on user inputted location, the web app will find the current weather, images taken around the area, and events happening around the area.
