@@ -7,6 +7,7 @@ Based on user inputted location, the web app will find the current weather, imag
 **Technologies Used**
 * HTML
 * CSS
+* bootstrap
 * Javascript
 * jQuery
 * AJAX
