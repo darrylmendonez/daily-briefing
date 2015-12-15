@@ -16,7 +16,7 @@ JSON
 
 Deployed Link
 
-http://my.herokuapp.com/
+https://dailybriefing.herokuapp.com
 
 API's Used
 
