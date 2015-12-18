@@ -33,3 +33,8 @@ video.fillWidth {
   color: #fff;
   text-align: center;
 }
+
+.input-field {
+  margin-top: 450px; /* this pushes the input field down to the bottom of the video-container */
+}
+
