@@ -7,7 +7,11 @@ $(document).ready(function(){
     menuWidth: 100 // So icons appear vertically instead of horizontally
   });
 
+  // Slider
+  $('.slider').slider({full_width: true});
+
 }); // End document ready function
+
 
 // To Do List:
 // Fill this out as you find issues with your code that you need to get back to later.
