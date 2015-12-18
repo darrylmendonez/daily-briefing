@@ -1,0 +1,35 @@
+.header-unit {
+  height: 600px;
+  position: relative;
+  z-index: 0;
+}
+#video-container {
+  position: absolute;
+  z-index: 0;
+}
+#video-container {
+  top:0%;
+  left:0%;
+  height:100%;
+  width:100%;
+  overflow: hidden;
+  z-index: 0;
+}
+video {
+  position:absolute;
+  z-index:0;
+}
+video.fillWidth {
+  width: 100%;
+}
+
+.video-header{
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+}
+
+.slogan{
+  color: #fff;
+  text-align: center;
+}
