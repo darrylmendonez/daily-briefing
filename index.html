@@ -4,21 +4,40 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Material Design for Bootstrap</title>
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Daily Briefing</title>
     <!-- Materialize core CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css" rel="stylesheet">
-
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- custom CSS -->
     <link rel="stylesheet" type="text/css" href="css/main.css">
-
 </head>
 
 <body>
+  <nav>
+    <div class="nav-wrapper light-blue darken-4">
+      <a href="#!" class="brand-logo waves-effect waves-light">Font Awesome Navbar</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li class="waves-effect waves-light"><a href="#"><i class="fa fa-sun-o"></i></a></li>
+        <li class="waves-effect waves-light"><a href="#"><i class="fa fa-car"></i></a></li>
+        <li class="waves-effect waves-light"><a href="#"><i class="fa fa-newspaper-o"></i></a></li>
+        <li class="waves-effect waves-light"><a href="#"><i class="fa fa-twitter"></i></a></li>
+        <li class="waves-effect waves-light"><a href="#"><i class="fa fa-flickr"></i></a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <br />
+        <li class="waves-effect waves-light"><a href="#"><i class="fa fa-sun-o"></i></a></li>
+        <li class="waves-effect waves-light"><a href="#"><i class="fa fa-car"></i></a></li>
+        <li class="waves-effect waves-light"><a href="#"><i class="fa fa-newspaper-o"></i></a></li>
+        <li class="waves-effect waves-light"><a href="#"><i class="fa fa-twitter"></i></a></li>
+        <li class="waves-effect waves-light"><a href="#"><i class="fa fa-flickr"></i></a></li>
+      </ul>
+    </div>
+  </nav> <!-- Can't get collapsed menu to pull down -->
     <header>
         <!-- enter header things here -->
     </header>
@@ -37,13 +56,17 @@
 
 
     <!-- SCRIPTS -->
-    <script type="text/javascript" src="js/main.js"></script>
-    <!-- JQuery -->
+    <!-- jQuery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
- 
+    <!-- custom JS -->
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 
 </html>
+
+<!--
+To Do List:
+Fill this out as you find issues with your code that you need to get back to later.
+-->
