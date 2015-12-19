@@ -66,3 +66,8 @@ video.fillWidth {
   background-color: #333;
   margin-top: 15px;
 }
+
+#map {
+  width: 100%;
+  height: 400px;
+}
