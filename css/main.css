@@ -1,4 +1,6 @@
-body{
+/* Styles for Daily Briefing */
+
+body {
   color:#fff;
   font-family: 'Hind', sans-serif;
 }
@@ -34,13 +36,13 @@ video.fillWidth {
   width: 100%;
 }
 
-.slogan{
+.slogan {
   color: #fff;
   text-align: center;
 }
 
 #selected-city {
-  margin-top: 450px; /* this pushes the input field down to the bottom of the video-container */
+  margin-top: 400px; /* this pushes the input field down to the bottom of the video-container */
   background-color: white;
   opacity: 0.3
 }
@@ -50,8 +52,13 @@ video.fillWidth {
   opacity: 0.6;
 }
 
+#search-button:hover {
+  cursor: pointer;
+}
+
 ::-webkit-input-placeholder {
    color: #666666;
+ }
 
 .test {
   width: 100%;
