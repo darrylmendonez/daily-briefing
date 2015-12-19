@@ -2,10 +2,18 @@
 
 $(document).ready(function(){
 
+  /* ======================================================================
+   NAVIGATION
+   ===================================================================== */
+
   // To initiate side Nav for mobile devices
   $(".button-collapse").sideNav({ 
     menuWidth: 100 // So icons appear vertically instead of horizontally
   });
+
+  /* ======================================================================
+   SLIDER AREA
+   ===================================================================== */
 
   // Slider
   $('.slider').slider({full_width: true});
@@ -33,6 +41,10 @@ $(document).ready(function(){
     };
     return selectedCity;
   }
+
+  /* ======================================================================
+   TRAFFIC
+   ===================================================================== */
 
   // this will make an AJAX request to google API and upon success, call the googleApiSuccessHandler
   function ajaxReqForLatLon(){
@@ -66,19 +78,25 @@ $(document).ready(function(){
     trafficLayer.setMap(map);
   }
 
-
-
-
-
-
 }); // End document ready function
 
 
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 8,
+    center: {lat: -34.397, lng: 150.644}
+  });
+}
+
 // To Do List:
 // Fill this out as you find issues with your code that you need to get back to later.
+<<<<<<< HEAD
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 8,
       center: {lat: 40.7053111, lng: -74.2581875}
     });
   }
+=======
+
+>>>>>>> e48284f455b80143ecbdfe0857b848b48237f9ad
