@@ -79,6 +79,6 @@ $(document).ready(function(){
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 8,
-      center: {lat: -34.397, lng: 150.644}
+      center: {lat: 40.7053111, lng: -74.2581875}
     });
   }
