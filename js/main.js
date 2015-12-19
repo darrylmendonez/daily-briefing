@@ -28,6 +28,9 @@ $(document).ready(function(){
   // function will return the city entered by the user
   function selectedCity() {
     var selectedCity = $("#selected-city").val().trim();
+    if (selectedCity.length === 0) {
+      return;
+    };
     return selectedCity;
   }
 
