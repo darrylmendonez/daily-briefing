@@ -80,23 +80,12 @@ $(document).ready(function(){
 
 }); // End document ready function
 
-
-function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 8,
-    center: {lat: -34.397, lng: 150.644}
-  });
-}
-
-// To Do List:
-// Fill this out as you find issues with your code that you need to get back to later.
-<<<<<<< HEAD
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 8,
       center: {lat: 40.7053111, lng: -74.2581875}
     });
   }
-=======
 
->>>>>>> e48284f455b80143ecbdfe0857b848b48237f9ad
+// To Do List:
+// Fill this out as you find issues with your code that you need to get back to later.
