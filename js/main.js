@@ -14,14 +14,14 @@ $(document).ready(function(){
   $("#selected-city").keypress(function(e){
     var userSelectedCity = selectedCity();
     if (e.which == 13) {
-      alert(userSelectedCity);
+      ajaxReqForLatLon();
     }
   });
 
   // this event listener will wait for the search icon to be pressed and grab the value of the input field for selected city
   $("#search-button").on("click", function(){
     var userSelectedCity = selectedCity();
-    alert(userSelectedCity);
+    ajaxReqForLatLon();
   });
 
 
@@ -34,9 +34,51 @@ $(document).ready(function(){
     return selectedCity;
   }
 
+  // this will make an AJAX request to google API and upon success, call the googleApiSuccessHandler
+  function ajaxReqForLatLon(){
+    var userRequestedLocation = selectedCity();
+    var googleApiURL = "https://maps.googleapis.com/maps/api/geocode/json?address="
+    googleApiURL += userRequestedLocation;
+    googleApiURL += "&key=AIzaSyBL0kULWrl9S6CMnmuzn8acUeNCcbBLgDs"
+    console.log(googleApiURL);
+    $.ajax({
+      type: "GET",
+      url: googleApiURL,
+      success: googleApiSuccessHandler,
+      error: function(jqXHR, textStatus, errorThrown){
+        console.log(errorThrown);
+      }
+    });
+  }
+  // function will take the response from the AJAX request and take the geolocation
+  function googleApiSuccessHandler(response){
+    var geoLocation = response.results[0].geometry.location;
+    initMap(geoLocation);
+  }
+
+  // function will initiate the map on the DOM and update when a new location is selected
+  function initMap(geoLocation) {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 12,
+      center: geoLocation
+    });
+    var trafficLayer = new google.maps.TrafficLayer();
+    trafficLayer.setMap(map);
+  }
+
+
+
+
+
+
 }); // End document ready function
 
 
 // To Do List:
 // Fill this out as you find issues with your code that you need to get back to later.
-
+function initMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 8,
+      center: {lat: -34.397, lng: 150.644}
+    });
+  }
