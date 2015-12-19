@@ -17,10 +17,16 @@ $(document).ready(function(){
 
     // this event listener will wait for the enter button to be pressed and alert the value in the field
   $("#selected-city").keypress(function(e){
-    var x = selectedCity();
+    var userSelectedCity = selectedCity();
     if (e.which == 13) {
-      alert(x);
+      alert(userSelectedCity);
     }
+  });
+
+  // this event listener will wait for the search icon to be pressed and grab the value of the input field for selected city
+  $("#search-button").on("click", function(){
+    var userSelectedCity = selectedCity();
+    alert(userSelectedCity);
   });
 
 
