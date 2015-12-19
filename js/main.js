@@ -1,3 +1,51 @@
+  var geoLocation;
+
+  // this will make an AJAX request to google API and upon success, call the googleApiSuccessHandler
+  function ajaxReqForLatLon(){
+    var userRequestedLocation = selectedCity();
+    var googleApiURL = "https://maps.googleapis.com/maps/api/geocode/json?address="
+    googleApiURL += userRequestedLocation;
+    googleApiURL += "&key=AIzaSyBL0kULWrl9S6CMnmuzn8acUeNCcbBLgDs"
+    // console.log(googleApiURL);
+    $.ajax({
+      type: "GET",
+      url: googleApiURL,
+      success: function(response){
+                        geoLocation = googleApiSuccessHandler(response);                    
+                      },
+      error: function(jqXHR, textStatus, errorThrown){
+        console.log(errorThrown);
+      }
+    });
+  }
+  // function will take the response from the AJAX request and take the geolocation
+  function googleApiSuccessHandler(response){
+    var geoLocation = response.results[0].geometry.location;
+
+    return geoLocation;
+    initMap(geoLocation);
+
+  }
+
+  // function will return the city entered by the user
+  function selectedCity() {
+    var city = $("#selected-city").val().trim();
+    if (city.length === 0) {
+      return;
+    };
+    return city;
+  }
+
+  // this event listener will wait for the enter button to be pressed and alert the value in the field
+  $("#selected-city").keypress(function(e){
+    if (e.which == 13) {
+      ajaxReqForLatLon();
+      setTimeout(function(){
+        console.log(geoLocation);
+      }, 500);
+    }
+  });
+
 // Scripts for Daily Briefing
 
 $(document).ready(function(){
@@ -18,55 +66,18 @@ $(document).ready(function(){
   // Slider
   $('.slider').slider({full_width: true});
 
-  // this event listener will wait for the enter button to be pressed and alert the value in the field
-  $("#selected-city").keypress(function(e){
-    var userSelectedCity = selectedCity();
-    if (e.which == 13) {
-      ajaxReqForLatLon();
-    }
-  });
 
   // this event listener will wait for the search icon to be pressed and grab the value of the input field for selected city
   $("#search-button").on("click", function(){
-    var userSelectedCity = selectedCity();
     ajaxReqForLatLon();
   });
 
-
-  // function will return the city entered by the user
-  function selectedCity() {
-    var selectedCity = $("#selected-city").val().trim();
-    if (selectedCity.length === 0) {
-      return;
-    };
-    return selectedCity;
-  }
 
   /* ======================================================================
    TRAFFIC
    ===================================================================== */
 
-  // this will make an AJAX request to google API and upon success, call the googleApiSuccessHandler
-  function ajaxReqForLatLon(){
-    var userRequestedLocation = selectedCity();
-    var googleApiURL = "https://maps.googleapis.com/maps/api/geocode/json?address="
-    googleApiURL += userRequestedLocation;
-    googleApiURL += "&key=AIzaSyBL0kULWrl9S6CMnmuzn8acUeNCcbBLgDs"
-    console.log(googleApiURL);
-    $.ajax({
-      type: "GET",
-      url: googleApiURL,
-      success: googleApiSuccessHandler,
-      error: function(jqXHR, textStatus, errorThrown){
-        console.log(errorThrown);
-      }
-    });
-  }
-  // function will take the response from the AJAX request and take the geolocation
-  function googleApiSuccessHandler(response){
-    var geoLocation = response.results[0].geometry.location;
-    initMap(geoLocation);
-  }
+
 
   // function will initiate the map on the DOM and update when a new location is selected
   function initMap(geoLocation) {
@@ -79,13 +90,6 @@ $(document).ready(function(){
   }
 
 }); // End document ready function
-
-function initMap() {
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 8,
-      center: {lat: 40.7053111, lng: -74.2581875}
-    });
-  }
 
 // To Do List:
 // Fill this out as you find issues with your code that you need to get back to later.
