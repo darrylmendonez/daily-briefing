@@ -10,12 +10,7 @@ $(document).ready(function(){
   // Slider
   $('.slider').slider({full_width: true});
 
-
-
-
-
-
-    // this event listener will wait for the enter button to be pressed and alert the value in the field
+  // this event listener will wait for the enter button to be pressed and alert the value in the field
   $("#selected-city").keypress(function(e){
     var userSelectedCity = selectedCity();
     if (e.which == 13) {

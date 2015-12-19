@@ -1,4 +1,6 @@
-body{
+/* Styles for Daily Briefing */
+
+body {
   color:#fff;
   font-family: 'Hind', sans-serif;
 }
@@ -34,7 +36,7 @@ video.fillWidth {
   width: 100%;
 }
 
-.slogan{
+.slogan {
   color: #fff;
   text-align: center;
 }
