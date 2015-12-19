@@ -42,7 +42,7 @@ video.fillWidth {
 }
 
 #selected-city {
-  margin-top: 400px; /* this pushes the input field down to the bottom of the video-container */
+  margin-top: 130px; /* this pushes the input field down to the bottom of the video-container */
   background-color: white;
   opacity: 0.3
 }
