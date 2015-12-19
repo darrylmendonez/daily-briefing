@@ -50,8 +50,13 @@ video.fillWidth {
   opacity: 0.6;
 }
 
+#search-button:hover {
+  cursor: pointer;
+}
+
 ::-webkit-input-placeholder {
    color: #666666;
+ }
 
 .test {
   width: 100%;
