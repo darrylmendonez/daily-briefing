@@ -6,22 +6,24 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>Daily Briefing</title>
-<!-- Materialize core CSS -->
+  <!-- Materialize core CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css" rel="stylesheet">
-<!-- Material Icons -->
+  <!-- CSS3 Animations by Dan Eden -->
+  <link rel="stylesheet" type="text/css" href="css/animate-by-dan-eden.css">
+  <!-- Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<!-- Google Fonts -->  
+  <!-- Google Fonts -->  
   <link href='https://fonts.googleapis.com/css?family=Hind:400,300|Poppins:400,300' rel='stylesheet' type='text/css'>
-<!-- Font Awesome -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-<!-- custom CSS -->
+  <!-- Custom CSS -->
   <link rel="stylesheet" type="text/css" href="css/main.css">
 
 </head>
 <body>
 
   <nav class="transparent">
-    <div class="nav-wrapper z-depth-1">
+    <div class="nav-wrapper z-depth-1 fadeInDown wow">
       <a href="#!" class="brand-logo waves-effect waves-light">&nbsp;&nbsp;Daily Briefing</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -48,7 +50,7 @@
 
   <main>
      <!-- Slider --> 
-    <div class="header-unit">
+    <div class="header-unit fadeInUp wow">
       <div class="video-header">
         <h3 class="slogan">Instant Insight On Any Location</h3>
         <h5 class="slogan">Weather, Traffic, News and Events</h5>
@@ -76,7 +78,7 @@
     <div class="container">
       
       <!-- Row for Greeting and Location Info -->
-      <div id="greetin-row" class="row">
+      <div id="greetin-row" class="row fadeInDown wow" data-wow-delay=".3s">
         <div id="greeting" class="col s6">
           <div class="test">
           <h1>User Greeting</h1>
@@ -91,7 +93,7 @@
       </div>
 
       <!-- Row for Weather -->
-      <div id="weather-row" class="row">
+      <div id="weather-row" class="row fadeInDown wow" data-wow-delay=".3s">
         <div class="col s12 m5">
           <div class="test">
             <h1>Weather</h1>
@@ -118,27 +120,28 @@
 
       <!-- Row for News, Events & Tweets -->
       <div id="news-events-tweets-row" class="row">
+      
         <!-- column for news-->
-        <div class="col s6">
+        <div class="col s6 fadeInDown wow" data-wow-delay=".3s">
           <div class="test">
             <h1>News</h1>
           </div>
         </div>
         
         <!-- column for events and tweet -->
-        <div class="col s6">
+        <div class="col s6 fadeInDown wow" data-wow-delay=".3s">
           <div class="test">
             <h1>Events</h1>
           </div>
 
-          <div class="test">
+          <div class="test fadeInDown wow" data-wow-delay=".3s">
             <h1>Tweets</h1>
           </div>
         </div>
       </div> <!-- End News, Events, & Tweets -->
 
       <!-- row for flickr images-->
-      <div class="row">
+      <div class="row  fadeInDown wow" data-wow-delay=".3s">
       <div class="col s12">
         <div class="test">
           <h1>Flickr</h1>
@@ -161,6 +164,8 @@
   <!-- google maps API -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuJleuoSrg7Q8ZFUBEogGFre0viUTqj4E&signed_in=true&callback=initMap"
         async defer></script>
+  <!-- WOW JS to animate objects while scrolling -->
+  <script type="text/javascript" src="js/wow.js"></script>
   <!-- custom JS -->
   <script type="text/javascript" src="js/main.js"></script>
 
