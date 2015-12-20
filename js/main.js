@@ -59,6 +59,9 @@ $(document).ready(function(){
     menuWidth: 100 // So icons appear vertically instead of horizontally
   });
 
+  // Smooth Scrolling from Nav Links to sections
+  $('.scrollspy').scrollSpy();
+
   /* ======================================================================
    SLIDER AREA
    ===================================================================== */
