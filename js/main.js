@@ -90,6 +90,3 @@ $(document).ready(function(){
   }
 
 }); // End document ready function
-
-// To Do List:
-// Fill this out as you find issues with your code that you need to get back to later.
