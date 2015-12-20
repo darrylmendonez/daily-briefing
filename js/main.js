@@ -62,6 +62,20 @@ $(document).ready(function(){
   // Smooth Scrolling from Nav Links to sections
   $('.scrollspy').scrollSpy();
 
+  $(function() {
+    var navbar = $("nav");
+    $(window).scroll(function() {
+      var scroll = $(window).scrollTop();
+
+      if (scroll >= 440) {
+        navbar.removeClass("transparent").addClass("light-blue darken-4").fadeIn();
+      } else {
+        navbar.removeClass("light-blue darken-4").fadeOut().addClass("transparent");
+      }
+    });
+  });
+
+
   /* ======================================================================
    SLIDER AREA
    ===================================================================== */
