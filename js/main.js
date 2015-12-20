@@ -77,8 +77,6 @@ $(document).ready(function(){
    TRAFFIC
    ===================================================================== */
 
-
-
   // function will initiate the map on the DOM and update when a new location is selected
   function initMap(geoLocation) {
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -90,6 +88,13 @@ $(document).ready(function(){
   }
 
 }); // End document ready function
+
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 8,
+    center: {lat: 40.7053111, lng: -74.2581875}
+  });
+}
 
 // To Do List:
 // Fill this out as you find issues with your code that you need to get back to later.
