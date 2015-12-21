@@ -21,31 +21,32 @@
 
 </head>
 <body>
-
-  <nav class="transparent">
-    <div class="nav-wrapper z-depth-1">
-      <img src="images/logo.png" class="logo">
-      <a href="#!" class="brand-logo waves-effect waves-light">&nbsp;&nbsp;Daily Briefing</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li class="waves-effect waves-light"><a href="#"><i class="fa fa-sun-o"></i></a></li>
-        <li class="waves-effect waves-light"><a href="#"><i class="fa fa-car"></i></a></li>
-        <li class="waves-effect waves-light"><a href="#"><i class="fa fa-newspaper-o"></i></a></li>
-        <li class="waves-effect waves-light"><a href="#"><i class="fa fa-calendar"></i></a></li>
-        <li class="waves-effect waves-light"><a href="#"><i class="fa fa-twitter"></i></a></li>
-        <li class="waves-effect waves-light"><a href="#"><i class="fa fa-flickr"></i></a></li>
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <br />
-        <li class="waves-effect waves-light"><a href="#"><i class="fa fa-sun-o"></i></a></li>
-        <li class="waves-effect waves-light"><a href="#"><i class="fa fa-car"></i></a></li>
-        <li class="waves-effect waves-light"><a href="#"><i class="fa fa-newspaper-o"></i></a></li>
-        <li class="waves-effect waves-light"><a href="#"><i class="fa fa-calendar"></i></a></li>
-        <li class="waves-effect waves-light"><a href="#"><i class="fa fa-twitter"></i></a></li>
-        <li class="waves-effect waves-light"><a href="#"><i class="fa fa-flickr"></i></a></li>
-      </ul>
-    </div>
-  </nav>
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper z-depth-1">
+        <img src="images/logo.png" class="logo">
+        <a href="#!" class="brand-logo waves-effect waves-light">&nbsp;&nbsp;Daily Briefing</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li class="waves-effect waves-light"><a href="#weather-row"><i class="fa fa-sun-o"></i></a></li>
+          <li class="waves-effect waves-light"><a href="#traffic-row"><i class="fa fa-car"></i></a></li>
+          <li class="waves-effect waves-light"><a href="#news-events-tweets-row"><i class="fa fa-newspaper-o"></i></a></li>
+          <li class="waves-effect waves-light"><a href="#news-events-tweets-row"><i class="fa fa-calendar"></i></a></li>
+          <li class="waves-effect waves-light"><a href="#tweets"><i class="fa fa-twitter"></i></a></li>
+          <li class="waves-effect waves-light"><a href="#photosRow"><i class="fa fa-flickr"></i></a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <br />
+          <li class="waves-effect waves-light"><a href="#weather-row"><i class="fa fa-sun-o"></i></a></li>
+          <li class="waves-effect waves-light"><a href="#traffic-row"><i class="fa fa-car"></i></a></li>
+          <li class="waves-effect waves-light"><a href="#news-events-tweets-row"><i class="fa fa-newspaper-o"></i></a></li>
+          <li class="waves-effect waves-light"><a href="#news-events-tweets-row"><i class="fa fa-calendar"></i></a></li>
+          <li class="waves-effect waves-light"><a href="#tweets"><i class="fa fa-twitter"></i></a></li>
+          <li class="waves-effect waves-light"><a href="#photosRow"><i class="fa fa-flickr"></i></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 
     <header>
         <!-- enter header things here -->
@@ -81,7 +82,7 @@
     <div class="container">
       
       <!-- Row for Greeting and Location Info -->
-      <div id="greetin-row" class="row fadeInDown wow" data-wow-delay=".3s">
+      <div id="greeting-row" class="row fadeInDown wow section scrollspy" data-wow-delay=".3s">
         <div id="greeting" class="col s6">
           <div class="test">
           <h1>User Greeting</h1>
@@ -96,7 +97,7 @@
       </div>
 
       <!-- Row for Weather -->
-      <div id="weather-row" class="row fadeInDown wow" data-wow-delay=".3s">
+      <div id="weather-row" class="row fadeInDown wow section scrollspy" data-wow-delay=".3s">
         <div class="col s12 m5">
           <div class="test">
             <h1>Weather</h1>
@@ -111,7 +112,7 @@
       </div>
 
       <!-- Row for traffic -->
-      <div id="traffic-row" class="row fadeInDown wow" data-wow-delay=".3s">
+      <div id="traffic-row" class="row fadeInDown wow section scrollspy" data-wow-delay=".3s">
         <div class="col s12">
           <div class="test">
             <h1>Traffic</h1>
@@ -122,7 +123,7 @@
       </div>
 
       <!-- Row for News, Events & Tweets -->
-      <div id="news-events-tweets-row" class="row">
+      <div id="news-events-tweets-row" class="row section scrollspy">
 
         <!-- column for news-->
         <div class="col s6 fadeInDown wow" data-wow-delay=".3s">
@@ -137,14 +138,14 @@
             <h1>Events</h1>
           </div>
 
-          <div class="test fadeInDown wow" data-wow-delay=".3s">
+          <div id="tweets" class="test fadeInDown wow section scrollspy" data-wow-delay=".3s">
             <h1>Tweets</h1>
           </div>
         </div>
       </div> <!-- End News, Events, & Tweets -->
 
       <!-- row for flickr images-->
-      <div id="photosRow" class="row  fadeInDown wow" data-wow-delay=".3s">
+      <div id="photosRow" class="row fadeInDown wow section scrollspy" data-wow-delay=".3s">
       </div>
 
     </div> <!-- end container div -->
