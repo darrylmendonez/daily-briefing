@@ -63,14 +63,6 @@ $(document).ready(function(){
   $('.scrollspy').scrollSpy();
 
   $(function() {
-    // var navbar = $("nav");
-    // $(window).scroll(function(){                          
-    //   if ($(this).scrollTop() >= 435) {
-    //     $("nav").removeClass("transparent").addClass("light-blue darken-4").fadeIn(5000);
-    //   } else {
-    //       $("nav").removeClass("light-blue darken-4").addClass("transparent").fadeIn(5000); 
-    //     }
-    // })
      var scroll_start = 0;
      
      $(window).scroll(function() { 
