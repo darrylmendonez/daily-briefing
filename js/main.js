@@ -1,10 +1,10 @@
+// Scripts for Daily Briefing
+
 /* ======================================================================
   GLOBAL VARIABLES
   =====================================================================*/
 var geoLocation = {lat: 40.7127837, lng: -74.0059413};
 
-
-// Scripts for Daily Briefing
 
 $(document).ready(function(){
 
@@ -15,6 +15,22 @@ $(document).ready(function(){
   // To initiate side Nav for mobile devices
   $(".button-collapse").sideNav({ 
     menuWidth: 100 // So icons appear vertically instead of horizontally
+  });
+
+  // Smooth Scrolling from Nav Links to sections
+  $('.scrollspy').scrollSpy();
+
+  $(function() {
+     var scroll_start = 0;
+     
+     $(window).scroll(function() { 
+        scroll_start = $(this).scrollTop();
+        if(scroll_start > 435) {
+            $('nav').css('background-color', 'rgba(0,53,95,1)');
+         } else {
+            $('nav').css('background-color', 'transparent');
+         }
+     });
   });
 
   /* ======================================================================
@@ -30,11 +46,9 @@ $(document).ready(function(){
     ajaxReqForLatLon();
   });
 
-
   /* ======================================================================
    TRAFFIC
    ===================================================================== */
-
 
   // this will make an AJAX request to google API and upon success, call the googleApiSuccessHandler
   function ajaxReqForLatLon(){
@@ -79,62 +93,11 @@ $(document).ready(function(){
     }
   });
 
-// Scripts for Daily Briefing
-
-$(document).ready(function(){
-
-  /* ======================================================================
-   NAVIGATION
-   ===================================================================== */
-
-  // To initiate side Nav for mobile devices
-  $(".button-collapse").sideNav({ 
-    menuWidth: 100 // So icons appear vertically instead of horizontally
-  });
-
-  // Smooth Scrolling from Nav Links to sections
-  $('.scrollspy').scrollSpy();
-
-  $(function() {
-     var scroll_start = 0;
-     
-     $(window).scroll(function() { 
-        scroll_start = $(this).scrollTop();
-        if(scroll_start > 435) {
-            $('nav').css('background-color', 'rgba(0,53,95,1)');
-         } else {
-            $('nav').css('background-color', 'transparent');
-         }
-     });
-  });
-
-
-
-  /* ======================================================================
-   SLIDER AREA
-   ===================================================================== */
-
-  // Slider
-  $('.slider').slider({full_width: true});
-
-
-  // this event listener will wait for the search icon to be pressed and grab the value of the input field for selected city
-  $("#search-button").on("click", function(){
-    ajaxReqForLatLon();
-  });
-
-
-  /* ======================================================================
-   TRAFFIC
-   ===================================================================== */
-
-
   /*======================================================================
     MAP SETUP UPON PAGE LOAD
     ====================================================================*/
 
-
-// A timeout was used because on page load, the initMap function generates an error
+  // A timeout was used because on page load, the initMap function generates an error
   setTimeout(function(){
     initMap(geoLocation);
   }, 500);
@@ -147,8 +110,5 @@ $(document).ready(function(){
     var trafficLayer = new google.maps.TrafficLayer();
     trafficLayer.setMap(map);
   }
-
-
-
 
 }); // End document ready function
