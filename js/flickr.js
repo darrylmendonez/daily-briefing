@@ -1,5 +1,8 @@
 $(document).ready(function() {  
 
+  setTimeout(function(){
+    console.log(geoLocation);
+  });
 
   function buildThumbnail(photoData) {  //function to show thumbnails into HTML page
     var photoUrl = "https://farm" + photoData.farm; // assign photoUrl 
