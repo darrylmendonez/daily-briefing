@@ -78,6 +78,11 @@ $(document).ready(function(){
   function selectedCity() {
     var city = $("#selected-city").val().trim();
     if (city.length === 0) {
+      // Animate placeholder text if user doesn't type in a city
+      $("#selected-city").addClass("animated shake");
+      $("#selected-city").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+        $("#selected-city").removeClass("animated shake");
+      });
       return;
     };
     return city;

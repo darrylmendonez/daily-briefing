@@ -6,7 +6,7 @@ body {
 }
 
 /* ======================================================================
-  Animation
+  Animations
 ===================================================================== */
 
 /* Custom fadeInDown */
@@ -79,6 +79,11 @@ body {
 .fadeInUp {
   -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
+}
+
+/* Custom shake */
+.shake {
+  -webkit-animation-duration: .8s;
 }
 
 /* ======================================================================
