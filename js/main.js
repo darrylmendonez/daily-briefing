@@ -94,6 +94,7 @@ $(document).ready(function(){
       ajaxReqForLatLon();
       setTimeout(function(){
         initMap(geoLocation);
+
       }, 500);
     }
   });
