@@ -56,13 +56,13 @@ $(document).ready(function(){
     var googleApiURL = "https://maps.googleapis.com/maps/api/geocode/json?address="
     googleApiURL += userRequestedLocation;
     googleApiURL += "&key=AIzaSyBL0kULWrl9S6CMnmuzn8acUeNCcbBLgDs"
-    // console.log(googleApiURL);
+    console.log(googleApiURL);
     $.ajax({
       type: "GET",
       url: googleApiURL,
       success: function(response){
-                        geoLocation = googleApiSuccessHandler(response);                    
-                      },
+        geoLocation = googleApiSuccessHandler(response);
+      },
       error: function(jqXHR, textStatus, errorThrown){
         console.log(errorThrown);
       }
@@ -71,6 +71,10 @@ $(document).ready(function(){
   // function will take the response from the AJAX request and take the geolocation
   function googleApiSuccessHandler(response){
     var geoLocation = response.results[0].geometry.location;
+    console.log(geoLocation);
+    console.log(geoLocation.lat);
+    console.log(geoLocation.lng);
+    console.log(forecastApiURL);
     return geoLocation;
   }
 
@@ -94,7 +98,6 @@ $(document).ready(function(){
       ajaxReqForLatLon();
       setTimeout(function(){
         initMap(geoLocation);
-
       }, 500);
     }
   });
@@ -116,5 +119,36 @@ $(document).ready(function(){
     var trafficLayer = new google.maps.TrafficLayer();
     trafficLayer.setMap(map);
   }
+
+  /*======================================================================
+    WEATHER
+    ====================================================================*/
+
+  // forecast.io's URL format: 
+  // https://api.forecast.io/forecast/APIKEY/LATITUDE,LONGITUDE
+
+  function requestForecast() {
+    console.log(geoLocation);
+    var forecastApiKey = "b8d3aced4b8b6952a488c8cd6b49c72a";
+    var forecastApiURL = "https://api.forecast.io/forecast/";
+    forecastApiURL += forecastApiKey + "/";
+    forecastApiURL += geoLocation.lat + "," + geoLocation.lng;
+    console.log(forecastApiURL);
+    return forecastApiURL;
+  }
+
+
+  function forecastApiSuccessHandler(response){
+    // NYC Example: https://api.forecast.io/forecast/b8d3aced4b8b6952a488c8cd6b49c72a/40.7127837,-74.0059413
+    // Copy and paste link to view json data
+    var weatherSummary = response.currently.summary; //What is that [0] for? Ask Paul.
+    var weatherIcon = response.currently.icon; // Same here
+    console.log(weatherSummary);
+    console.log(weatherIcon);
+  }
+
+  requestForecast();
+  forecastApiSuccessHandler();
+
 
 }); // End document ready function
