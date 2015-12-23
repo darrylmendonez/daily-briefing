@@ -72,9 +72,10 @@ $(document).ready(function(){
   function googleApiSuccessHandler(response){
     var geoLocation = response.results[0].geometry.location;
     console.log(geoLocation);
-    console.log(geoLocation.lat);
-    console.log(geoLocation.lng);
-    console.log(forecastApiURL);
+    requestForecast();
+    console.log("geoLocation.lat = " + geoLocation.lat);
+    console.log("geoLocation.lng = " + geoLocation.lng);
+    console.log("forecastApiURL = " + forecastApiURL);
     return geoLocation;
   }
 
@@ -128,27 +129,38 @@ $(document).ready(function(){
   // https://api.forecast.io/forecast/APIKEY/LATITUDE,LONGITUDE
 
   function requestForecast() {
-    console.log(geoLocation);
     var forecastApiKey = "b8d3aced4b8b6952a488c8cd6b49c72a";
     var forecastApiURL = "https://api.forecast.io/forecast/";
     forecastApiURL += forecastApiKey + "/";
     forecastApiURL += geoLocation.lat + "," + geoLocation.lng;
     console.log(forecastApiURL);
-    return forecastApiURL;
-  }
-
-
-  function forecastApiSuccessHandler(response){
-    // NYC Example: https://api.forecast.io/forecast/b8d3aced4b8b6952a488c8cd6b49c72a/40.7127837,-74.0059413
-    // Copy and paste link to view json data
-    var weatherSummary = response.currently.summary; //What is that [0] for? Ask Paul.
-    var weatherIcon = response.currently.icon; // Same here
-    console.log(weatherSummary);
-    console.log(weatherIcon);
-  }
+    $.ajax({
+      type: "GET",
+      url: forecastApiURL,
+      success: function(response){
+        var weatherSummary = response.currently.summary;
+        var weatherIcon = response.currently.icon;
+      },
+      error: function(jqXHR, textStatus, errorThrown){
+        console.log(errorThrown);
+        console.log("Error: Function requestForecast isn't successful.")
+      }
+    });
+  };
 
   requestForecast();
-  forecastApiSuccessHandler();
+
+  $("#weather-button").on("click", function() {
+    var apiKey = 'b8d3aced4b8b6952a488c8cd6b49c72a';
+    var url = 'https://api.forecast.io/forecast/';
+    var lati = 40.7127837;
+    var longi = -74.0059413;
+    var data;
+    $.getJSON(url + apiKey + "/" + lati + "," + longi + "?callback=?", function(data) {
+      //console.log(data);
+      $('#weather').html('and the temperature is: ' + data.currently.temperature);
+    })
+  });
 
 
 }); // End document ready function
