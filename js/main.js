@@ -44,6 +44,7 @@ $(document).ready(function(){
   // this event listener will wait for the search icon to be pressed and grab the value of the input field for selected city
   $("#search-button").on("click", function(){
     ajaxReqForLatLon();
+    weatherData();
   });
 
   /* ======================================================================
@@ -150,17 +151,20 @@ $(document).ready(function(){
 
   requestForecast();
 
-  $("#weather-button").on("click", function() {
+  var weatherData = function() {
     var apiKey = 'b8d3aced4b8b6952a488c8cd6b49c72a';
     var url = 'https://api.forecast.io/forecast/';
-    var lati = 40.7127837;
-    var longi = -74.0059413;
+    var lati = geoLocation.lat;
+    var longi = geoLocation.lat;
     var data;
     $.getJSON(url + apiKey + "/" + lati + "," + longi + "?callback=?", function(data) {
-      //console.log(data);
-      $('#weather').html('and the temperature is: ' + data.currently.temperature);
+      console.log("geoLocation.lat = " + geoLocation.lat);
+      console.log("geoLocation.lng = " + geoLocation.lng);
+      $('#weather').html("Weather Summary: " + data.currently.summary + data.currently.icon + " Current Temperature: " + data.currently.temperature);
     })
-  });
+  }; //Gotta figure out how to access geoLocation variable. You have to put this function in the same scope as the geoLocation var.
+
+  weatherData();
 
 
 }); // End document ready function
