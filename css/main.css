@@ -1,4 +1,8 @@
 /* Styles for Daily Briefing */
+.container {
+    width: 85%;
+}
+
 
 body {
   color:#fff;
@@ -176,8 +180,42 @@ video.fillWidth {
   height:500px;
   background-color: #333;
   margin-top: 15px;
+  position: relative;
+  z-index: 1;
 }
 
+.large-icon{
+  color: #00355F;
+  font-size: 500px;
+  opacity: 0.5;
+}
+#large-sun{
+  top: -30px;
+  left: -168px;
+  position: absolute;
+  z-index: 0;
+}
+
+#large-car{
+  top: -30px;
+  left: -168px;
+  position: absolute;
+  z-index: 0;
+}
+
+#large-news{
+  top: -30px;
+  left: -168px;
+  position: absolute;
+  z-index: 0;
+} 
+
+#large-cal{
+  top: -30px;
+  left: -168px;
+  position: absolute;
+  z-index: 0;
+} 
 /* ======================================================================
   TRAFFIC
 ===================================================================== */
