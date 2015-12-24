@@ -62,21 +62,17 @@ $(document).ready(function(){
       url: googleApiURL,
       success: function(response){
         geoLocation = googleApiSuccessHandler(response);
+        weatherData();
       },
       error: function(jqXHR, textStatus, errorThrown){
         console.log(errorThrown);
       }
     });
-    weatherData();
   }
   // function will take the response from the AJAX request and take the geolocation
   function googleApiSuccessHandler(response){
     var geoLocation = response.results[0].geometry.location;
-    console.log(geoLocation);
-    requestForecast();
-    console.log("geoLocation.lat = " + geoLocation.lat);
-    console.log("geoLocation.lng = " + geoLocation.lng);
-    weatherData();
+
     return geoLocation;
   }
 
@@ -155,13 +151,15 @@ $(document).ready(function(){
     var apiKey = 'b8d3aced4b8b6952a488c8cd6b49c72a';
     var url = 'https://api.forecast.io/forecast/';
     var lati = geoLocation.lat;
-    var longi = geoLocation.lat;
+    var longi = geoLocation.lng;
     var data;
     $.getJSON(url + apiKey + "/" + lati + "," + longi + "?callback=?", function(data) {
       console.log("geoLocation.lat = " + geoLocation.lat);
       console.log("geoLocation.lng = " + geoLocation.lng);
       $('#weather').html("City: " + city + "<br /> Weather Summary: " + data.currently.summary + "<br /> Current Temperature: " + data.currently.temperature + "&deg; F");
     })
-  }; //Gotta figure out how to access geoLocation variable. You probably have to put this function in the same scope as the geoLocation var.
+  }; 
+
+  weatherData();
 
 }); // End document ready function
