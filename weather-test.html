@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    <p id="weather">Here's the weather:<p>
+
+    <button onclick="b()">Submit</button>
+        <script>
+
+        function b(){
+
+            var apiKey = 'b8d3aced4b8b6952a488c8cd6b49c72a';
+            var url = 'https://api.forecast.io/forecast/';
+            var lati = 40.7127837;
+            var longi = -74.0059413;
+            var data;
+
+            $.getJSON(url + apiKey + "/" + lati + "," + longi + "?callback=?", function(data) {
+              //console.log(data);
+              $('#weather').html('and the temperature is: ' + data.currently.temperature);
+            });
+        }
+        </script>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    </body>
+</html>
