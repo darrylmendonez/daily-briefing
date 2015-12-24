@@ -13,7 +13,7 @@ $(document).ready(function(){
     $("#news").empty();
     var city = $("#selected-city").val().trim();
 
-    var requestStr = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/News?Query=%27" + city + "%27&$top=10&$format=json";
+    var requestStr = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/News?Query=%27" + city + "%27&Latitude=" + geoLocation.lat + "&Longitude=" + geoLocation.lng + "&$top=15&$format=json";
 
     var appId = "xqH9UulnxWvYID2if8wODlrsrvBKXFrlnKE8TmGDdJI"; //bing api key
     var appId = base64_encode(":" + appId); //takes api key and encodes to base64

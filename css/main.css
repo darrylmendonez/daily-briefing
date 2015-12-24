@@ -237,7 +237,11 @@ video.fillWidth {
   color: black;
 }
 
-#news-column {
-  height: 500px;
+#news-column, .news-content {
+  height: 800px;
+  overflow: scroll;
+}
+
+.news-content {
   overflow: scroll;
 }
