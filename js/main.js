@@ -4,7 +4,7 @@
   GLOBAL VARIABLES
   =====================================================================*/
 var geoLocation = {lat: 40.7127837, lng: -74.0059413};
-
+var city = "New York City"
 
 $(document).ready(function(){
 
@@ -66,13 +66,14 @@ $(document).ready(function(){
     var googleApiURL = "https://maps.googleapis.com/maps/api/geocode/json?address="
     googleApiURL += userRequestedLocation;
     googleApiURL += "&key=AIzaSyBL0kULWrl9S6CMnmuzn8acUeNCcbBLgDs"
-    // console.log(googleApiURL);
+    console.log(googleApiURL);
     $.ajax({
       type: "GET",
       url: googleApiURL,
       success: function(response){
-                        geoLocation = googleApiSuccessHandler(response);                    
-                      },
+        geoLocation = googleApiSuccessHandler(response);
+        weatherData();
+      },
       error: function(jqXHR, textStatus, errorThrown){
         console.log(errorThrown);
       }
@@ -86,7 +87,7 @@ $(document).ready(function(){
 
   // function will return the city entered by the user
   function selectedCity() {
-    var city = $("#selected-city").val().trim();
+    city = $("#selected-city").val().trim();
     if (city.length === 0) {
       // Animate placeholder text if user doesn't type in a city
       $("#selected-city").addClass("animated shake");
@@ -97,6 +98,16 @@ $(document).ready(function(){
     };
     return city;
   }
+
+  // this event listener will wait for the enter button to be pressed and alert the value in the field
+  $("#selected-city").keypress(function(e){
+    if (e.which == 13) {
+      ajaxReqForLatLon();
+      setTimeout(function(){
+        initMap(geoLocation);
+      }, 500);
+    }
+  });
 
   /*======================================================================
     MAP SETUP UPON PAGE LOAD
@@ -116,5 +127,49 @@ $(document).ready(function(){
     var trafficLayer = new google.maps.TrafficLayer();
     trafficLayer.setMap(map);
   }
+
+  /*======================================================================
+    WEATHER
+    ====================================================================*/
+
+  // forecast.io's URL format: 
+  // https://api.forecast.io/forecast/APIKEY/LATITUDE,LONGITUDE
+
+  // function requestForecast() {
+  //   var forecastApiKey = "b8d3aced4b8b6952a488c8cd6b49c72a";
+  //   var forecastApiURL = "https://api.forecast.io/forecast/";
+  //   forecastApiURL += forecastApiKey + "/";
+  //   forecastApiURL += geoLocation.lat + "," + geoLocation.lng;
+  //   console.log(forecastApiURL);
+  //   $.ajax({
+  //     type: "GET",
+  //     url: forecastApiURL,
+  //     success: function(response){
+  //       var weatherSummary = response.currently.summary;
+  //       var weatherIcon = response.currently.icon;
+  //     },
+  //     error: function(jqXHR, textStatus, errorThrown){
+  //       console.log(errorThrown);
+  //       console.log("Error: Function requestForecast isn't successful.")
+  //     }
+  //   });
+  // };
+
+  // requestForecast();
+
+  var weatherData = function() {
+    var apiKey = 'b8d3aced4b8b6952a488c8cd6b49c72a';
+    var url = 'https://api.forecast.io/forecast/';
+    var lati = geoLocation.lat;
+    var longi = geoLocation.lng;
+    var data;
+    $.getJSON(url + apiKey + "/" + lati + "," + longi + "?callback=?", function(data) {
+      console.log("geoLocation.lat = " + geoLocation.lat);
+      console.log("geoLocation.lng = " + geoLocation.lng);
+      $('#weather').html("City: " + city + "<br /> Weather Summary: " + data.currently.summary + "<br /> Current Temperature: " + data.currently.temperature + "&deg; F");
+    })
+  }; 
+
+  weatherData();
 
 }); // End document ready function
