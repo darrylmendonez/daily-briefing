@@ -4,7 +4,7 @@
   GLOBAL VARIABLES
   =====================================================================*/
 var geoLocation = {lat: 40.7127837, lng: -74.0059413};
-
+var city = "New York City"
 
 $(document).ready(function(){
 
@@ -82,7 +82,7 @@ $(document).ready(function(){
 
   // function will return the city entered by the user
   function selectedCity() {
-    var city = $("#selected-city").val().trim();
+    city = $("#selected-city").val().trim();
     if (city.length === 0) {
       // Animate placeholder text if user doesn't type in a city
       $("#selected-city").addClass("animated shake");
@@ -160,11 +160,19 @@ $(document).ready(function(){
     $.getJSON(url + apiKey + "/" + lati + "," + longi + "?callback=?", function(data) {
       console.log("geoLocation.lat = " + geoLocation.lat);
       console.log("geoLocation.lng = " + geoLocation.lng);
+<<<<<<< Updated upstream
       $('#weather').html("Weather Summary: " + data.currently.summary + data.currently.icon + " Current Temperature: " + data.currently.temperature);
+=======
+      $('#weather').html("City: " + city + "<br /> Weather Summary: " + data.currently.summary + "<br /> Current Temperature: " + data.currently.temperature + "&deg; F");
+>>>>>>> Stashed changes
     })
   }; //Gotta figure out how to access geoLocation variable. You have to put this function in the same scope as the geoLocation var.
 
   weatherData();
 
+<<<<<<< Updated upstream
 
 }); // End document ready function
+=======
+}); // End document ready function
+>>>>>>> Stashed changes
