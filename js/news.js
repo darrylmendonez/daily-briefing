@@ -1,8 +1,17 @@
 $(document).ready(function(){
-  guardianAPI();
-  function guardianAPI(){
+  var city = "new york, ny";
+  bingNewsAPI();
+  $("#selected-city").keypress(function(e){
+    if (e.which == 13) {
+      setTimeout(function(){
+        bingNewsAPI();
+      }, 500);
+    }
+  }); 
 
-    var city = "new york, ny";
+  function bingNewsAPI(){
+    $("#news").empty();
+    var city = $("#selected-city").val().trim();
 
     var requestStr = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/News?Query=%27" + city + "%27&$top=10&$format=json";
 
@@ -34,7 +43,7 @@ $(document).ready(function(){
       var newListItem = $("<li>");
       var newDivHeader = $("<div>").addClass("collapsible-header").html(articles.d.results[i].Title);
       var newDivBody = $("<div>").addClass("collapsible-body");
-      var bodyContent = $("<p>").html(articles.d.results[i].Description);
+      var bodyContent = $("<p>").html(articles.d.results[i].Description).append($("<a>").attr("href", articles.d.results[i].Url).attr("target", "_blank").html("read more..."));
 
       newListItem.append(newDivHeader).append(newDivBody.append(bodyContent));
       $("#news").append(newListItem);
