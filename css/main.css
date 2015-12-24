@@ -235,6 +235,7 @@ video.fillWidth {
 
 #news > * {
   color: black;
+  z-index: 2;
 }
 
 #news-column, .news-content {
@@ -244,4 +245,30 @@ video.fillWidth {
 
 .news-content {
   overflow: scroll;
+}
+
+#news-column {
+  width: 100%;
+  background-color: gray;
+  margin-top: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.row {
+  background-color: gray;
+}
+
+.news-header {
+  font-size: 1.2em;
+  font-weight: bold;
+  min-height: 2rem;
+  line-height: 2.5rem;
+}
+
+.news-source {
+  font-size: 0.8em;
+  font-weight: normal;
+  color: #8c8c8c;
+  margin-top: 0;
 }

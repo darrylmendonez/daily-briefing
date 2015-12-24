@@ -31,7 +31,6 @@ $(document).ready(function(){
       context: this,
       type: "GET",
       success: function(data){
-        console.log(data.d.results[0].Title);
         bingSuccessHandler(data);
       }
     })
@@ -40,10 +39,11 @@ $(document).ready(function(){
   function bingSuccessHandler(articles){
 
     for (var i = 0; i < articles.d.results.length ; i++) {
-      var newListItem = $("<li>");
-      var newDivHeader = $("<div>").addClass("collapsible-header").html(articles.d.results[i].Title);
+      var newListItem = $("<li>").addClass("hoverable");
+      var newDivHeader = $("<div>").addClass("collapsible-header news-header").append($("<a>").attr("href", articles.d.results[i].Url).attr("target", "_blank").append(articles.d.results[i].Title));
+      newDivHeader.append($("<h6>").addClass("news-source").html(articles.d.results[i].Source));
       var newDivBody = $("<div>").addClass("collapsible-body");
-      var bodyContent = $("<p>").html(articles.d.results[i].Description).append($("<a>").attr("href", articles.d.results[i].Url).attr("target", "_blank").html("read more..."));
+      var bodyContent = $("<p>").html(articles.d.results[i].Description);
 
       newListItem.append(newDivHeader).append(newDivBody.append(bodyContent));
       $("#news").append(newListItem);
