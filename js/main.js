@@ -44,7 +44,6 @@ $(document).ready(function(){
   // this event listener will wait for the search icon to be pressed and grab the value of the input field for selected city
   $("#search-button").on("click", function(){
     ajaxReqForLatLon();
-    weatherData();
   });
 
   /* ======================================================================
@@ -68,6 +67,7 @@ $(document).ready(function(){
         console.log(errorThrown);
       }
     });
+    weatherData();
   }
   // function will take the response from the AJAX request and take the geolocation
   function googleApiSuccessHandler(response){
@@ -76,7 +76,7 @@ $(document).ready(function(){
     requestForecast();
     console.log("geoLocation.lat = " + geoLocation.lat);
     console.log("geoLocation.lng = " + geoLocation.lng);
-    console.log("forecastApiURL = " + forecastApiURL);
+    weatherData();
     return geoLocation;
   }
 
@@ -129,27 +129,27 @@ $(document).ready(function(){
   // forecast.io's URL format: 
   // https://api.forecast.io/forecast/APIKEY/LATITUDE,LONGITUDE
 
-  function requestForecast() {
-    var forecastApiKey = "b8d3aced4b8b6952a488c8cd6b49c72a";
-    var forecastApiURL = "https://api.forecast.io/forecast/";
-    forecastApiURL += forecastApiKey + "/";
-    forecastApiURL += geoLocation.lat + "," + geoLocation.lng;
-    console.log(forecastApiURL);
-    $.ajax({
-      type: "GET",
-      url: forecastApiURL,
-      success: function(response){
-        var weatherSummary = response.currently.summary;
-        var weatherIcon = response.currently.icon;
-      },
-      error: function(jqXHR, textStatus, errorThrown){
-        console.log(errorThrown);
-        console.log("Error: Function requestForecast isn't successful.")
-      }
-    });
-  };
+  // function requestForecast() {
+  //   var forecastApiKey = "b8d3aced4b8b6952a488c8cd6b49c72a";
+  //   var forecastApiURL = "https://api.forecast.io/forecast/";
+  //   forecastApiURL += forecastApiKey + "/";
+  //   forecastApiURL += geoLocation.lat + "," + geoLocation.lng;
+  //   console.log(forecastApiURL);
+  //   $.ajax({
+  //     type: "GET",
+  //     url: forecastApiURL,
+  //     success: function(response){
+  //       var weatherSummary = response.currently.summary;
+  //       var weatherIcon = response.currently.icon;
+  //     },
+  //     error: function(jqXHR, textStatus, errorThrown){
+  //       console.log(errorThrown);
+  //       console.log("Error: Function requestForecast isn't successful.")
+  //     }
+  //   });
+  // };
 
-  requestForecast();
+  // requestForecast();
 
   var weatherData = function() {
     var apiKey = 'b8d3aced4b8b6952a488c8cd6b49c72a';
@@ -163,7 +163,5 @@ $(document).ready(function(){
       $('#weather').html("City: " + city + "<br /> Weather Summary: " + data.currently.summary + "<br /> Current Temperature: " + data.currently.temperature + "&deg; F");
     })
   }; //Gotta figure out how to access geoLocation variable. You probably have to put this function in the same scope as the geoLocation var.
-
-  weatherData();
 
 }); // End document ready function
