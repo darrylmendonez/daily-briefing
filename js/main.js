@@ -160,19 +160,10 @@ $(document).ready(function(){
     $.getJSON(url + apiKey + "/" + lati + "," + longi + "?callback=?", function(data) {
       console.log("geoLocation.lat = " + geoLocation.lat);
       console.log("geoLocation.lng = " + geoLocation.lng);
-<<<<<<< Updated upstream
-      $('#weather').html("Weather Summary: " + data.currently.summary + data.currently.icon + " Current Temperature: " + data.currently.temperature);
-=======
       $('#weather').html("City: " + city + "<br /> Weather Summary: " + data.currently.summary + "<br /> Current Temperature: " + data.currently.temperature + "&deg; F");
->>>>>>> Stashed changes
     })
-  }; //Gotta figure out how to access geoLocation variable. You have to put this function in the same scope as the geoLocation var.
+  }; //Gotta figure out how to access geoLocation variable. You probably have to put this function in the same scope as the geoLocation var.
 
   weatherData();
 
-<<<<<<< Updated upstream
-
 }); // End document ready function
-=======
-}); // End document ready function
->>>>>>> Stashed changes
