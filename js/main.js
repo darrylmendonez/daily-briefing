@@ -40,6 +40,16 @@ $(document).ready(function(){
   // Slider
   $('.slider').slider({full_width: true});
 
+   // this event listener will wait for the enter button to be pressed and alert the value in the field
+  $("#selected-city").keypress(function(e){
+    if (e.which == 13) {
+      ajaxReqForLatLon();
+      setTimeout(function(){
+        initMap(geoLocation);
+
+      }, 500);
+    }
+  }); 
 
   // this event listener will wait for the search icon to be pressed and grab the value of the input field for selected city
   $("#search-button").on("click", function(){
@@ -72,7 +82,6 @@ $(document).ready(function(){
   // function will take the response from the AJAX request and take the geolocation
   function googleApiSuccessHandler(response){
     var geoLocation = response.results[0].geometry.location;
-
     return geoLocation;
   }
 
@@ -112,7 +121,8 @@ $(document).ready(function(){
   function initMap(geoLocation) {
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 12,
-      center: geoLocation
+      center: geoLocation,
+      scrollwheel: false
     });
     var trafficLayer = new google.maps.TrafficLayer();
     trafficLayer.setMap(map);
