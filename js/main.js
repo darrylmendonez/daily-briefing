@@ -40,16 +40,6 @@ $(document).ready(function(){
   // Slider
   $('.slider').slider({full_width: true});
 
-   // this event listener will wait for the enter button to be pressed and alert the value in the field
-  $("#selected-city").keypress(function(e){
-    if (e.which == 13) {
-      ajaxReqForLatLon();
-      setTimeout(function(){
-        initMap(geoLocation);
-
-      }, 500);
-    }
-  }); 
 
   // this event listener will wait for the search icon to be pressed and grab the value of the input field for selected city
   $("#search-button").on("click", function(){
@@ -104,7 +94,6 @@ $(document).ready(function(){
     return city;
   }
 
-<<<<<<< HEAD
   // this event listener will wait for the enter button to be pressed and alert the value in the field
   $("#selected-city").keypress(function(e){
     if (e.which == 13) {
@@ -115,8 +104,6 @@ $(document).ready(function(){
     }
   });
 
-=======
->>>>>>> 3c7bab6b04e962a09735b066ff8ad770ff2ee4c0
   /*======================================================================
     MAP SETUP UPON PAGE LOAD
     ====================================================================*/
