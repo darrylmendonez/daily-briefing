@@ -10,8 +10,14 @@ $(document).ready(function(){
   }); 
 
   $(document).on("click", ".news-header", function(){
-    $(this).children(".chevron-down").toggle();
-    $(this).children(".chevron-up").toggle();
+    $(".chevron-up").hide();
+    $(".chevron-down").show();
+
+    if ($(this).hasClass("active")) {
+      $(this).children(".chevron-down").hide();
+      $(this).children(".chevron-up").show();
+    }
+    
   });
 
   function bingNewsAPI(){
