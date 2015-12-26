@@ -236,10 +236,11 @@ video.fillWidth {
 #news > * {
   color: black;
   z-index: 2;
+  background-color: white;
 }
 
-#news-column, .news-content {
-  height: 800px;
+#news-column {
+  height: 1000px;
   overflow: scroll;
 }
 
@@ -268,6 +269,7 @@ video.fillWidth {
   font-weight: bold;
   min-height: 2rem;
   line-height: 2.5rem;
+  position: relative;
 }
 
 .news-source {
@@ -275,4 +277,31 @@ video.fillWidth {
   font-weight: normal;
   color: #8c8c8c;
   margin-top: 0;
+}
+
+.collapsible-header .chevron-down {
+  width: 1rem;
+  font-size: 1.6rem;
+  line-height: 1rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.collapsible-header .chevron-up {
+  display: none;
+  width: 1rem;
+  font-size: 1.6rem;
+  line-height: 1rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.article-title {
+  position: inherit;
 }

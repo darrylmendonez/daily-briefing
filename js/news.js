@@ -9,6 +9,11 @@ $(document).ready(function(){
     }
   }); 
 
+  $(document).on("click", ".news-header", function(){
+    $(this).children(".chevron-down").toggle();
+    $(this).children(".chevron-up").toggle();
+  });
+
   function bingNewsAPI(){
     $("#news").empty();
     var city = $("#selected-city").val().trim();
@@ -40,7 +45,7 @@ $(document).ready(function(){
 
     for (var i = 0; i < articles.d.results.length ; i++) {
       var newListItem = $("<li>").addClass("hoverable");
-      var newDivHeader = $("<div>").addClass("collapsible-header news-header").append($("<a>").attr("href", articles.d.results[i].Url).attr("target", "_blank").append(articles.d.results[i].Title));
+      var newDivHeader = $("<div>").addClass("collapsible-header news-header").append($("<a class='article-title'>").attr("href", articles.d.results[i].Url).attr("target", "_blank").append(articles.d.results[i].Title)).append($("<i class='fa fa-chevron-circle-down chevron-down'></i>")).append($("<i class='fa fa-chevron-circle-up chevron-up'></i>"));
       newDivHeader.append($("<h6>").addClass("news-source").html(articles.d.results[i].Source));
       var newDivBody = $("<div>").addClass("collapsible-body");
       var bodyContent = $("<p>").html(articles.d.results[i].Description);
