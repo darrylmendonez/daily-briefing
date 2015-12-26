@@ -241,3 +241,17 @@ video.fillWidth {
   height: 500px;
   overflow: scroll;
 }
+
+/* =====================================================================
+    TWITTER TIMELINE
+======================================================================*/
+
+#tweets {
+  padding: 0;
+}
+
+.timeline {
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+}
