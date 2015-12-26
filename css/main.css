@@ -255,6 +255,10 @@ video.fillWidth {
   z-index: 1;
 }
 
+#news-column > h1 {
+  margin: 0px;
+}
+
 .row {
   background-color: gray;
 }
