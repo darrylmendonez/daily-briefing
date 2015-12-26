@@ -9,16 +9,32 @@ $(document).ready(function(){
     }
   }); 
 
+/*=================================================================
+      ON CLICK EVENT FOR NEWS ARTICLE HEADERS
+================================================================ */
   $(document).on("click", ".news-header", function(){
-    $(".chevron-up").hide();
-    $(".chevron-down").show();
 
     if ($(this).hasClass("active")) {
       $(this).children(".chevron-down").hide();
       $(this).children(".chevron-up").show();
     }
-    
   });
+
+  $(document).on({
+    mouseenter: function(){
+      if ($(this).hasClass("active")) {
+        $(this).children(".chevron-down").fadeOut();
+        $(this).children(".chevron-up").fadeIn();
+      } else {
+        $(this).children(".chevron-down").fadeIn();
+        $(this).children(".chevron-up").fadeOut();
+      }
+    },
+    mouseleave: function(){
+      $(this).children(".chevron-down").fadeOut();
+      $(this).children(".chevron-up").fadeOut();
+    }
+  }, ".news-header");
 
   function bingNewsAPI(){
     $("#news").empty();

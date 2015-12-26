@@ -272,6 +272,15 @@ video.fillWidth {
   position: relative;
 }
 
+.news-header:hover {
+  font-size: 1.2em;
+  font-weight: bold;
+  min-height: 2rem;
+  line-height: 2.5rem;
+  position: relative;
+  background-color: #f2f2f2;
+}
+
 .news-source {
   font-size: 0.8em;
   font-weight: normal;
@@ -280,6 +289,7 @@ video.fillWidth {
 }
 
 .collapsible-header .chevron-down {
+  display: none;
   width: 1rem;
   font-size: 1.6rem;
   line-height: 1rem;
