@@ -290,11 +290,11 @@ video.fillWidth {
 
 .collapsible-header .chevron-down {
   display: none;
-  width: 1rem;
+  width: 2rem;
   font-size: 1.6rem;
-  line-height: 1rem;
-  margin-right: 1rem;
-  margin-top: 1rem;
+  line-height: 2rem;
+  margin-right: 0;
+  margin-top: 0;
   position: absolute;
   top: 0;
   right: 0;
@@ -302,11 +302,11 @@ video.fillWidth {
 
 .collapsible-header .chevron-up {
   display: none;
-  width: 1rem;
+  width: 2rem;
   font-size: 1.6rem;
-  line-height: 1rem;
-  margin-right: 1rem;
-  margin-top: 1rem;
+  line-height: 2rem;
+  margin-right: 0;
+  margin-top: 0;
   position: absolute;
   top: 0;
   right: 0;

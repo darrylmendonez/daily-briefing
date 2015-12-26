@@ -67,7 +67,7 @@ $(document).ready(function(){
 
     for (var i = 0; i < articles.d.results.length ; i++) {
       var newListItem = $("<li>").addClass("hoverable");
-      var newDivHeader = $("<div>").addClass("collapsible-header news-header").append($("<a class='article-title'>").attr("href", articles.d.results[i].Url).attr("target", "_blank").append(articles.d.results[i].Title)).append($("<i class='fa fa-chevron-circle-down chevron-down'></i>")).append($("<i class='fa fa-chevron-circle-up chevron-up'></i>"));
+      var newDivHeader = $("<div>").addClass("collapsible-header news-header").append($("<a class='article-title'>").attr("href", articles.d.results[i].Url).attr("target", "_blank").append(articles.d.results[i].Title)).append($("<i class='fa fa-angle-double-down chevron-down'></i>")).append($("<i class='fa fa-angle-double-up chevron-up'></i>"));
       newDivHeader.append($("<h6>").addClass("news-source").html(articles.d.results[i].Source));
       var newDivBody = $("<div>").addClass("collapsible-body");
       var bodyContent = $("<p>").html(articles.d.results[i].Description);
