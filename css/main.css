@@ -184,37 +184,7 @@ video.fillWidth {
   z-index: 1;
 }
 
-.large-icon{
-  color: #00355F;
-  font-size: 500px;
-  opacity: 0.5;
-}
-#large-sun{
-  top: -30px;
-  left: -168px;
-  position: absolute;
-  z-index: 0;
-}
 
-#large-car{
-  top: -30px;
-  left: -168px;
-  position: absolute;
-  z-index: 0;
-}
-
-#large-news{
-  top: -30px;
-  left: -168px;
-  position: absolute;
-  z-index: 0;
-} 
-
-#large-cal{
-  top: -30px;
-  left: -168px;
-  position: absolute;
-  z-index: 0;
 } 
 /* ======================================================================
   TRAFFIC
@@ -239,22 +209,18 @@ video.fillWidth {
   background-color: white;
 }
 
-#news-column {
-  height: 1000px;
-  overflow: scroll;
-}
-
 .news-content {
   overflow: scroll;
 }
 
-<<<<<<< HEAD
 #news-column {
   width: 100%;
   background-color: gray;
   margin-top: 15px;
   position: relative;
   z-index: 1;
+  height: 1000px;
+  overflow: scroll;
 }
 
 #news-column > h1 {
@@ -315,13 +281,17 @@ video.fillWidth {
 
 .article-title {
   position: inherit;
-=======
+
+}
+
 /*======================================================================
     FOOTER
 =======================================================================*/
 
 footer.page-footer {
   background-color: rgba(0,53,95,1)
+
+}
 
 /* =====================================================================
     TWITTER TIMELINE
@@ -335,5 +305,4 @@ footer.page-footer {
   margin-bottom: 10px;
   background-color: #fff;
   border-radius: 5px;
->>>>>>> 3b035e9b3efa90396f12374fe54791711da32303
 }
