@@ -14,25 +14,27 @@ $(document).ready(function(){
 ================================================================ */
   $(document).on("click", ".news-header", function(){
 
+
     if ($(this).hasClass("active")) {
       $(this).children(".chevron-down").hide();
       $(this).children(".chevron-up").show();
+    } else {
+      $(this).children(".chevron-down").show();
+      $(this).children(".chevron-up").hide();
     }
   });
 
   $(document).on({
     mouseenter: function(){
       if ($(this).hasClass("active")) {
-        $(this).children(".chevron-down").fadeOut();
-        $(this).children(".chevron-up").fadeIn();
+        $(this).children(".chevron-up").fadeIn("fast");
       } else {
-        $(this).children(".chevron-down").fadeIn();
-        $(this).children(".chevron-up").fadeOut();
+        $(this).children(".chevron-down").fadeIn("fast");
       }
     },
     mouseleave: function(){
-      $(this).children(".chevron-down").fadeOut();
-      $(this).children(".chevron-up").fadeOut();
+      $(this).children(".chevron-down").fadeOut("fast");
+      $(this).children(".chevron-up").fadeOut("fast");
     }
   }, ".news-header");
 
@@ -75,13 +77,7 @@ $(document).ready(function(){
       newListItem.append(newDivHeader).append(newDivBody.append(bodyContent));
       $("#news").append(newListItem);
     };
-
-
-
-
   }
-
-  
 
   function base64_encode(data) {
     // http://kevin.vanzonneveld.net
