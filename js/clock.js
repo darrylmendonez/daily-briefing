@@ -15,12 +15,11 @@ $(document).ready(function(){
     clockFace: "TwelveHourClock"
   });
 
-  
-
   //start the clock for the user's timezone
   localClock.start(function(){});
   
   var now_utc;
+  var timezone;
   function getTimeZoneOfCity (){
     var now = new Date();
     var now_utc = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(),  now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
@@ -36,37 +35,26 @@ $(document).ready(function(){
       type: "GET",
       url: googleTimezoneApiURL,
       success: function(timezoneData){
-        locationTime(timezoneData.timeZoneId);
+        timezone = timezoneData.timeZoneId;
       }
       
     });
   }
 
-  function locationTime (timeZone){
-    // var localOffset = new Date().getTimezoneOffset();
-    // console.log(localOffset);
-    // // var newTime = new Date(moment().tz(timeZone).format("MMM DD, YYYY HH:MM:SS"));
-    // var newOffset = moment.tz.zone(timeZone).offset();
-    // console.log(newOffset);
-    // var newOffset = newTime.getTimezoneOffset();
-    // console.log(newOffset);
-    // var diff = localOffset - newOffset;
-    // console.log(diff);
-    // var locationClock = $(".location-clock").FlipClock(diff, {
-    //   clockFace: "TwelveHourClock"
-    // });
+  setInterval(function(){
+    toTimeZone(timezone);
+  }, 1000);
 
-    var newOffset = moment.tz(timeZone).format("Z");
-    console.log(typeof(newOffset));
-
-    $("#flipcountdownbox1").flipcountdown({
-      size: "lg",
-      tzoneOffset: newOffset
-    });
+  function toTimeZone(zone) {
+    var format = 'hh:mm:ss a';
+    var time = moment().format(format);
+    console.log(time);
+    console.log(typeof(time));
+    console.log(moment(time, format).tz(zone).format(format));
+    var timezoneTime =  moment(time, format).tz(zone).format(format);
+    $("#local-time").text(time);
+    $("#location-time").text(timezoneTime);
   }
-
-
-  
 
 });
 
