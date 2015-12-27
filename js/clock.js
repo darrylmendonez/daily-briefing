@@ -2,9 +2,11 @@ $(document).ready(function(){
 
   $("#selected-city").keypress(function(e){
     if (e.which == 13) {
+      $("#location").html(($(this).val().trim()).toUpperCase());
+      $("#location-time").fadeIn("slow");
       setTimeout(function(){
         getTimeZoneOfCity();
-      }, 1000)
+      }, 500)
     }
   });
   
@@ -19,7 +21,7 @@ $(document).ready(function(){
   localClock.start(function(){});
   
   var now_utc;
-  var timezone;
+  var timezone = "America/New_York";
   function getTimeZoneOfCity (){
     var now = new Date();
     var now_utc = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(),  now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
@@ -46,7 +48,7 @@ $(document).ready(function(){
   }, 1000);
 
   function toTimeZone(zone) {
-    var format = 'hh:mm:ss a';
+    var format = 'hh:mm:ss A';
     var time = moment().format(format);
     var timezoneTime =  moment(time, format).tz(zone).format(format);
     $("#local-time").text(time);

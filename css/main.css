@@ -241,3 +241,33 @@ video.fillWidth {
   height: 500px;
   overflow: scroll;
 }
+
+/*===================================================================
+    CLOCK AREA
+  ==================================================================*/
+
+#location-time {
+  display: none;
+}
+
+.greeting-time {
+  height: 150px;
+  width: 100%;
+  background-color: #333;
+  margin-top: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+#greeting, #location-info {
+  height: 150px;
+}
+
+.time {
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.greeting-heading {
+  margin-bottom: 0;
+}
