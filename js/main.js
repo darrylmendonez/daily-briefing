@@ -172,4 +172,10 @@ $(document).ready(function(){
 
   weatherData();
 
+    $(".chevron-down").on("click", function(){
+    alert("yo");
+    $(".chevron-up").toggle();  
+    $(".chevron-down").toggle();  
+  });
+
 }); // End document ready function
