@@ -166,7 +166,7 @@ $(document).ready(function(){
     $.getJSON(url + apiKey + "/" + lati + "," + longi + "?callback=?", function(data) {
       console.log("geoLocation.lat = " + geoLocation.lat);
       console.log("geoLocation.lng = " + geoLocation.lng);
-      $('#weather').html("City: " + city + "<br /> Weather Summary: " + data.currently.summary + "<br /> Current Temperature: " + data.currently.temperature + "&deg; F");
+      $('#weather').html("City: " + city + "<br /> Weather Summary: " + data.currently.summary + "<br /> Current Temperature: " + data.currently.temperature.toFixed(0) + "&deg; F");
     })
   }; 
 
