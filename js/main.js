@@ -164,8 +164,6 @@ $(document).ready(function(){
     var longi = geoLocation.lng;
     var data;
     $.getJSON(url + apiKey + "/" + lati + "," + longi + "?callback=?", function(data) {
-      console.log("geoLocation.lat = " + geoLocation.lat);
-      console.log("geoLocation.lng = " + geoLocation.lng);
       $('#weather').html("City: " + city + "<br /> Weather Summary: " + data.currently.summary + "<br /> Current Temperature: " + data.currently.temperature.toFixed(0) + "&deg; F");
     })
   }; 
