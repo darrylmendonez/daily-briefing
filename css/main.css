@@ -248,6 +248,7 @@ video.fillWidth {
   overflow: scroll;
 }
 
+<<<<<<< HEAD
 #news-column {
   width: 100%;
   background-color: gray;
@@ -314,4 +315,16 @@ video.fillWidth {
 
 .article-title {
   position: inherit;
+/* =====================================================================
+    TWITTER TIMELINE
+======================================================================*/
+
+#tweets {
+  padding: 0;
+}
+
+.timeline {
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 5px;
 }
