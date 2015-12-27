@@ -48,9 +48,6 @@ $(document).ready(function(){
   function toTimeZone(zone) {
     var format = 'hh:mm:ss a';
     var time = moment().format(format);
-    console.log(time);
-    console.log(typeof(time));
-    console.log(moment(time, format).tz(zone).format(format));
     var timezoneTime =  moment(time, format).tz(zone).format(format);
     $("#local-time").text(time);
     $("#location-time").text(timezoneTime);
