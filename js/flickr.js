@@ -1,17 +1,17 @@
 $(document).ready(function() {  
 
+
+
   setTimeout(function(){
     $("#foo").slideme({
       arrows: true,
       itemsForSlide : 2,
-      transition : 'page',
-      css3 : true,
       resizeable:{
           width: 990,
-          height: 450,
+          height: 500,
       }
     });
-  }, 500);
+  }, 1000);
 
   
   
@@ -24,8 +24,9 @@ $(document).ready(function() {
   $("#selected-city").keypress(function(e){
     if (e.which == 13) {
       setTimeout(function(){
+        $(".slideme").empty(); 
         googleApiSuccessHandler();
-        $("#flickrRow").empty(); 
+
       },500)  
     }
   });
@@ -63,7 +64,9 @@ $(document).ready(function() {
     $.ajax({
       type: "GET",
       url: flickrApiUrl + $.param(flickrApiParams),
-      success: flickrSuccessHandler
+      success: function(response){
+        flickrSuccessHandler(response);
+       } 
     });
 
 

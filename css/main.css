@@ -285,12 +285,23 @@ video.fillWidth {
     FLICKR
 ====================================================================== */
 
+#foo {
+  height: 500px;
+}
+
 .slideme{
   max-width: 990px;
-  max-height: 450px;
+  height: 500px;
   width: 100%;
   height: 100%;
   margin: 0 auto;
+}
+
+
+
+.slideme_container ul, .slideme_container ol, .slideme {
+    margin: 0 auto;
+    padding: 0;
 }
 
 /*======================================================================
@@ -298,8 +309,8 @@ video.fillWidth {
 =======================================================================*/
 
 footer.page-footer {
-  background-color: rgba(0,53,95,1)
-
+  background-color: rgba(0,53,95,1);
+  margin-top: 160px;
 }
 
 /* =====================================================================
@@ -314,4 +325,6 @@ footer.page-footer {
   margin-bottom: 10px;
   background-color: #fff;
   border-radius: 5px;
+  width: 100%;
+  height: 500px;
 }
