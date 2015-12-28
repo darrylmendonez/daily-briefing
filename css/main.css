@@ -184,37 +184,7 @@ video.fillWidth {
   z-index: 1;
 }
 
-.large-icon{
-  color: #00355F;
-  font-size: 500px;
-  opacity: 0.5;
-}
-#large-sun{
-  top: -30px;
-  left: -168px;
-  position: absolute;
-  z-index: 0;
-}
 
-#large-car{
-  top: -30px;
-  left: -168px;
-  position: absolute;
-  z-index: 0;
-}
-
-#large-news{
-  top: -30px;
-  left: -168px;
-  position: absolute;
-  z-index: 0;
-} 
-
-#large-cal{
-  top: -30px;
-  left: -168px;
-  position: absolute;
-  z-index: 0;
 } 
 /* ======================================================================
   TRAFFIC
@@ -235,11 +205,83 @@ video.fillWidth {
 
 #news > * {
   color: black;
+  z-index: 2;
+  background-color: white;
+}
+
+.news-content {
+  overflow: scroll;
 }
 
 #news-column {
-  height: 500px;
+  width: 100%;
+  background-color: gray;
+  margin-top: 15px;
+  position: relative;
+  z-index: 1;
+  height: 1000px;
   overflow: scroll;
+}
+
+#news-column > h1 {
+  margin: 0px;
+}
+
+.row {
+  background-color: gray;
+}
+
+.news-header {
+  font-size: 1.2em;
+  font-weight: bold;
+  min-height: 2rem;
+  line-height: 2.5rem;
+  position: relative;
+}
+
+.news-header:hover {
+  font-size: 1.2em;
+  font-weight: bold;
+  min-height: 2rem;
+  line-height: 2.5rem;
+  position: relative;
+  background-color: #f2f2f2;
+}
+
+.news-source {
+  font-size: 0.8em;
+  font-weight: normal;
+  color: #8c8c8c;
+  margin-top: 0;
+}
+
+.collapsible-header .chevron-down {
+  display: none;
+  width: 2rem;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  margin-right: 0;
+  margin-top: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.collapsible-header .chevron-up {
+  display: none;
+  width: 2rem;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  margin-right: 0;
+  margin-top: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.article-title {
+  position: inherit;
+
 }
 
 /*======================================================================
@@ -248,6 +290,8 @@ video.fillWidth {
 
 footer.page-footer {
   background-color: rgba(0,53,95,1)
+
+}
 
 /* =====================================================================
     TWITTER TIMELINE
