@@ -16,10 +16,6 @@
   <link href='https://fonts.googleapis.com/css?family=Hind:400,300|Poppins:400,300' rel='stylesheet' type='text/css'>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-  <!-- flipclock CSS -->
-  <link rel="stylesheet" href="css/flipclock.css">
-  <!-- flipclock CSS -->
-  <link rel="stylesheet" href="css/jquery.flipcountdown.css">
   <!-- slideme CSS -->
   <link rel="stylesheet" href="css/slideme.css">
   <!-- Custom CSS -->
@@ -89,17 +85,17 @@
       
       <!-- Row for Greeting and Location Info -->
       <div id="greeting-row" class="row">
-        <div id="greeting" class="col s6 fadeInDown wow section scrollspy" data-wow-delay=".1s">
-          <div class="test hoverable">
-          <h1>User Greeting</h1>
-          <div id="local-time"></div>
+        <div id="greeting" class="col s12 m6 fadeInDown wow section scrollspy" data-wow-delay=".1s">
+          <div class="greeting-time">
+            <h1 class="center-align greeting-heading">LOCAL</h1>
+            <div id="local-time" class="time center-align"></div>
           </div>
         </div>
 
-        <div id="location-info" class="col s6 fadeInDown wow section scrollspy" data-wow-delay=".3s">
-          <div class="test hoverable">
-            <h1>Location Info</h1>
-            <div id="location-time"></div>
+        <div id="location-info" class="col s12 m6 fadeInDown wow section scrollspy" data-wow-delay=".3s">
+          <div class="greeting-time">
+            <h1 id="location" class="center-align greeting-heading"></h1>
+            <div id="location-time" class="time center-align"></div>
           </div>
         </div>
       </div>
@@ -211,8 +207,6 @@
   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
   <!-- WOW JS to animate objects while scrolling -->
   <script type="text/javascript" src="js/wow.js"></script>
-  <!-- flipclock JS -->
-  <script src="js/flipclock.min.js"></script>
   <!-- momentJS -->
   <script src="js/moment.js"></script>
   <script src="js/moment-timezone-with-data.js"></script>
