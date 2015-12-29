@@ -9,11 +9,40 @@ $(document).ready(function(){
     }
   }); 
 
+/*=================================================================
+      ON CLICK EVENT FOR NEWS ARTICLE HEADERS
+================================================================ */
+  $(document).on("click", ".news-header", function(){
+
+
+    if ($(this).hasClass("active")) {
+      $(this).children(".chevron-down").hide();
+      $(this).children(".chevron-up").show();
+    } else {
+      $(this).children(".chevron-down").show();
+      $(this).children(".chevron-up").hide();
+    }
+  });
+
+  $(document).on({
+    mouseenter: function(){
+      if ($(this).hasClass("active")) {
+        $(this).children(".chevron-up").fadeIn("fast");
+      } else {
+        $(this).children(".chevron-down").fadeIn("fast");
+      }
+    },
+    mouseleave: function(){
+      $(this).children(".chevron-down").fadeOut("fast");
+      $(this).children(".chevron-up").fadeOut("fast");
+    }
+  }, ".news-header");
+
   function bingNewsAPI(){
     $("#news").empty();
     var city = $("#selected-city").val().trim();
 
-    var requestStr = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/News?Query=%27" + city + "%27&$top=10&$format=json";
+    var requestStr = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/News?Query=%27" + city + "%27&Latitude=" + geoLocation.lat + "&Longitude=" + geoLocation.lng + "&$top=15&$format=json";
 
     var appId = "xqH9UulnxWvYID2if8wODlrsrvBKXFrlnKE8TmGDdJI"; //bing api key
     var appId = base64_encode(":" + appId); //takes api key and encodes to base64
@@ -31,7 +60,6 @@ $(document).ready(function(){
       context: this,
       type: "GET",
       success: function(data){
-        console.log(data.d.results[0].Title);
         bingSuccessHandler(data);
       }
     })
@@ -40,21 +68,16 @@ $(document).ready(function(){
   function bingSuccessHandler(articles){
 
     for (var i = 0; i < articles.d.results.length ; i++) {
-      var newListItem = $("<li>");
-      var newDivHeader = $("<div>").addClass("collapsible-header").html(articles.d.results[i].Title);
+      var newListItem = $("<li>").addClass("hoverable");
+      var newDivHeader = $("<div>").addClass("collapsible-header news-header").append($("<a class='article-title'>").attr("href", articles.d.results[i].Url).attr("target", "_blank").append(articles.d.results[i].Title)).append($("<i class='fa fa-angle-double-down chevron-down'></i>")).append($("<i class='fa fa-angle-double-up chevron-up'></i>"));
+      newDivHeader.append($("<h6>").addClass("news-source").html(articles.d.results[i].Source));
       var newDivBody = $("<div>").addClass("collapsible-body");
-      var bodyContent = $("<p>").html(articles.d.results[i].Description).append($("<a>").attr("href", articles.d.results[i].Url).attr("target", "_blank").html("read more..."));
+      var bodyContent = $("<p>").html(articles.d.results[i].Description);
 
       newListItem.append(newDivHeader).append(newDivBody.append(bodyContent));
       $("#news").append(newListItem);
     };
-
-
-
-
   }
-
-  
 
   function base64_encode(data) {
     // http://kevin.vanzonneveld.net

@@ -10,16 +10,6 @@ $(document).ready(function(){
     }
   });
   
-
-  // clock settings
-  var localClock = $(".local-clock").FlipClock({
-    // options here
-    clockFace: "TwelveHourClock"
-  });
-
-  //start the clock for the user's timezone
-  localClock.start(function(){});
-  
   var now_utc;
   var timezone = "America/New_York";
   function getTimeZoneOfCity (){

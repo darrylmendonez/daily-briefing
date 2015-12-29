@@ -184,38 +184,6 @@ video.fillWidth {
   z-index: 1;
 }
 
-.large-icon{
-  color: #00355F;
-  font-size: 500px;
-  opacity: 0.5;
-}
-#large-sun{
-  top: -30px;
-  left: -168px;
-  position: absolute;
-  z-index: 0;
-}
-
-#large-car{
-  top: -30px;
-  left: -168px;
-  position: absolute;
-  z-index: 0;
-}
-
-#large-news{
-  top: -30px;
-  left: -168px;
-  position: absolute;
-  z-index: 0;
-} 
-
-#large-cal{
-  top: -30px;
-  left: -168px;
-  position: absolute;
-  z-index: 0;
-} 
 /* ======================================================================
   TRAFFIC
 ===================================================================== */
@@ -235,48 +203,114 @@ video.fillWidth {
 
 #news > * {
   color: black;
+  z-index: 2;
+  background-color: white;
 }
 
-#news-column {
-  height: 500px;
+.news-content {
   overflow: scroll;
 }
 
-/*===================================================================
-    CLOCK AREA
-  ==================================================================*/
-
-#location-time {
-  display: none;
-}
-
-.greeting-time {
-  height: 150px;
+#news-column {
   width: 100%;
-  background-color: #333;
+  background-color: gray;
   margin-top: 15px;
   position: relative;
   z-index: 1;
+  height: 1000px;
+  overflow: scroll;
 }
 
-#greeting, #location-info {
-  height: 150px;
+#news-column > h1 {
+  margin: 0px;
 }
 
-.time {
-  font-size: 3.5rem;
+.row {
+  background-color: gray;
+}
+
+.news-header {
+  font-size: 1.2em;
   font-weight: bold;
+  min-height: 2rem;
+  line-height: 2.5rem;
+  position: relative;
 }
 
-.greeting-heading {
-  margin-bottom: 0;
+.news-header:hover {
+  font-size: 1.2em;
+  font-weight: bold;
+  min-height: 2rem;
+  line-height: 2.5rem;
+  position: relative;
+  background-color: #f2f2f2;
+}
+
+.news-source {
+  font-size: 0.8em;
+  font-weight: normal;
+  color: #8c8c8c;
+  margin-top: 0;
+}
+
+.collapsible-header .chevron-down {
+  display: none;
+  width: 2rem;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  margin-right: 0;
+  margin-top: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.collapsible-header .chevron-up {
+  display: none;
+  width: 2rem;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  margin-right: 0;
+  margin-top: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.article-title {
+  position: inherit;
+}
+
+/* =====================================================================
+    FLICKR
+====================================================================== */
+
+#foo {
+  height: 500px;
+}
+
+.slideme{
+  max-width: 990px;
+  height: 500px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+
+
+.slideme_container ul, .slideme_container ol, .slideme {
+    margin: 0 auto;
+    padding: 0;
+}
 
 /*======================================================================
     FOOTER
 =======================================================================*/
 
 footer.page-footer {
-  background-color: rgba(0,53,95,1)
+  background-color: rgba(0,53,95,1);
+  margin-top: 160px;
 }
 
 /* =====================================================================
@@ -291,4 +325,44 @@ footer.page-footer {
   margin-bottom: 10px;
   background-color: #fff;
   border-radius: 5px;
+  width: 100%;
+  height: 500px;
+}
+
+/*===================================================================
+    CLOCK AREA
+  ==================================================================*/
+
+#location-time {
+  display: none;
+}
+
+#greeting-row {
+  margin-top: 0.75rem;
+}
+
+.greeting-time {
+  height: 150px;
+  width: 100%;
+  background-color: #333;
+  position: relative;
+  z-index: 1;
+}
+
+.greeting-time h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#greeting, #location-info {
+  height: 150px;
+}
+
+.time {
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.greeting-heading {
+  margin-bottom: 0;
 }

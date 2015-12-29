@@ -16,10 +16,8 @@
   <link href='https://fonts.googleapis.com/css?family=Hind:400,300|Poppins:400,300' rel='stylesheet' type='text/css'>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-  <!-- flipclock CSS -->
-  <link rel="stylesheet" href="css/flipclock.css">
-  <!-- flipclock CSS -->
-  <link rel="stylesheet" href="css/jquery.flipcountdown.css">
+  <!-- slideme CSS -->
+  <link rel="stylesheet" href="css/slideme.css">
   <!-- Custom CSS -->
   <link rel="stylesheet" type="text/css" href="css/main.css">
 
@@ -133,17 +131,18 @@
       <div id="news-events-tweets-row" class="row section scrollspy">
 
         <!-- column for news-->
-        <div class="col s6 fadeInDown wow" data-wow-delay=".3s">
-          <div class="test hoverable" id="news-column">
+        <div class="col m6 s12 fadeInDown wow" data-wow-delay=".3s">
+          <div class="test" id="news-column">
             <h1>News</h1>
-            <ul class="collapsible popout" id="news" data-collapsible="accordion">
-
+            <div class="news-content">
+              <ul class="collapsible" id="news" data-collapsible="accordion">
+            </div>
             </ul>
           </div>
         </div>
         
         <!-- column for events and tweet -->
-        <div class="col s6 fadeInDown wow" data-wow-delay=".1s">
+        <div class="col m6 s12 fadeInDown wow" data-wow-delay=".1s">
           <div class="test hoverable">
             <h1>Events</h1>
           </div>
@@ -157,12 +156,16 @@
       </div> <!-- End News, Events, & Tweets -->
 
       <!-- row for flickr images-->
-      <div id="traffic-row" class="row fadeInDown wow section scrollspy" data-wow-delay=".3s">
-          <div id="flickrRow" class="test">
+      <div id="flickr-row" class="row fadeInDown wow section scrollspy" data-wow-delay=".3s">
+          <div id="flickrRow" class="col s12 test">
             <h1>Flickr</h1>
+            <div id="foo">
+              <ul class="slideme">
+              </ul>
+            </div>
           </div>
-        </div>
       </div>
+     
 
     </div> <!-- end container div -->
 
@@ -204,8 +207,6 @@
   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
   <!-- WOW JS to animate objects while scrolling -->
   <script type="text/javascript" src="js/wow.js"></script>
-  <!-- flipclock JS -->
-  <script src="js/flipclock.min.js"></script>
   <!-- momentJS -->
   <script src="js/moment.js"></script>
   <script src="js/moment-timezone-with-data.js"></script>
@@ -214,6 +215,7 @@
   <script type="text/javascript" src="js/flickr.js"></script>
   <script type="text/javascript" src="js/clock.js"></script>
   <script type="text/javascript" src="js/news.js"></script>
+  <script type="text/javascript" src="js/jquery.slideme2.js"></script>
 
 
 </body>

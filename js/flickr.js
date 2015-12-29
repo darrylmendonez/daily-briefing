@@ -1,4 +1,20 @@
 $(document).ready(function() {  
+
+
+
+  setTimeout(function(){
+    $("#foo").slideme({
+      arrows: true,
+      itemsForSlide : 2,
+      resizeable:{
+          width: 990,
+          height: 500,
+      }
+    });
+  }, 1000);
+
+  
+  
   
   // Allows NYC location to be default for images
   googleApiSuccessHandler();
@@ -8,8 +24,9 @@ $(document).ready(function() {
   $("#selected-city").keypress(function(e){
     if (e.which == 13) {
       setTimeout(function(){
+        $(".slideme").empty(); 
         googleApiSuccessHandler();
-        $("#flickrRow").empty(); 
+
       },500)  
     }
   });
@@ -22,13 +39,13 @@ $(document).ready(function() {
     photoUrl += "/" + photoData.id;
     photoUrl += "_" + photoData.secret + ".jpg";
 
-    var colDiv = $("<div>").addClass("col s6");
-    var photoImg = $("<img>").attr("src", photoUrl).attr("width", "200px").addClass("materialboxed");
+    var newLi = $("<li>");
+    var photoImg = $("<img>").attr("src", photoUrl).addClass("col s6");
     
 
-    colDiv.append(photoImg);
+    newLi.append(photoImg);
 
-    return colDiv;
+    return newLi;
 
   }
 
@@ -47,7 +64,9 @@ $(document).ready(function() {
     $.ajax({
       type: "GET",
       url: flickrApiUrl + $.param(flickrApiParams),
-      success: flickrSuccessHandler
+      success: function(response){
+        flickrSuccessHandler(response);
+       } 
     });
 
 
@@ -57,7 +76,7 @@ $(document).ready(function() {
     var locationPhotos = response.photos.photo; 
     for(var i = 0; i < 30; i++) {  
       var newCol = buildThumbnail(locationPhotos[i]);
-      $("#flickrRow").append(newCol);
+      $(".slideme").append(newCol);
 
     }
   }
