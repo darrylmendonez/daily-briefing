@@ -167,7 +167,6 @@ $(document).ready(function(){
       $('#weather').html("City: " + city + "<br /> Weather Summary: " + data.currently.summary + "<br /> Current Temperature: " + data.currently.temperature.toFixed(0) + "&deg; F");
       var skycons = new Skycons({"color": "white"});
       var currentWeatherIcon = data.currently.icon;
-      console.log(currentWeatherIcon);
 
       switch (currentWeatherIcon) { 
         case 'clear-day': 
