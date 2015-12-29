@@ -167,40 +167,52 @@ $(document).ready(function(){
       $('#weather').html("City: " + city + "<br /> Weather Summary: " + data.currently.summary + "<br /> Current Temperature: " + data.currently.temperature.toFixed(0) + "&deg; F");
       var skycons = new Skycons({"color": "white"});
       var currentWeatherIcon = data.currently.icon;
+      console.log(currentWeatherIcon);
 
       switch (currentWeatherIcon) { 
         case 'clear-day': 
           skycons.add("weather-icon", Skycons.CLEAR_DAY);
+          $("#weather-image").attr("src", "images/weather-images/clear-day.jpg");
           break;
         case 'clear-night': 
           skycons.add("weather-icon", Skycons.CLEAR_NIGHT);
+          $("#weather-image").attr("src", "images/weather-images/clear-night.jpg");
           break;
         case 'partly-cloudy-day': 
           skycons.add("weather-icon", Skycons.PARTLY_CLOUDY_DAY);
+          $("#weather-image").attr("src", "images/weather-images/partly-cloudy-day.jpg");
           break;    
         case 'partly-cloudy-night': 
           skycons.add("weather-icon", Skycons.PARTLY_CLOUDY_NIGHT);
+          $("#weather-image").attr("src", "images/weather-images/partly-cloudy-night.jpg");
           break;
         case 'cloudy': 
           skycons.add("weather-icon", Skycons.CLOUDY);
+          $("#weather-image").attr("src", "images/weather-images/cloudy.jpg");
           break;
         case 'rain': 
           skycons.add("weather-icon", Skycons.RAIN);
+          $("#weather-image").attr("src", "images/weather-images/rain.jpg");
           break;
         case 'sleet': 
           skycons.add("weather-icon", Skycons.SLEET);
+          $("#weather-image").attr("src", "images/weather-images/sleet.jpg");
           break;    
         case 'snow': 
           skycons.add("weather-icon", Skycons.SNOW);
+          $("#weather-image").attr("src", "images/weather-images/snow.jpg");
           break;
         case 'wind': 
           skycons.add("weather-icon", Skycons.WIND);
+          $("#weather-image").attr("src", "images/weather-images/wind.jpg");
           break;    
         case 'fog': 
           skycons.add("weather-icon", Skycons.FOG);
+          $("#weather-image").attr("src", "images/weather-images/fog.jpg");
           break;
         default:
           skycons.add("weather-icon", Skycons.RAIN);
+          $("#weather-image").attr("src", "images/weather-images/rain.jpg");
           break;
       }
       // start animation!
