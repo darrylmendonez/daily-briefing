@@ -26,7 +26,6 @@ $(document).ready(function() {
       setTimeout(function(){
         $(".slideme").empty(); 
         googleApiSuccessHandler();
-
       },500)  
     }
   });
