@@ -210,6 +210,8 @@ $(document).ready(function(){
           skycons.add("weather-icon", Skycons.FOG);
           $("#weather-image").attr("src", "images/weather-images/fog.jpg");
           break;
+        // From forecast.io documentation: "Developers should ensure that a sensible default is defined, as additional values, such as hail, thunderstorm, or tornado, may be defined in the future."
+        // therefore default has been set to rain.
         default:
           skycons.add("weather-icon", Skycons.RAIN);
           $("#weather-image").attr("src", "images/weather-images/rain.jpg");
