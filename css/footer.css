@@ -2,6 +2,8 @@
     FOOTER
 =======================================================================*/
 
+/* Note: The <link> for this stylesheet must be placed above Materialize core CSS <link> in the html file in order to override their footer background color due to their use of !important on their primary colors on their footer bar */
+
 footer.page-footer {
   background-color: rgba(0,53,95,1) !important;
   margin-top: 160px;
