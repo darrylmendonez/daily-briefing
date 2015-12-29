@@ -165,6 +165,46 @@ $(document).ready(function(){
     var data;
     $.getJSON(url + apiKey + "/" + lati + "," + longi + "?callback=?", function(data) {
       $('#weather').html("City: " + city + "<br /> Weather Summary: " + data.currently.summary + "<br /> Current Temperature: " + data.currently.temperature.toFixed(0) + "&deg; F");
+      var skycons = new Skycons({"color": "white"});
+      var currentWeatherIcon = data.currently.icon;
+
+      switch (currentWeatherIcon) { 
+        case 'clear-day': 
+          skycons.add("weather-icon", Skycons.CLEAR_DAY);
+          break;
+        case 'clear-night': 
+          skycons.add("weather-icon", Skycons.CLEAR_NIGHT);
+          break;
+        case 'partly-cloudy-day': 
+          skycons.add("weather-icon", Skycons.PARTLY_CLOUDY_DAY);
+          break;    
+        case 'partly-cloudy-night': 
+          skycons.add("weather-icon", Skycons.PARTLY_CLOUDY_NIGHT);
+          break;
+        case 'cloudy': 
+          skycons.add("weather-icon", Skycons.CLOUDY);
+          break;
+        case 'rain': 
+          skycons.add("weather-icon", Skycons.RAIN);
+          break;
+        case 'sleet': 
+          skycons.add("weather-icon", Skycons.SLEET);
+          break;    
+        case 'snow': 
+          skycons.add("weather-icon", Skycons.SNOW);
+          break;
+        case 'wind': 
+          skycons.add("weather-icon", Skycons.WIND);
+          break;    
+        case 'fog': 
+          skycons.add("weather-icon", Skycons.FOG);
+          break;
+        default:
+          skycons.add("weather-icon", Skycons.RAIN);
+          break;
+      }
+      // start animation!
+      skycons.play();
     })
   }; 
 
