@@ -5,7 +5,7 @@
 
 
 body {
-  color:#fff;
+  background-color: #EDEFED;
   font-family: 'Hind', sans-serif;
 }
 
@@ -178,7 +178,7 @@ video.fillWidth {
 .test {
   width: 100%;
   height:500px;
-  background-color: #333;
+  background-color: white;
   margin-top: 15px;
   position: relative;
   z-index: 1;
@@ -191,6 +191,27 @@ video.fillWidth {
 #map {
   width: 100%;
   height: 400px;
+}
+
+#traffic-row {
+  background-color: white;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.traffic-map {
+  padding: 0;
+  margin-top: 11.25px
+}
+
+.traffic-map h1 {
+  color: white;
+  margin-top: 0;
+  margin-bottom: 5px;
+  padding-top: 30px;
+  background-image: url(../images/traffic.png);
+  background-size: 100%;
+  background-position-y: -380px;
 }
 
 .nav-wrapper {
@@ -221,7 +242,6 @@ video.fillWidth {
   overflow: scroll;
 }
 
-<<<<<<< HEAD
 #news-column > h1 {
   margin: 0px;
 }
@@ -304,7 +324,7 @@ video.fillWidth {
     margin: 0 auto;
     padding: 0;
 }
-=======
+
 /*===================================================================
     CLOCK AREA
   ==================================================================*/
