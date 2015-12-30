@@ -7,3 +7,7 @@
 footer.page-footer {
   background-color: rgba(0,53,95,1) !important;
 }
+
+#footer-row {
+  background-color: white;
+}

@@ -3,7 +3,7 @@
 
 **General Project Summary**
 
-Based on user inputted location, the web app will find the current weather, images taken around the area, and events happening around the area.
+Based on user inputted location, the web app will find the current weather, traffic, images taken around the area, and events happening around the area.
 
 **Technologies Used**
 * HTML
@@ -22,7 +22,7 @@ https://dailybriefing.herokuapp.com
 
 * Google Maps: https://developers.google.com/maps/?hl=en/
 * flickr: https://www.flickr.com/services/api/misc.api_keys.html
-* Yahoo Weather: https://developer.yahoo.com/weather/
+* The Dark Sky Forecast: https://developer.forcast.io
 * Gravy: https://api.findgravy.com/docs/
 
 

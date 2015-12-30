@@ -135,28 +135,6 @@ $(document).ready(function(){
   // forecast.io's URL format: 
   // https://api.forecast.io/forecast/APIKEY/LATITUDE,LONGITUDE
 
-  // function requestForecast() {
-  //   var forecastApiKey = "b8d3aced4b8b6952a488c8cd6b49c72a";
-  //   var forecastApiURL = "https://api.forecast.io/forecast/";
-  //   forecastApiURL += forecastApiKey + "/";
-  //   forecastApiURL += geoLocation.lat + "," + geoLocation.lng;
-  //   console.log(forecastApiURL);
-  //   $.ajax({
-  //     type: "GET",
-  //     url: forecastApiURL,
-  //     success: function(response){
-  //       var weatherSummary = response.currently.summary;
-  //       var weatherIcon = response.currently.icon;
-  //     },
-  //     error: function(jqXHR, textStatus, errorThrown){
-  //       console.log(errorThrown);
-  //       console.log("Error: Function requestForecast isn't successful.")
-  //     }
-  //   });
-  // };
-
-  // requestForecast();
-
   var weatherData = function() {
     var apiKey = 'b8d3aced4b8b6952a488c8cd6b49c72a';
     var url = 'https://api.forecast.io/forecast/';
@@ -164,8 +142,8 @@ $(document).ready(function(){
     var longi = geoLocation.lng;
     var data;
     $.getJSON(url + apiKey + "/" + lati + "," + longi + "?callback=?", function(data) {
-      $('#weather').html("City: " + city + "<br /> Weather Summary: " + data.currently.summary + "<br /> Current Temperature: " + data.currently.temperature.toFixed(0) + "&deg; F");
-      var skycons = new Skycons({"color": "black"});
+      $('#weather').html("&nbsp;&nbsp;Today: " + data.currently.summary + "<br />&nbsp;&nbsp;Current Temperature: " + data.currently.temperature.toFixed(0) + "&deg; F");
+      var skycons = new Skycons({"color": "#E65100"});
       var currentWeatherIcon = data.currently.icon;
       console.log("var currentWeatherIcon = " + currentWeatherIcon);
 
@@ -173,6 +151,7 @@ $(document).ready(function(){
         case 'clear-day': 
           skycons.add("weather-icon", Skycons.CLEAR_DAY);
           $("#weather-image").attr("src", "images/weather-images/clear-day.jpg");
+          
           break;
         case 'clear-night': 
           skycons.add("weather-icon", Skycons.CLEAR_NIGHT);
@@ -229,7 +208,11 @@ $(document).ready(function(){
     $('.parallax').parallax();
   });
 
-    $(".chevron-down").on("click", function(){
+  /*======================================================================
+    NEWS
+    ====================================================================*/
+
+  $(".chevron-down").on("click", function(){
     alert("yo");
     $(".chevron-up").toggle();  
     $(".chevron-down").toggle();  
