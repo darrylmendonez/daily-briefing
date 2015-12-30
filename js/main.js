@@ -165,7 +165,7 @@ $(document).ready(function(){
     var data;
     $.getJSON(url + apiKey + "/" + lati + "," + longi + "?callback=?", function(data) {
       $('#weather').html("Weather Summary: " + data.currently.summary + "<br /> Current Temperature: " + data.currently.temperature.toFixed(0) + "&deg; F");
-      var skycons = new Skycons({"color": "#1976D2"});
+      var skycons = new Skycons({"color": "#1A237E"});
       var currentWeatherIcon = data.currently.icon;
       console.log("var currentWeatherIcon = " + currentWeatherIcon);
 
