@@ -5,6 +5,7 @@
 
 
 body {
+  color: #565A5C;
   background-color: #EDEFED;
   font-family: 'Hind', sans-serif;
 }
@@ -259,11 +260,12 @@ video.fillWidth {
   position: relative;
   z-index: 1;
   height: 1000px;
+  overflow: scroll;
 }
 
 #news-column > h1 {
   margin: 0px;
-}
+  /*overflow: scroll;*/
 
 .row {
   background-color: white;
@@ -344,36 +346,6 @@ video.fillWidth {
     padding: 0;
 }
 
-/*===================================================================
-    CLOCK AREA
-  ==================================================================*/
-
-#location-time {
-  display: none;
-}
-
-.greeting-time {
-  height: 150px;
-  width: 100%;
-  background-color: #333;
-  margin-top: 15px;
-  position: relative;
-  z-index: 1;
-}
-
-#greeting, #location-info {
-  height: 150px;
-}
-
-.time {
-  font-size: 3.5rem;
-  font-weight: bold;
-}
-
-.greeting-heading {
-  margin-bottom: 0;
-
-
 /* =====================================================================
     TWITTER TIMELINE
 ====================================================================== */
@@ -399,15 +371,36 @@ video.fillWidth {
 }
 
 #greeting-row {
-  margin-top: 0.75rem;
+  margin-top: 20px;
+}
+
+#clock-img-container{
+  height: 130px;
+}
+
+#parallax-clock {
+  width: 768px;
+}
+
+.greeting-image {
+  height: 130px;
+  width: 100%;
+  /*background-color: white;*/
+  position: relative;
+  z-index: 1;
+  /*background-image: url(../images/clock.png);*/
+  /*background-size: 100%;*/
+  /*background-position-y: -120px; */
 }
 
 .greeting-time {
-  height: 150px;
+  height: 130px;
   width: 100%;
-  background-color: #333;
+  /*background-color: white;*/
   position: relative;
   z-index: 1;
+  display: flex;
+  justify-content: space-around;
 }
 
 .greeting-time h1 {
@@ -417,13 +410,27 @@ video.fillWidth {
 
 #greeting, #location-info {
   height: 150px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .time {
-  font-size: 3.5rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
 .greeting-heading {
   margin-bottom: 0;
 }
+
+/*===================================================================
+    WEATHER
+  ==================================================================*/
+
+  #weather-image {
+    z-index: -1;
+  }
+
+  #weather-text {
+    z-index: 1;
+  }

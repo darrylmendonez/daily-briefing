@@ -229,6 +229,11 @@ $(document).ready(function(){
     $('.parallax').parallax();
   });
 
+  //Image Captions
+  $(document).ready(function(){
+    $('.slider').slider({full_width: true});
+  });
+
     $(".chevron-down").on("click", function(){
     alert("yo");
     $(".chevron-up").toggle();  
