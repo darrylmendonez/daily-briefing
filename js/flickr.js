@@ -5,9 +5,9 @@ $(document).ready(function() {
   setTimeout(function(){
     $("#foo").slideme({
       arrows: true,
-      itemsForSlide : 2,
+      itemsForSlide : 3,
       resizeable:{
-          width: 990,
+          width: 1250,
           height: 500,
       }
     });
@@ -39,11 +39,10 @@ $(document).ready(function() {
     photoUrl += "_" + photoData.secret + ".jpg";
 
     var newLi = $("<li>");
-    var photoImg = $("<img>").attr("src", photoUrl).addClass("col s6");
+    var photoImg = $("<img>").attr("src", photoUrl).addClass("col s4");
     
 
     newLi.append(photoImg);
-
     return newLi;
 
   }
@@ -73,7 +72,7 @@ $(document).ready(function() {
   // loops through all images and applies them into the HTML
   function flickrSuccessHandler(response) { 
     var locationPhotos = response.photos.photo; 
-    for(var i = 0; i < 30; i++) {  
+    for(var i = 0; i < locationPhotos.length; i++) {  
       var newCol = buildThumbnail(locationPhotos[i]);
       $(".slideme").append(newCol);
 
