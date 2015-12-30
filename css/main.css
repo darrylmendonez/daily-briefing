@@ -204,20 +204,15 @@ video.fillWidth {
 #news > * {
   color: black;
   z-index: 2;
-  /*background-color: white;*/
 }
 
 .news-content {
-  /*overflow: scroll;*/
   position: absolute;
   top: 95px;
 }
 
 .news-heading {
   margin: 0px;
-  background-image: url(../images/newspaper.png);
-  background-size: 100%;  
-  background-position-y: -30px;
   height: 100px;
   position: relative;
 }
@@ -229,14 +224,16 @@ video.fillWidth {
   margin-bottom: 0;
 }
 
+#news-image {
+  width: 100%;
+}
+
 #news-column {
   width: 100%;
-  /*background-color: gray;*/
   margin-top: -2px;
   position: relative;
   z-index: 1;
   height: 1000px;
-  /*overflow: scroll;*/
 }
 
 .row {
