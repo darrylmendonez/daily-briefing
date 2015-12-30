@@ -165,7 +165,7 @@ $(document).ready(function(){
     var data;
     $.getJSON(url + apiKey + "/" + lati + "," + longi + "?callback=?", function(data) {
       $('#weather').html("City: " + city + "<br /> Weather Summary: " + data.currently.summary + "<br /> Current Temperature: " + data.currently.temperature.toFixed(0) + "&deg; F");
-      var skycons = new Skycons({"color": "white"});
+      var skycons = new Skycons({"color": "black"});
       var currentWeatherIcon = data.currently.icon;
       console.log(currentWeatherIcon);
 
@@ -223,6 +223,11 @@ $(document).ready(function(){
   }; 
 
   weatherData();
+
+  //Parallax function from Materializecss
+  $(document).ready(function(){
+    $('.parallax').parallax();
+  });
 
     $(".chevron-down").on("click", function(){
     alert("yo");
