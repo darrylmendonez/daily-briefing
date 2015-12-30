@@ -349,7 +349,6 @@ video.fillWidth {
   margin: 0 auto;
 }
 
-
 .slideme_container ul, .slideme_container ol, .slideme {
     margin: 0 auto;
     padding: 0;
@@ -430,4 +429,16 @@ video.fillWidth {
 
 .greeting-heading {
   margin-bottom: 0;
+}
+
+/*======================================================================
+    FOOTER
+=======================================================================*/
+
+footer.page-footer {
+  background-color: #00355F !important;
+}
+
+#footer-row {
+  background-color: white;
 }
