@@ -2,7 +2,7 @@ $(document).ready(function(){
 
   $("#selected-city").keypress(function(e){
     if (e.which == 13) {
-      $("#location").html(($(this).val().trim()).toUpperCase());
+      $(".location").html(($(this).val().trim()).toUpperCase());
       $("#location-time").fadeIn("slow");
       setTimeout(function(){
         getTimeZoneOfCity();
