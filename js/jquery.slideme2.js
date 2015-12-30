@@ -322,7 +322,7 @@
                     var params = { 'direction': key === "next" ? 1 : -1, 'key': key };
                     var arrow = $('<button class="arrow" />').addClass(key).html(this.settings.labels[key]).on('click', params, event);
                     arrows[key] = arrow;
-                    this.dom.slideME.append(arrows[key]);
+                    this.dom.slideme_container.append(arrows[key]);
                 }
                 return arrows;
             },
