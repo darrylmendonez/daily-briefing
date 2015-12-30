@@ -135,28 +135,6 @@ $(document).ready(function(){
   // forecast.io's URL format: 
   // https://api.forecast.io/forecast/APIKEY/LATITUDE,LONGITUDE
 
-  // function requestForecast() {
-  //   var forecastApiKey = "b8d3aced4b8b6952a488c8cd6b49c72a";
-  //   var forecastApiURL = "https://api.forecast.io/forecast/";
-  //   forecastApiURL += forecastApiKey + "/";
-  //   forecastApiURL += geoLocation.lat + "," + geoLocation.lng;
-  //   console.log(forecastApiURL);
-  //   $.ajax({
-  //     type: "GET",
-  //     url: forecastApiURL,
-  //     success: function(response){
-  //       var weatherSummary = response.currently.summary;
-  //       var weatherIcon = response.currently.icon;
-  //     },
-  //     error: function(jqXHR, textStatus, errorThrown){
-  //       console.log(errorThrown);
-  //       console.log("Error: Function requestForecast isn't successful.")
-  //     }
-  //   });
-  // };
-
-  // requestForecast();
-
   var weatherData = function() {
     var apiKey = 'b8d3aced4b8b6952a488c8cd6b49c72a';
     var url = 'https://api.forecast.io/forecast/';
@@ -228,6 +206,10 @@ $(document).ready(function(){
   $(document).ready(function(){
     $('.parallax').parallax();
   });
+
+  /*======================================================================
+    NEWS
+    ====================================================================*/
 
     $(".chevron-down").on("click", function(){
     alert("yo");
