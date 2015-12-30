@@ -225,21 +225,38 @@ video.fillWidth {
 #news > * {
   color: black;
   z-index: 2;
-  background-color: white;
+  /*background-color: white;*/
 }
 
 .news-content {
-  overflow: scroll;
+  /*overflow: scroll;*/
+  position: absolute;
+  top: 95px;
+}
+
+.news-heading {
+  margin: 0px;
+  background-image: url(../images/newspaper.png);
+  background-size: 100%;  
+  background-position-y: -30px;
+  height: 100px;
+  position: relative;
+}
+
+.news-heading h1 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-bottom: 0;
 }
 
 #news-column {
   width: 100%;
-  background-color: gray;
-  margin-top: 15px;
+  /*background-color: gray;*/
+  margin-top: -2px;
   position: relative;
   z-index: 1;
   height: 1000px;
-  overflow: scroll;
 }
 
 #news-column > h1 {
@@ -247,7 +264,7 @@ video.fillWidth {
 }
 
 .row {
-  background-color: gray;
+  background-color: white;
 }
 
 .news-header {
@@ -354,14 +371,6 @@ video.fillWidth {
 .greeting-heading {
   margin-bottom: 0;
 
-/*======================================================================
-    FOOTER
-=======================================================================*/
-
-footer.page-footer {
-  background-color: rgba(0,53,95,1);
-  margin-top: 160px;
-}
 
 /* =====================================================================
     TWITTER TIMELINE
