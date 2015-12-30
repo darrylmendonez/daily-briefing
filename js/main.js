@@ -164,7 +164,7 @@ $(document).ready(function(){
     var longi = geoLocation.lng;
     var data;
     $.getJSON(url + apiKey + "/" + lati + "," + longi + "?callback=?", function(data) {
-      $('#weather').html("Weather Summary: " + data.currently.summary + "<br /> Current Temperature: " + data.currently.temperature.toFixed(0) + "&deg; F");
+      $('#weather').html("&nbsp;&nbsp;Weather Summary: " + data.currently.summary + "<br />&nbsp;&nbsp;Current Temperature: " + data.currently.temperature.toFixed(0) + "&deg; F");
       var skycons = new Skycons({"color": "#1A237E"});
       var currentWeatherIcon = data.currently.icon;
       console.log("var currentWeatherIcon = " + currentWeatherIcon);
