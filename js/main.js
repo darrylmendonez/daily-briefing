@@ -46,7 +46,7 @@ $(document).ready(function(){
       ajaxReqForLatLon();
       setTimeout(function(){
         initMap(geoLocation);
-
+        
       }, 500);
     }
   }); 
@@ -105,6 +105,7 @@ $(document).ready(function(){
       ajaxReqForLatLon();
       setTimeout(function(){
         initMap(geoLocation);
+
       }, 500);
     }
   });
