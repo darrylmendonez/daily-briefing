@@ -164,8 +164,8 @@ $(document).ready(function(){
     var longi = geoLocation.lng;
     var data;
     $.getJSON(url + apiKey + "/" + lati + "," + longi + "?callback=?", function(data) {
-      $('#weather').html("City: " + city + "<br /> Weather Summary: " + data.currently.summary + "<br /> Current Temperature: " + data.currently.temperature.toFixed(0) + "&deg; F");
-      var skycons = new Skycons({"color": "black"});
+      $('#weather').html("Weather Summary: " + data.currently.summary + "<br /> Current Temperature: " + data.currently.temperature.toFixed(0) + "&deg; F");
+      var skycons = new Skycons({"color": "#1976D2"});
       var currentWeatherIcon = data.currently.icon;
       console.log("var currentWeatherIcon = " + currentWeatherIcon);
 
@@ -227,11 +227,6 @@ $(document).ready(function(){
   //Parallax function from Materializecss
   $(document).ready(function(){
     $('.parallax').parallax();
-  });
-
-  //Image Captions
-  $(document).ready(function(){
-    $('.slider').slider({full_width: true});
   });
 
     $(".chevron-down").on("click", function(){
