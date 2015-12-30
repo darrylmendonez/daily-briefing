@@ -199,6 +199,11 @@ video.fillWidth {
   padding-top: 0;
 }
 
+.traffic-heading {
+  height: 100px;
+  margin-bottom: 3px;
+}
+
 .traffic-map {
   padding: 0;
   margin-top: 11.25px
@@ -209,9 +214,6 @@ video.fillWidth {
   margin-top: 0;
   margin-bottom: 5px;
   padding-top: 30px;
-  background-image: url(../images/traffic.png);
-  background-size: 100%;
-  background-position-y: -380px;
 }
 
 .nav-wrapper {
