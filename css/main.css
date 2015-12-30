@@ -178,7 +178,7 @@ video.fillWidth {
 .test {
   width: 100%;
   height:500px;
-  /*background-color: white;*/
+  background-color: white;
   margin-top: 15px;
   position: relative;
   z-index: 1;
@@ -191,6 +191,29 @@ video.fillWidth {
 #map {
   width: 100%;
   height: 400px;
+}
+
+#traffic-row {
+  background-color: white;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.traffic-heading {
+  height: 100px;
+  margin-bottom: 3px;
+}
+
+.traffic-map {
+  padding: 0;
+  margin-top: 11.25px
+}
+
+.traffic-map h1 {
+  color: white;
+  margin-top: 0;
+  margin-bottom: 5px;
+  padding-top: 30px;
 }
 
 .nav-wrapper {
@@ -236,7 +259,10 @@ video.fillWidth {
   position: relative;
   z-index: 1;
   height: 1000px;
-  /*overflow: scroll;*/
+}
+
+#news-column > h1 {
+  margin: 0px;
 }
 
 .row {
