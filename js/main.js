@@ -143,7 +143,7 @@ $(document).ready(function(){
     var data;
     $.getJSON(url + apiKey + "/" + lati + "," + longi + "?callback=?", function(data) {
       $('#weather').html("&nbsp;&nbsp;Today: " + data.currently.summary + "<br />&nbsp;&nbsp;Current Temperature: " + data.currently.temperature.toFixed(0) + "&deg; F");
-      var skycons = new Skycons({"color": "#4153B5"});
+      var skycons = new Skycons({"color": "#E65100"});
       var currentWeatherIcon = data.currently.icon;
       console.log("var currentWeatherIcon = " + currentWeatherIcon);
 
@@ -151,6 +151,7 @@ $(document).ready(function(){
         case 'clear-day': 
           skycons.add("weather-icon", Skycons.CLEAR_DAY);
           $("#weather-image").attr("src", "images/weather-images/clear-day.jpg");
+          
           break;
         case 'clear-night': 
           skycons.add("weather-icon", Skycons.CLEAR_NIGHT);
@@ -211,7 +212,7 @@ $(document).ready(function(){
     NEWS
     ====================================================================*/
 
-    $(".chevron-down").on("click", function(){
+  $(".chevron-down").on("click", function(){
     alert("yo");
     $(".chevron-up").toggle();  
     $(".chevron-down").toggle();  
