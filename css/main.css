@@ -432,3 +432,15 @@ video.fillWidth {
 .greeting-heading {
   margin-bottom: 0;
 }
+
+/*======================================================================
+    FOOTER
+=======================================================================*/
+
+footer.page-footer {
+  background-color: #00355F !important;
+}
+
+#footer-row {
+  background-color: white;
+}
