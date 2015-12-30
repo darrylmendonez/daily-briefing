@@ -275,6 +275,7 @@ video.fillWidth {
 #news-column > h1 {
   margin: 0px;
   /*overflow: scroll;*/
+}
 
 .row {
   background-color: white;
