@@ -5,6 +5,12 @@
   =====================================================================*/
 var geoLocation = {lat: 40.7127837, lng: -74.0059413};
 var city = "New York City"
+// This autoscrolls to the clock when user enters city.
+var autoScroll = function() {
+  $("html, body").animate({
+    scrollTop: $("#greeting-row").offset().top - 60
+  }, 1250);
+} // This is called within function ajaxReqForLatLon()
 
 $(document).ready(function(){
 
@@ -46,7 +52,6 @@ $(document).ready(function(){
       ajaxReqForLatLon();
       setTimeout(function(){
         initMap(geoLocation);
-        
       }, 500);
     }
   });
@@ -79,6 +84,7 @@ $(document).ready(function(){
         console.log(errorThrown);
       }
     });
+    autoScroll(); // This autoscrolls to the clock when user enters city.
   }
   // function will take the response from the AJAX request and take the geolocation
   function googleApiSuccessHandler(response){
