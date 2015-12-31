@@ -8,7 +8,7 @@
   @copyright (c)2014 Luigi Ferraresi (http://slideme.luigiferraresi.it)
 */
 
-(function ($) {
+(function slidemeGlobal($) {
 
     var version = '2.21.36';
     var pluginName = 'slideme';

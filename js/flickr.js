@@ -1,6 +1,6 @@
 $(document).ready(function() {  
 
-
+  $
 
   setTimeout(function(){
     $("#foo").slideme({
@@ -24,7 +24,8 @@ $(document).ready(function() {
   $("#selected-city").keypress(function(e){
     if (e.which == 13) {
       setTimeout(function(){
-        $(".slideme").empty(); 
+        $(".slideme").empty();
+        slidemeGlobal(); 
         googleApiSuccessHandler();
       },500)  
     }
