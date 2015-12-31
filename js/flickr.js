@@ -1,21 +1,5 @@
 $(document).ready(function() {  
 
-  $
-
-  setTimeout(function(){
-    $("#foo").slideme({
-      arrows: true,
-      itemsForSlide : 3,
-      resizeable:{
-          width: 1250,
-          height: 500,
-      }
-    });
-  }, 1000);
-
-  
-  
-  
   // Allows NYC location to be default for images
   googleApiSuccessHandler();
 
@@ -24,8 +8,8 @@ $(document).ready(function() {
   $("#selected-city").keypress(function(e){
     if (e.which == 13) {
       setTimeout(function(){
-        $(".slideme").empty();
-        slidemeGlobal(); 
+        $("#flickrRow").empty();
+        $("#flickrRow").append($("<div class='carousel'>"));
         googleApiSuccessHandler();
       },500)  
     }
@@ -33,14 +17,14 @@ $(document).ready(function() {
 
 
   // Builds the photo urls for all images from entered location then builds gallery
-  function buildThumbnail(photoData) {  
+  function buildThumbnail(photoData, number) {  
     var photoUrl = "https://farm" + photoData.farm; 
     photoUrl += ".staticflickr.com/" + photoData.server;
     photoUrl += "/" + photoData.id;
     photoUrl += "_" + photoData.secret + ".jpg";
 
-    var newLi = $("<li>");
-    var photoImg = $("<img>").attr("src", photoUrl).addClass("col s4");
+    var newLi = $("<a>").addClass("carousel-item");
+    var photoImg = $("<img>").attr("src", photoUrl);
     
 
     newLi.append(photoImg);
@@ -72,11 +56,14 @@ $(document).ready(function() {
   }
   // loops through all images and applies them into the HTML
   function flickrSuccessHandler(response) { 
-    var locationPhotos = response.photos.photo; 
-    for(var i = 0; i < locationPhotos.length; i++) {  
-      var newCol = buildThumbnail(locationPhotos[i]);
-      $(".slideme").append(newCol);
-
+    var locationPhotos = response.photos.photo;
+    for(var i = 0; i < 15; i++) {  
+      var newCol = buildThumbnail(locationPhotos[i], i);
+      $(".carousel").append(newCol);
     }
+    $(".carousel").carousel({
+      dist: -30
+    });
   }
 });
+
