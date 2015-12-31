@@ -10,14 +10,6 @@ body {
   font-family: 'Hind', sans-serif;
 }
 
-.white-font {
-  color: white;
-}
-
-.black-font { /* For snow text */
-  color: black;
-}
-
 .capitalize {
     text-transform: capitalize;
 }
