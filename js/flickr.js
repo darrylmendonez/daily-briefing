@@ -33,14 +33,14 @@ $(document).ready(function() {
 
 
   // Builds the photo urls for all images from entered location then builds gallery
-  function buildThumbnail(photoData) {  
+  function buildThumbnail(photoData, number) {  
     var photoUrl = "https://farm" + photoData.farm; 
     photoUrl += ".staticflickr.com/" + photoData.server;
     photoUrl += "/" + photoData.id;
     photoUrl += "_" + photoData.secret + ".jpg";
 
-    var newLi = $("<li>");
-    var photoImg = $("<img>").attr("src", photoUrl).addClass("col s4");
+    var newLi = $("<a>").addClass("carousel-item");
+    var photoImg = $("<img>").attr("src", photoUrl);
     
 
     newLi.append(photoImg);
@@ -74,9 +74,13 @@ $(document).ready(function() {
   function flickrSuccessHandler(response) { 
     var locationPhotos = response.photos.photo; 
     for(var i = 0; i < locationPhotos.length; i++) {  
-      var newCol = buildThumbnail(locationPhotos[i]);
-      $(".slideme").append(newCol);
-
+      var newCol = buildThumbnail(locationPhotos[i], i);
+      $(".carousel").append(newCol);
     }
+    setTimeout(function(){
+      $(".carousel").carousel();
+    }, 1000)
   }
+
 });
+
