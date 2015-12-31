@@ -9,7 +9,7 @@ $(document).ready(function() {
     if (e.which == 13) {
       setTimeout(function(){
         $("#flickrRow").empty();
-        $("#flickrRow").append($("<h1>Public View of <span class='location capitalize'>New York City</span></h1>")).append($("<div class='newArrows'>")).append($("<div class='slick-slider'>"));
+        $("#flickrRow").append($("<div class='newArrows'>")).append($("<div class='slick-slider'>"));
         googleApiSuccessHandler();
       },500)  
     }
