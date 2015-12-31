@@ -1,19 +1,5 @@
 $(document).ready(function() {  
 
-  setTimeout(function(){
-    $("#foo").slideme({
-      arrows: true,
-      itemsForSlide : 3,
-      resizeable:{
-          width: 1250,
-          height: 500,
-      }
-    });
-  }, 1000);
-
-  
-  
-  
   // Allows NYC location to be default for images
   googleApiSuccessHandler();
 
@@ -71,11 +57,13 @@ $(document).ready(function() {
   // loops through all images and applies them into the HTML
   function flickrSuccessHandler(response) { 
     var locationPhotos = response.photos.photo;
-    for(var i = 0; i < locationPhotos.length; i++) {  
+    for(var i = 0; i < 15; i++) {  
       var newCol = buildThumbnail(locationPhotos[i], i);
       $(".carousel").append(newCol);
     }
-    $(".carousel").carousel();
+    $(".carousel").carousel({
+      dist: -30
+    });
   }
 });
 
