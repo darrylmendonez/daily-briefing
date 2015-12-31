@@ -3,7 +3,7 @@ $(document).ready(function(){
   $("#selected-city").keypress(function(e){
     if (e.which == 13) {
       $(".location").html(($(this).val().trim()));
-      $("#location-time").fadeIn("slow");
+      $("#target-time").css("display", "flex");
       setTimeout(function(){
         getTimeZoneOfCity();
       }, 500)
@@ -16,7 +16,6 @@ $(document).ready(function(){
     var now = new Date();
     var now_utc = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(),  now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
     now_utc = now_utc;
-    console.log(now_utc*1000);
     var lat = geoLocation.lat;
     var lng = geoLocation.lng;
     var googleTimezoneApiURL = "https://maps.googleapis.com/maps/api/timezone/json?"

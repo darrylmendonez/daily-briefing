@@ -374,7 +374,7 @@ video.fillWidth {
     CLOCK AREA
   ==================================================================*/
 
-#location-time {
+#target-time {
   display: none;
 }
 
@@ -390,21 +390,22 @@ video.fillWidth {
   width: 768px;
 }
 
+.time-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .greeting-image {
   height: 130px;
   width: 100%;
-  /*background-color: white;*/
   position: relative;
   z-index: 1;
-  /*background-image: url(../images/clock.png);*/
-  /*background-size: 100%;*/
-  /*background-position-y: -120px; */
 }
 
 .greeting-time {
   height: 130px;
   width: 100%;
-  /*background-color: white;*/
   position: relative;
   z-index: 1;
   display: flex;
@@ -428,7 +429,8 @@ video.fillWidth {
 }
 
 .greeting-heading {
-  margin-bottom: 0;
+  margin: 0;
+  font-size: 27px;
 }
 
 /*======================================================================
