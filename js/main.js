@@ -49,7 +49,7 @@ $(document).ready(function(){
         
       }, 500);
     }
-  }); 
+  });
 
   // this event listener will wait for the search icon to be pressed and grab the value of the input field for selected city
   $("#search-button").on("click", function(){
@@ -146,13 +146,11 @@ $(document).ready(function(){
       $('#weather').html("&nbsp;&nbsp;Today: " + data.currently.summary + "<br />&nbsp;&nbsp;Current Temperature: " + data.currently.temperature.toFixed(0) + "&deg; F");
       var skycons = new Skycons({"color": "#E65100"});
       var currentWeatherIcon = data.currently.icon;
-      console.log("var currentWeatherIcon = " + currentWeatherIcon);
 
       switch (currentWeatherIcon) { 
         case 'clear-day': 
           skycons.add("weather-icon", Skycons.CLEAR_DAY);
           $("#weather-image").attr("src", "images/weather-images/clear-day.jpg");
-          
           break;
         case 'clear-night': 
           skycons.add("weather-icon", Skycons.CLEAR_NIGHT);
@@ -191,13 +189,13 @@ $(document).ready(function(){
           $("#weather-image").attr("src", "images/weather-images/fog.jpg");
           break;
         // From forecast.io documentation: "Developers should ensure that a sensible default is defined, as additional values, such as hail, thunderstorm, or tornado, may be defined in the future."
-        // therefore default has been set to rain.
+        // Therefore default has been set to rain.
         default:
           skycons.add("weather-icon", Skycons.RAIN);
           $("#weather-image").attr("src", "images/weather-images/rain.jpg");
           break;
       }
-      // start animation!
+      // Start animation
       skycons.play();
     })
   }; 
