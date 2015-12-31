@@ -16,8 +16,9 @@
   <link href='https://fonts.googleapis.com/css?family=Hind:400,300|Poppins:400,300' rel='stylesheet' type='text/css'>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-  <!-- slideme CSS -->
-  <link rel="stylesheet" href="css/slideme.css">
+  <!-- slidck slider CSS -->
+  <link rel="stylesheet" href="css/slick.css">
+  <link rel="stylesheet" href="css/slick-theme.css">
   <!-- Custom CSS -->
   <link rel="stylesheet" type="text/css" href="css/main.css">
 
@@ -169,11 +170,13 @@
       </div> <!-- End News, Events, & Tweets -->
 
       <!-- row for flickr images-->
-     <div id="flickr-row" class="fadeInDown wow section scrollspy" data-wow-delay=".3s">
-        <div id="flickrRow">
-          <h1>Flickr</h1>
-          <div class="carousel">
-            
+     <div id="flickr-row" class="row fadeInDown wow section scrollspy" data-wow-delay=".3s">
+        <div id="flickrRowMain">
+          <h1>Public View of <span class="location capitalize">New York City</span></h1>
+          <div id="flickrRow">
+            <div class="newArrows"></div>
+            <div class="slick-slider">
+          </div>
           </div>
         </div>
       </div> 
@@ -240,6 +243,8 @@ https://www.linkedin.com/in/paul-michael-santos-75770329" target="_blank" class=
   <!-- SCRIPTS -->
   <!-- jQuery -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <!-- Slick JS -->
+  <script type="text/javascript" src="js/slick.min.js"></script>
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
   <!-- google maps API -->
