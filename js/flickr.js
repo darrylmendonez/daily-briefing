@@ -1,7 +1,5 @@
 $(document).ready(function() {  
 
-  $
-
   setTimeout(function(){
     $("#foo").slideme({
       arrows: true,
@@ -24,8 +22,8 @@ $(document).ready(function() {
   $("#selected-city").keypress(function(e){
     if (e.which == 13) {
       setTimeout(function(){
-        $(".slideme").empty();
-        slidemeGlobal(); 
+        $("#flickrRow").empty();
+        $("#flickrRow").append($("<div class='carousel'>"));
         googleApiSuccessHandler();
       },500)  
     }
@@ -72,15 +70,12 @@ $(document).ready(function() {
   }
   // loops through all images and applies them into the HTML
   function flickrSuccessHandler(response) { 
-    var locationPhotos = response.photos.photo; 
+    var locationPhotos = response.photos.photo;
     for(var i = 0; i < locationPhotos.length; i++) {  
       var newCol = buildThumbnail(locationPhotos[i], i);
       $(".carousel").append(newCol);
     }
-    setTimeout(function(){
-      $(".carousel").carousel();
-    }, 1000)
+    $(".carousel").carousel();
   }
-
 });
 
