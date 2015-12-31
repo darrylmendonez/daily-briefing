@@ -18,6 +18,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <!-- slideme CSS -->
   <link rel="stylesheet" href="css/slideme.css">
+  <link rel="stylesheet" href="css/slick.css">
+  <link rel="stylesheet" href="css/slick-theme.css">
   <!-- Custom CSS -->
   <link rel="stylesheet" type="text/css" href="css/main.css">
 
@@ -94,12 +96,12 @@
         </div>
         <div id="location-info" class="col s12 m4 fadeInDown wow section scrollspy" data-wow-delay=".3s">
           <div class="greeting-time">
-            <div id="local">
-              <h3 class="center-align greeting-heading">Local</h3>
+            <div class="time-container"id="local">
+              <div class="center-align greeting-heading">Local</div>
               <div id="local-time" class="time center-align"></div>
             </div>
-            <div id="target-time">
-              <h3 class="location center-align greeting-heading capitalize">New York City</h3>
+            <div class="time-container" id="target-time">
+              <div class="location center-align greeting-heading capitalize"></div>
               <div id="location-time" class="time center-align"></div>
             </div>
           </div>
@@ -169,10 +171,11 @@
       </div> <!-- End News, Events, & Tweets -->
 
       <!-- row for flickr images-->
-     <div id="flickr-row" class="fadeInDown wow section scrollspy" data-wow-delay=".3s">
+     <div id="flickr-row" class="row fadeInDown wow section scrollspy" data-wow-delay=".3s">
         <div id="flickrRow">
-          <h1>Flickr</h1>
-          <div class="carousel">
+          <h1>Public View of <span class="location capitalize">New York City</span></h1>
+          <div class="newArrows"></div>
+          <div class="slick-slider">
             
           </div>
         </div>
@@ -188,7 +191,7 @@
       <div id="footer-row" class="row">
         <div class="col l6 s12">
           <h5 class="black-text">Daily Briefing</h5>
-          <p class="black-text text-lighten-4">Your one-stop shop for weather, traffic, news, events, tweets, and pictures going on in your city of choice. As students of Rutgers Coding Bootcamp in Piscataway, NJ, Daily Briefing was created as a front-end project. HTML, CSS, Javascript, jQuery, MaterializeCSS, and AJAX were used along with API's from The Dark Sky Forecast, Google Maps, Bing (for news), and Flickr.</p>
+          <p class="black-text text-lighten-4">Your one-stop shop for weather, traffic, news, events, tweets, and pictures going on in your city of choice. As students of Rutgers Coding Bootcamp in Piscataway, NJ, Daily Briefing was created as a front-end project. HTML, CSS, Javascript, jQuery, MaterializeCSS, and AJAX were used along with a Twitter widget and API's from The Dark Sky Forecast, Google Maps, Bing (for news), and Flickr.</p>
         </div>
         <div class="col l6 offset-l2 s12">
           <h5 class="black-text">The Daily Briefing Team</h5>
@@ -240,6 +243,8 @@ https://www.linkedin.com/in/paul-michael-santos-75770329" target="_blank" class=
   <!-- SCRIPTS -->
   <!-- jQuery -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <!-- Slick JS -->
+  <script type="text/javascript" src="js/slick.min.js"></script>
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
   <!-- google maps API -->

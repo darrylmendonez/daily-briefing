@@ -10,14 +10,6 @@ body {
   font-family: 'Hind', sans-serif;
 }
 
-.white-font {
-  color: white;
-}
-
-.black-font { /* For snow text */
-  color: black;
-}
-
 .capitalize {
     text-transform: capitalize;
 }
@@ -336,15 +328,24 @@ video.fillWidth {
 /* =====================================================================
     FLICKR
 ====================================================================== */
-.carousel{
-    margin-left: -85px;
-    margin-top: -200px;
-    height: 600px;
-  }
+#flickr-row{
+  padding-right: 15px;
+  padding-left: 15px;
+}
 
-  .carousel .carousel-item img {
-    width: 200%;
-  }
+.slick-slide img {
+    padding-left: 10px;
+}
+
+.slick-arrow{
+  color:  #00355F;
+}
+
+.newArrows {
+    position: absolute;
+    top: 120px;
+    left: 40px;
+}
 /* =====================================================================
     TWITTER TIMELINE
 ====================================================================== */
@@ -365,7 +366,7 @@ video.fillWidth {
     CLOCK AREA
   ==================================================================*/
 
-#location-time {
+#target-time {
   display: none;
 }
 
@@ -381,21 +382,22 @@ video.fillWidth {
   width: 768px;
 }
 
+.time-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .greeting-image {
   height: 130px;
   width: 100%;
-  /*background-color: white;*/
   position: relative;
   z-index: 1;
-  /*background-image: url(../images/clock.png);*/
-  /*background-size: 100%;*/
-  /*background-position-y: -120px; */
 }
 
 .greeting-time {
   height: 130px;
   width: 100%;
-  /*background-color: white;*/
   position: relative;
   z-index: 1;
   display: flex;
@@ -419,7 +421,8 @@ video.fillWidth {
 }
 
 .greeting-heading {
-  margin-bottom: 0;
+  margin: 0;
+  font-size: 27px;
 }
 
 /*======================================================================

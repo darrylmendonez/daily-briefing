@@ -9,7 +9,7 @@ $(document).ready(function() {
     if (e.which == 13) {
       setTimeout(function(){
         $("#flickrRow").empty();
-        $("#flickrRow").append($("<div class='carousel'>"));
+        $("#flickrRow").append($("<h1>Public View of <span class='location capitalize'>New York City</span></h1>")).append($("<div class='newArrows'>")).append($("<div class='slick-slider'>"));
         googleApiSuccessHandler();
       },500)  
     }
@@ -23,12 +23,12 @@ $(document).ready(function() {
     photoUrl += "/" + photoData.id;
     photoUrl += "_" + photoData.secret + ".jpg";
 
-    var newLi = $("<a>").addClass("carousel-item");
+    var newDiv = $("<div>");
     var photoImg = $("<img>").attr("src", photoUrl);
     
 
-    newLi.append(photoImg);
-    return newLi;
+    newDiv.append(photoImg);
+    return newDiv;
 
   }
 
@@ -57,13 +57,22 @@ $(document).ready(function() {
   // loops through all images and applies them into the HTML
   function flickrSuccessHandler(response) { 
     var locationPhotos = response.photos.photo;
-    for(var i = 0; i < 15; i++) {  
+    for(var i = 0; i < locationPhotos.length; i++) {  
       var newCol = buildThumbnail(locationPhotos[i], i);
-      $(".carousel").append(newCol);
+      $(".slick-slider").append(newCol);
     }
-    $(".carousel").carousel({
-      dist: -30
+    
+    $(".slick-slider").slick({
+      infinite: true,
+      speed: 300,
+      slidesToShow: 1,
+      centerMode: true,
+      variableWidth: true,
+      autoplay: true,
+      adaptiveHeight: true,
+      appendArrows: $(".newArrows")
     });
-  }
+  };
+  
 });
 
