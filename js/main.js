@@ -54,6 +54,7 @@ $(document).ready(function(){
   // this event listener will wait for the search icon to be pressed and grab the value of the input field for selected city
   $("#search-button").on("click", function(){
     ajaxReqForLatLon();
+    
   });
 
   /* ======================================================================
