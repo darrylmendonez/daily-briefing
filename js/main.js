@@ -20,7 +20,8 @@ $(document).ready(function(){
 
   // To initiate side Nav for mobile devices
   $(".button-collapse").sideNav({ 
-    menuWidth: 100 // So icons appear vertically instead of horizontally
+    menuWidth: 86, // So icons appear vertically instead of horizontally
+    closeOnClick: true
   });
 
   // Smooth Scrolling from Nav Links to sections
@@ -223,5 +224,42 @@ $(document).ready(function(){
     $(".chevron-up").toggle();  
     $(".chevron-down").toggle();  
   });
+
+  /*======================================================================
+   LIKE COUNTER
+  ====================================================================*/
+  var likeCounter = new Firebase("https://fiery-heat-8606.firebaseio.com");
+
+  likeCounter.child("counter").on("value", updateDiv);
+  likeCounter.on("value", updatePTag);
+
+  $("#like-counter-button").on("click", function() {
+    likeCounter.child("counter").transaction(function(currentValue) {
+      return (currentValue || 0) + 1;
+    })
+  });
+
+  // Reset like counter to 0.
+  // 1. First uncomment the reset button in index.html on or about line 200. If it helps, search for 'reset-button' instead.
+  // 2. Refresh local site or open local index.html in browser
+  // 3. You should see the black reset button in the footer bar. Click to reset like counter to 0.
+  // 4. Finally, comment out reset button.
+  $("#reset-button").on("click", function() {
+    likeCounter.remove();
+    $("#number-of-likes").html("0");
+  });
+
+  function updateDiv(likeTotal) {
+    $("#number-of-likes").html(likeTotal.val());
+    if (likeTotal.val() === null) {
+      $("#number-of-likes").html("0");
+    }
+  }
+
+  function updatePTag() {
+
+  }
+
+
 
 }); // End document ready function

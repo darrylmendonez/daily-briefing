@@ -34,13 +34,13 @@
         </span>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li class="waves-effect waves-light"><a href="#video-container"><i class="fa fa-search fa-2x"></i></a></li>
-          <li class="waves-effect waves-light"><a href="#weather-row"><i class="fa fa-sun-o fa-2x"></i></a></li>
-          <li class="waves-effect waves-light"><a href="#traffic-row"><i class="fa fa-car fa-2x"></i></a></li>
-          <li class="waves-effect waves-light"><a href="#news-events-tweets-row"><i class="fa fa-newspaper-o fa-2x"></i></a></li>
-          <li class="waves-effect waves-light"><a href="#news-events-tweets-row"><i class="fa fa-calendar fa-2x"></i></a></li>
-          <li class="waves-effect waves-light"><a href="#tweets"><i class="fa fa-twitter fa-2x"></i></a></li>
-          <li class="waves-effect waves-light"><a href="#flickr-row"><i class="fa fa-flickr fa-2x"></i></a></li>
+          <li class="waves-effect waves-light"><a href="#video-container" class="fit-nav-height"><i class="fa fa-search fa-2x"></i></a></li>
+          <li class="waves-effect waves-light"><a href="#weather-row" class="fit-nav-height"><i class="fa fa-sun-o fa-2x"></i></a></li>
+          <li class="waves-effect waves-light"><a href="#traffic-row" class="fit-nav-height"><i class="fa fa-car fa-2x"></i></a></li>
+          <li class="waves-effect waves-light"><a href="#news-events-tweets-row" class="fit-nav-height"><i class="fa fa-newspaper-o fa-2x"></i></a></li>
+          <li class="waves-effect waves-light"><a href="#news-events-tweets-row" class="fit-nav-height"><i class="fa fa-calendar fa-2x"></i></a></li>
+          <li class="waves-effect waves-light"><a href="#tweets" class="fit-nav-height"><i class="fa fa-twitter fa-2x"></i></a></li>
+          <li class="waves-effect waves-light"><a href="#flickr-row" class="fit-nav-height"><i class="fa fa-flickr fa-2x"></i></a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
           <br />
@@ -185,7 +185,6 @@
         </div>
       </div> 
 
-
     </div> <!-- end container div -->
 
   </main>
@@ -196,6 +195,11 @@
         <div class="col l6 s12">
           <h5 class="black-text">Daily Briefing</h5>
           <p class="black-text text-lighten-4">Your one-stop shop for weather, traffic, news, events, tweets, and pictures going on in your city of choice. As students of Rutgers Coding Bootcamp in Piscataway, NJ, Daily Briefing was created as a front-end project. HTML, CSS, Javascript, jQuery, MaterializeCSS, and AJAX were used along with a Twitter widget and API's from The Dark Sky Forecast, Google Maps, Bing (for news), and Flickr.</p>
+          <p>Like this app? Show some love...</p>
+          <a id="like-counter-button" class="waves-effect waves-light btn red accent-3 z-depth-3"><span class="fa fa-heart"></span> Like (<span id="number-of-likes">0</span>)</a> 
+          <!--<a id="reset-button" class="waves-effect waves-light btn black z-depth-3"><i class="fa fa-trash"></i> Reset Like Counter to 0</a>-->
+          <br />
+          <br />
         </div>
         <div class="col l6 s12">
           <h5 class="black-text">The Daily Briefing Team</h5>
@@ -235,11 +239,11 @@ https://www.linkedin.com/in/paul-michael-santos-75770329" target="_blank" class=
             </div>
           </div>
         </div>
-      </div>
+      </div> <!-- end row -->
     </div>
     <div class="footer-copyright">
       <div class="container">
-      © Daily Briefing 2016
+        © Daily Briefing 2016
       </div>
     </div>
   </footer>
@@ -263,6 +267,8 @@ https://www.linkedin.com/in/paul-michael-santos-75770329" target="_blank" class=
   <script src="js/moment-timezone-with-data.js"></script>
   <!-- forecast.io Skycons for weather -->
   <script src="https://rawgithub.com/darkskyapp/skycons/master/skycons.js"></script>
+  <!-- Firebase -->
+  <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
   <!-- custom JS -->
   <script type="text/javascript" src="js/main.js"></script>
   <script type="text/javascript" src="js/flickr.js"></script>

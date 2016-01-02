@@ -14,6 +14,7 @@ body {
     text-transform: capitalize;
 }
 
+
 /* ======================================================================
   Animations
 ===================================================================== */
@@ -107,6 +108,10 @@ body {
 nav {
 transition-duration: 1s;
 background-color:transparent;
+}
+
+.fit-nav-height {
+  height: 64px;
 }
 
 
