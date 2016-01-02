@@ -14,6 +14,11 @@ body {
     text-transform: capitalize;
 }
 
+.row{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
 
 /* ======================================================================
   Animations
@@ -189,7 +194,6 @@ video.fillWidth {
   width: 100%;
   height:500px;
   background-color: white;
-  margin-top: 15px;
   position: relative;
   z-index: 1;
 }
@@ -211,7 +215,7 @@ video.fillWidth {
 
 .traffic-heading {
   height: 100px;
-  margin-bottom: 3px;
+  margin-bottom: 8px;
 }
 
 .traffic-map {
@@ -241,7 +245,7 @@ video.fillWidth {
 
 .news-content {
   position: absolute;
-  top: 95px;
+  top: 105px;
 }
 
 .news-heading {
@@ -331,6 +335,43 @@ video.fillWidth {
 }
 
 /* =====================================================================
+    EVENTS
+====================================================================== */
+#eventTable{
+  width: 100px;
+  height: 300px;
+  overflow: auto;
+}
+
+.events-heading {
+  margin: 0px;
+  height: 100px;
+  position: relative;
+}
+
+.events-heading h1 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-bottom: 0;
+}
+
+#events-image {
+  width: 100%;
+}
+
+.p-events{
+  padding-left: 10px;
+  padding-right: 10px;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 3;
+   -webkit-box-orient: vertical;
+}
+
+
+/* =====================================================================
     FLICKR
 ====================================================================== */
 #flickr-row{
@@ -350,6 +391,10 @@ video.fillWidth {
     position: absolute;
     top: 120px;
     left: 40px;
+}
+
+.slick-slider{
+  margin-bottom: 0px;
 }
 /* =====================================================================
     TWITTER TIMELINE
@@ -415,9 +460,8 @@ video.fillWidth {
 }
 
 #greeting, #location-info {
-  height: 150px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  height: 130px;
+  
 }
 
 .time {

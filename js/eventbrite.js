@@ -7,7 +7,7 @@ $(document).ready(function() {
   $("#selected-city").keypress(function(e){
     if (e.which == 13) {
       setTimeout(function(){
-        $("#newTableBody").empty();
+        $("#tableBody").empty();
         
         googleApiSuccessHandler();
       },500)  
@@ -17,25 +17,28 @@ $(document).ready(function() {
 
   //Builds the table of events from inputted location
   function buildTable(events) {  
-    var newTr = $("<tr>");
-
     
-    var eventImg = $("<img>").attr("src", events.logo.url);
+    
+
+    var newTr = $("<tr>");
+    var newTd = $("<td>")
+    //var eventImg = $("<img>").attr("src", events.logo.url);
     var eventLink =$("<a>").attr("href", events.url);
-    var eventName = $("<h3>").html(events.name.text);
-    var eventDescription = $("<p>").html(events.description.text);
+    var eventName = $("<h5>").html(events.name.text);
+    var eventDescription = $("<p>").html(events.description.text).addClass("p-events");
     var eventTime = $("<h4>").html(events.start.local);
     
 
     newTr
-      .append(eventImg)
-      .append(eventName.append(eventLink))
-      .append(eventDescription)
-      .append(eventTime)
+      .append(newTd
+      //.append(eventImg)
+      .append(eventLink.append(eventName))
+      .append(eventDescription))
+      
       
     
     return newTr;
-
+    
   }
 
 
@@ -58,6 +61,7 @@ $(document).ready(function() {
     for(var i = 0; i < locationEvents.length; i++) {  
       var newTableBody = buildTable(locationEvents[i], i);
       $("#tableBody").append(newTableBody);
+      
     }
   };
 
