@@ -20,7 +20,7 @@ $(document).ready(function() {
     
     var newTr = $("<tr>");
     var newTd = $("<td>")
-    //var eventImg = $("<img>").attr("src", events.logo.url);
+    var eventImg = $("<img>").attr("src", events.logo.url);
     var eventLink =$("<a>").attr("href", events.url);
     var eventName = $("<h5>").html(events.name.text).addClass("h-events");
     var eventDescription = $("<p>").html(events.description.text).addClass("p-events");
@@ -28,7 +28,7 @@ $(document).ready(function() {
     
     newTr
       .append(newTd
-      //.append(eventImg)
+      .append(eventImg)
       .append(eventLink.append(eventName))
       .append(eventDescription))
       
