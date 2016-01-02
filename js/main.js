@@ -260,22 +260,6 @@ $(document).ready(function(){
 
   }
 
-  /*======================================================================
-    EventBrite
-    ====================================================================*/
-     var eventBriteUrl = "https://www.eventbriteapi.com/v3/"
-     var token = "OO4THRQ4RMB522E4DLLG"
-
-     $.ajax({
-      type: "GET",
-      url: eventBriteUrl + "events/search/?location.latitude="+geoLocation.lat+"&location.longitude="+geoLocation.lng+"&token="+token
-      success: function(response){
-        
-      },
-      error: function(jqXHR, textStatus, errorThrown){
-        console.log(errorThrown);
-      }
-    });
 
 
 }); // End document ready function

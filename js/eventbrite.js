@@ -7,25 +7,36 @@ $(document).ready(function() {
   $("#selected-city").keypress(function(e){
     if (e.which == 13) {
       setTimeout(function(){
-        $("#").empty();
-        $("#").append();
+        $("#newTableBody").empty();
+        
         googleApiSuccessHandler();
       },500)  
     }
   });
 
 
-  // Builds the table of events from inputted location
-  // function buildTable(photoData, number) {  
+  //Builds the table of events from inputted location
+  function buildTable(events) {  
+    var newTr = $("<tr>");
+
     
-  //   var newDiv = $("<div>");
-  //   var photoImg = $("<img>").attr("src", photoUrl);
+    var eventImg = $("<img>").attr("src", events.logo.url);
+    var eventLink =$("<a>").attr("href", events.url);
+    var eventName = $("<h3>").html(events.name.text);
+    var eventDescription = $("<p>").html(events.description.text);
+    var eventTime = $("<h4>").html(events.start.local);
     
 
-  //   newDiv.append(photoImg);
-  //   return newDiv;
+    newTr
+      .append(eventImg)
+      .append(eventName.append(eventLink))
+      .append(eventDescription)
+      .append(eventTime)
+      
+    
+    return newTr;
 
-  // }
+  }
 
 
   function googleApiSuccessHandler() {
@@ -34,40 +45,21 @@ $(document).ready(function() {
 
     $.ajax({
       type: "GET",
-      url: eventBriteUrl + "events/search/?location.latitude="+geoLocation.lat+"&location.longitude="+geoLocation.lng+"&token="+token
+      url: eventBriteUrl + "events/search/?location.latitude="+geoLocation.lat+"&location.longitude="+geoLocation.lng+"&token="+token,
       success: function(response){
         eventBriteSuccessHandler(response);
-      },
-      error: function(jqXHR, textStatus, errorThrown){
-        console.log(errorThrown);
       }
+      
     });
   }
 
   function eventBriteSuccessHandler(response) { 
     var locationEvents = response.events;
     for(var i = 0; i < locationEvents.length; i++) {  
-      var newCol = buildTable(locationEvents[i], i);
-      $("").append(newCol);
+      var newTableBody = buildTable(locationEvents[i], i);
+      $("#tableBody").append(newTableBody);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  };
 
 
 
