@@ -20,7 +20,8 @@ $(document).ready(function(){
 
   // To initiate side Nav for mobile devices
   $(".button-collapse").sideNav({ 
-    menuWidth: 100 // So icons appear vertically instead of horizontally
+    menuWidth: 100, // So icons appear vertically instead of horizontally
+    closeOnClick: true
   });
 
   // Smooth Scrolling from Nav Links to sections
