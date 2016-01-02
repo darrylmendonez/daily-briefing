@@ -337,9 +337,8 @@ video.fillWidth {
 /* =====================================================================
     EVENTS
 ====================================================================== */
-#eventTable{
-  width: 100px;
-  height: 300px;
+.eventColumn{
+  height: 400px;
   overflow: auto;
 }
 
@@ -363,11 +362,17 @@ video.fillWidth {
 .p-events{
   padding-left: 10px;
   padding-right: 10px;
-   overflow: hidden;
-   text-overflow: ellipsis;
-   display: -webkit-box;
-   -webkit-line-clamp: 3;
-   -webkit-box-orient: vertical;
+  font-size:  15px;
+  overflow: hidden;
+}
+
+.h-events{
+  padding-left: 5px;
+}
+
+
+#eventsTitle{
+  color: white;
 }
 
 
@@ -402,14 +407,19 @@ video.fillWidth {
 
 #tweets {
   padding: 0;
+  margin-top: 15px;
 }
 
 .timeline {
   margin-bottom: 10px;
   background-color: #fff;
   border-radius: 5px;
-  width: 100%;
+  max-width: 600px;
   height: 500px;
+}
+
+.SandboxRoot{
+  max-width: 600px;
 }
 
 /*===================================================================

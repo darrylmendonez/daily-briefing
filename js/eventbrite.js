@@ -24,7 +24,7 @@ $(document).ready(function() {
     var newTd = $("<td>")
     //var eventImg = $("<img>").attr("src", events.logo.url);
     var eventLink =$("<a>").attr("href", events.url);
-    var eventName = $("<h5>").html(events.name.text);
+    var eventName = $("<h5>").html(events.name.text).addClass("h-events");
     var eventDescription = $("<p>").html(events.description.text).addClass("p-events");
     var eventTime = $("<h4>").html(events.start.local);
     
@@ -58,7 +58,7 @@ $(document).ready(function() {
 
   function eventBriteSuccessHandler(response) { 
     var locationEvents = response.events;
-    for(var i = 0; i < locationEvents.length; i++) {  
+    for(var i = 0; i < 15; i++) {  
       var newTableBody = buildTable(locationEvents[i], i);
       $("#tableBody").append(newTableBody);
       
