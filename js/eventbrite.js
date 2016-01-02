@@ -18,8 +18,6 @@ $(document).ready(function() {
   //Builds the table of events from inputted location
   function buildTable(events) {  
     
-    
-
     var newTr = $("<tr>");
     var newTd = $("<td>")
     //var eventImg = $("<img>").attr("src", events.logo.url);
@@ -28,27 +26,21 @@ $(document).ready(function() {
     var eventDescription = $("<p>").html(events.description.text).addClass("p-events");
     var eventTime = $("<h4>").html(events.start.local);
     
-
     newTr
       .append(newTd
       //.append(eventImg)
       .append(eventLink.append(eventName))
       .append(eventDescription))
       
-      
-    
     return newTr;
-    
   }
-
-
+  //Function to use geoLocation and perform AJAX request to get events 1km from inputed location
   function googleApiSuccessHandler() {
-    var eventBriteUrl = "https://www.eventbriteapi.com/v3/"
-    var token = "OO4THRQ4RMB522E4DLLG"
-
+    var eventBriteUrl = "https://www.eventbriteapi.com/v3/";
+    var token = "OO4THRQ4RMB522E4DLLG";
     $.ajax({
       type: "GET",
-      url: eventBriteUrl + "events/search/?location.latitude="+geoLocation.lat+"&location.longitude="+geoLocation.lng+"&token="+token,
+      url: eventBriteUrl + "events/search/?location.within=1km&location.latitude="+geoLocation.lat+"&location.longitude="+geoLocation.lng+"&token="+token,
       success: function(response){
         eventBriteSuccessHandler(response);
       }
@@ -64,7 +56,4 @@ $(document).ready(function() {
       
     }
   };
-
-
-
 });
