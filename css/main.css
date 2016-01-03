@@ -393,8 +393,8 @@ td>img{
     FLICKR
 ====================================================================== */
 #flickr-row{
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 30px;
+  padding-left: 30px;
 }
 
 .slick-slide img {
@@ -403,12 +403,6 @@ td>img{
 
 .slick-arrow{
   color:  #00355F;
-}
-
-.newArrows {
-  position: absolute;
-  top: 120px;
-  left: 40px;
 }
 
 .slick-slider{
