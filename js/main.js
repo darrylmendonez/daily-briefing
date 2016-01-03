@@ -28,17 +28,37 @@ $(document).ready(function(){
   $('.scrollspy').scrollSpy();
 
   $(function() {
-     var scroll_start = 0;
+    $(window).width();
+    var width = $(window).width();
+    var scroll_start = 0;
+
+    if(width <= 480){
      
-     $(window).scroll(function() { 
-        scroll_start = $(this).scrollTop();
-        if(scroll_start > 435) {
-            $('nav').css('background-color', 'rgba(0,53,95,1)');
-         } else {
-            $('nav').css('background-color', 'transparent');
-         }
-     });
+       $(window).scroll(function() { 
+          scroll_start = $(this).scrollTop();
+          if(scroll_start > 140) {
+              $('nav').css('background-color', 'rgba(0,53,95,1)');
+           } else {
+              $('nav').css('background-color', 'transparent');
+           }
+       });
+    } else{
+      $(window).scroll(function() { 
+          scroll_start = $(this).scrollTop();
+          if(scroll_start > 435) {
+              $('nav').css('background-color', 'rgba(0,53,95,1)');
+           } else {
+              $('nav').css('background-color', 'transparent');
+           }
+       });
+
+    };
+
+
+
   });
+
+
 
   /* ======================================================================
    SLIDER AREA
