@@ -531,6 +531,15 @@ footer.page-footer {
   #selected-city {
     margin-top: 124px;
   }
+
+  .news-content {
+    max-height: 380px;
+    overflow: scroll;
+  }
+
+  #news-column {
+    height: 500px;
+  }
 }  
 
 
