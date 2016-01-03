@@ -130,6 +130,14 @@ background-color:transparent;
   margin-top: -65px;
   z-index: 0;
 }
+
+/* Remove white space between slider and clock-row */
+@media only screen and (max-width: 600px) {
+  .header-unit {
+    height:50%;
+  }
+}
+
 #video-container {
   position: absolute;
   z-index: 0;
@@ -142,6 +150,7 @@ background-color:transparent;
   overflow: hidden;
   z-index: 0;
 }
+
 video {
   position:absolute;
   z-index:0;
@@ -168,9 +177,9 @@ video.fillWidth {
 }
 
 #selected-city {
-  margin-top: 170px; /* this pushes the input field down to the bottom of the video-container */
+  margin-top: 165px; /* this pushes the input field down to the bottom of the video-container */
   background-color: white;
-  opacity: 0.3
+  opacity: 0.3;
 }
 
 #selected-city:focus {
@@ -397,9 +406,9 @@ td>img{
 }
 
 .newArrows {
-    position: absolute;
-    top: 120px;
-    left: 40px;
+  position: absolute;
+  top: 120px;
+  left: 40px;
 }
 
 .slick-slider{
