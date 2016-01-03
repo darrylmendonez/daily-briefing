@@ -531,6 +531,11 @@ footer.page-footer {
   #selected-city {
     margin-top: 124px;
   }
+
+  #greeting-row {
+    margin-top: 0;
+    padding-bottom: 0;
+  }
 }  
 
 
