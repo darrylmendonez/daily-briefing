@@ -73,7 +73,7 @@ $(document).ready(function(){
     var googleApiURL = "https://maps.googleapis.com/maps/api/geocode/json?address="
     googleApiURL += userRequestedLocation;
     googleApiURL += "&key=AIzaSyBL0kULWrl9S6CMnmuzn8acUeNCcbBLgDs"
-    console.log(googleApiURL);
+
     $.ajax({
       type: "GET",
       url: googleApiURL,
@@ -151,7 +151,7 @@ $(document).ready(function(){
     var longi = geoLocation.lng;
     var data;
     $.getJSON(url + apiKey + "/" + lati + "," + longi + "?callback=?", function(data) {
-      $('#weather').html("&nbsp;&nbsp;Today: " + data.currently.summary + "<br />&nbsp;&nbsp;Current Temperature: " + data.currently.temperature.toFixed(0) + "&deg; F");
+      $("#weather").html("&nbsp;&nbsp;Today: " + data.currently.summary + "<br />&nbsp;&nbsp;Current Temperature: " + data.currently.temperature.toFixed(0) + "&deg; F");
       var skycons = new Skycons({"color": "#E65100"});
       var currentWeatherIcon = data.currently.icon;
 
