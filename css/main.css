@@ -130,6 +130,13 @@ background-color:transparent;
   margin-top: -65px;
   z-index: 0;
 }
+
+@media only screen and (max-width: 600px) {
+    .header-unit {
+        height:50%;
+    }
+}
+
 #video-container {
   position: absolute;
   z-index: 0;
@@ -142,6 +149,7 @@ background-color:transparent;
   overflow: hidden;
   z-index: 0;
 }
+
 video {
   position:absolute;
   z-index:0;
