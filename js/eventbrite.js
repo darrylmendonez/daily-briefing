@@ -20,7 +20,7 @@ $(document).ready(function() {
     
     var newTr = $("<tr>");
     var newTd = $("<td>")
-    var eventImg = $("<img>").attr("src", events.logo.url);
+    var eventImg = $("<img>").attr("src", events.logo.url).addClass("responsive-img");
     var eventLink =$("<a>").attr("href", events.url).attr("target", "_blank");
     var eventName = $("<h5>").html(events.name.text).addClass("h-events");
     var eventDescription = $("<p>").html(events.description.text).addClass("p-events");
