@@ -15,6 +15,7 @@ body {
 }
 
 .row{
+  background-color: white;
   padding-top: 15px;
   padding-bottom: 15px;
 }
@@ -131,13 +132,6 @@ background-color:transparent;
   z-index: 0;
 }
 
-/* Remove white space between slider and clock-row */
-@media only screen and (max-width: 600px) {
-  .header-unit {
-    height:50%;
-  }
-}
-
 #video-container {
   position: absolute;
   z-index: 0;
@@ -229,7 +223,7 @@ video.fillWidth {
 
 .traffic-map {
   padding: 0;
-  margin-top: 11.25px
+  margin-top: 15px;
 }
 
 .traffic-map h1 {
@@ -255,6 +249,7 @@ video.fillWidth {
 .news-content {
   position: absolute;
   top: 105px;
+  width: 100%;
 }
 
 .news-heading {
@@ -279,16 +274,12 @@ video.fillWidth {
   margin-top: -2px;
   position: relative;
   z-index: 1;
-  height: 1000px;
+  height: 1075px;
 }
 
 #news-column > h1 {
   margin: 0px;
   /*overflow: scroll;*/
-}
-
-.row {
-  background-color: white;
 }
 
 .news-header {
@@ -388,6 +379,10 @@ td>img{
   color: white;
 }
 
+#ev{
+  width: 100%
+}
+
 
 /* =====================================================================
     FLICKR
@@ -395,7 +390,8 @@ td>img{
 #flickr-row{
   padding-right: 30px;
   padding-left: 30px;
-  height: 775px;
+  height: 660px;
+  
 }
 
 .slick-slide img {
@@ -507,4 +503,41 @@ footer.page-footer {
 
 #footer-row {
   background-color: white;
+}
+
+/*======================================================================
+    MEDIA QUERIES
+=======================================================================*/
+@media (max-width: 480px) {
+  
+  h1{
+    font-size: 30px;
+    line-height: 100%;
+    margin: 10px;
+  } 
+
+  h3 {
+      font-size: 20px;
+      line-height: 100%;
+      margin: 1.46rem 0 1.168rem 0;
+  }
+
+  h5 {
+    font-size: 16px;
+    line-height: 100%;
+    margin-top: -10px;
+  }
+
+  #selected-city {
+    margin-top: 124px;
+  }
+}  
+
+
+
+/* Remove white space between slider and clock-row */
+@media only screen and (max-width: 600px) {
+  .header-unit {
+    height:50%;
+  }
 }
