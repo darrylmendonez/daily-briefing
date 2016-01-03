@@ -231,9 +231,14 @@ $(document).ready(function(){
   var likeCounter = new Firebase("https://fiery-heat-8606.firebaseio.com");
 
   likeCounter.child("counter").on("value", updateDiv);
-  likeCounter.on("value", updatePTag);
 
   $("#like-counter-button").on("click", function() {
+    // Heart animation on like button
+    $("#heart-icon").addClass("zoomIn");
+    setTimeout(function () { 
+      $("#heart-icon").removeClass("zoomIn");
+    }, 1000);
+    // Increase like count by 1
     likeCounter.child("counter").transaction(function(currentValue) {
       return (currentValue || 0) + 1;
     })
@@ -255,11 +260,5 @@ $(document).ready(function(){
       $("#number-of-likes").html("0");
     }
   }
-
-  function updatePTag() {
-
-  }
-
-
 
 }); // End document ready function
