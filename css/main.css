@@ -255,6 +255,7 @@ video.fillWidth {
 .news-content {
   position: absolute;
   top: 105px;
+  width: 100%;
 }
 
 .news-heading {
@@ -395,7 +396,7 @@ td>img{
 #flickr-row{
   padding-right: 30px;
   padding-left: 30px;
-  height: 775px;
+  
 }
 
 .slick-slide img {
