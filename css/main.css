@@ -395,6 +395,7 @@ td>img{
 #flickr-row{
   padding-right: 30px;
   padding-left: 30px;
+  height: 775px;
 }
 
 .slick-slide img {
@@ -407,6 +408,10 @@ td>img{
 
 .slick-slider{
   margin-bottom: 0px;
+}
+
+.slick-prev, .slick-next {
+  height: 775px;
 }
 /* =====================================================================
     TWITTER TIMELINE
