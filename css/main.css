@@ -274,7 +274,7 @@ video.fillWidth {
   margin-top: -2px;
   position: relative;
   z-index: 1;
-  height: 1075px;
+  height: 760px;
 }
 
 #news-column > h1 {
@@ -365,6 +365,7 @@ video.fillWidth {
   padding-right: 10px;
   font-size:  15px;
   overflow: hidden;
+  text-align: justify;
 }
 
 .h-events{
@@ -409,26 +410,6 @@ td>img{
 /* This makes the target area larger so the user doesn't have to click directly on the button. Clicking the entire left or right side of the carousel will allow the next or prev pic to show. */
 .slick-prev, .slick-next {
   height: 775px;
-}
-/* =====================================================================
-    TWITTER TIMELINE
-====================================================================== */
-
-#tweets {
-  padding: 0;
-  margin-top: 15px;
-}
-
-.timeline {
-  margin-bottom: 10px;
-  background-color: #fff;
-  border-radius: 5px;
-  max-width: 600px;
-  height: 500px;
-}
-
-.SandboxRoot{
-  max-width: 600px;
 }
 
 /*===================================================================
@@ -531,7 +512,18 @@ footer.page-footer {
   #selected-city {
     margin-top: 124px;
   }
+
+  #greeting-row {
+    margin-top: 0;
+    padding-bottom: 0;
+  }
 }  
+
+@media (min-width: 993px) {
+  .eventColumn {
+  height: 650px;
+  }
+}
 
 
 
