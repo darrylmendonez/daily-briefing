@@ -42,7 +42,7 @@ $(document).ready(function(){
 /*================================================================
     BING API AJAX 
   ================================================================ */
-  window.bingNewsAPI = function (){
+  function bingNewsAPI(){
     $("#news").empty();
     var city = $("#selected-city").val().trim(); //get the city inputted
 
