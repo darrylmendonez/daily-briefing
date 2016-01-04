@@ -155,7 +155,6 @@ $(document).ready(function(){
   // A timeout was used because on page load, the initMap function generates an error
   setTimeout(function(){
     initMap(geoLocation);
-    console.log(geoLocation);
   }, 500);
 
   function initMap(geoLocation) {
@@ -173,6 +172,7 @@ $(document).ready(function(){
           lng: position.coords.longitude
         };
         geoLocation = {lat: position.coords.latitude, lng: position.coords.longitude}
+        console.log(geoLocation);
         infoWindow.setPosition(pos);
         infoWindow.setContent('Location found.');
         map.setCenter(pos);
