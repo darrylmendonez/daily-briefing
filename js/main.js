@@ -12,6 +12,17 @@ var autoScroll = function() {
   }, 1250);
 } // This is called within function ajaxReqForLatLon()
 
+var createCityHashtag = function() {
+  var cityWithNoSpaces = city;
+  cityWithNoSpaces = cityWithNoSpaces.replace(/\s+/g, '');
+  console.log(cityWithNoSpaces);
+  var hashtagUrl = "https://twitter.com/hashtag/" + cityWithNoSpaces;
+  console.log(hashtagUrl);
+  $("#default-timeline").remove();
+  $("#tweets").append("<div id='city-timeline'><a class='twitter-timeline' href=" + hashtagUrl + " data-widget-id='683850742529146880'>Tweets about <span class='location capitalize'>" + cityWithNoSpaces + "</span></a></div>");
+  twttr.widgets.load();
+};
+
 $(document).ready(function(){
 
   /* ======================================================================
@@ -86,7 +97,6 @@ $(document).ready(function(){
   // this event listener will wait for the search icon to be pressed and grab the value of the input field for selected city
   $("#search-button").on("click", function(){
     ajaxReqForLatLon();
-    
   });
 
   /* ======================================================================
@@ -111,8 +121,10 @@ $(document).ready(function(){
         console.log(errorThrown);
       }
     });
+    createCityHashtag();
     autoScroll(); // This autoscrolls to the clock when user enters city.
   }
+
   // function will take the response from the AJAX request and take the geolocation
   function googleApiSuccessHandler(response){
     var geoLocation = response.results[0].geometry.location;
@@ -250,6 +262,11 @@ $(document).ready(function(){
     $(".chevron-up").toggle();  
     $(".chevron-down").toggle();  
   });
+
+/*======================================================================
+  TWITTER
+    ====================================================================*/
+
 
   /*======================================================================
    LIKE COUNTER

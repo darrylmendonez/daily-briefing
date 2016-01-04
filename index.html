@@ -175,19 +175,17 @@
                 </tbody>
               </table>
             </div>
-          </div>
-
-
-          <div id="tweets" class="test fadeInDown wow section scrollspy" data-wow-delay=".3s">
-            <a class="twitter-timeline" href="https://twitter.com/twitter" data-widget-id="680871015635750912" width="600" height="500">Tweets by @twitter</a>
-
+            <div id="tweets" class="test fadeInDown wow section scrollspy" data-wow-delay=".3s">
+              <div id="default-timeline">
+                <a class="twitter-timeline" href="https://twitter.com/hashtag/newyorkcity" data-widget-id="683850742529146880">Tweets about <span class="location capitalize">New York City</span></a>
+              </div>
+            </div>
           </div>
         </div>
-
       </div> <!-- End News, Events, & Tweets -->
 
       <!-- row for flickr images-->
-     <div id="flickr-row" class="row fadeInDown wow section scrollspy" data-wow-delay=".3s">
+      <div id="flickr-row" class="row fadeInDown wow section scrollspy" data-wow-delay=".3s">
         <div id="flickrRowMain">
           <h1 class="center-align flckrheader">Public View of <span class="location capitalize">New York City</span></h1>
           <div id="flickrRow">
@@ -266,7 +264,8 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuJleuoSrg7Q8ZFUBEogGFre0viUTqj4E&signed_in=true&callback=initMap"
         async defer></script>
   <!-- Twitter widget -->
-  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+  </script>
   <!-- WOW JS to animate objects while scrolling -->
   <script type="text/javascript" src="js/wow.js"></script>
   <!-- momentJS -->
