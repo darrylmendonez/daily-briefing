@@ -250,6 +250,13 @@ video.fillWidth {
   position: absolute;
   top: 105px;
   width: 100%;
+  height: 650px;
+  overflow: scroll;
+  margin-top: 10px;
+}
+
+.news-content::-webkit-scrollbar {
+ display: none;
 }
 
 .news-heading {
@@ -334,12 +341,16 @@ video.fillWidth {
   position: inherit;
 }
 
+ul#news.collapsible{
+  margin-top: 0px;
+}
+
 /* =====================================================================
     EVENTS
 ====================================================================== */
 .eventColumn{
   width: 100%;
-  height: 400px;
+  height: 650px;
   overflow: auto;
 }
 
@@ -354,7 +365,7 @@ video.fillWidth {
   position: absolute;
   bottom: 0;
   left: 0;
-  margin-bottom: ;
+  margin-bottom: 0;
 }
 
 #eventTable{
@@ -523,21 +534,29 @@ footer.page-footer {
     overflow: scroll;
   }
 
-  #news-column {
+  /*#news-column {
     height: 500px;
-  }
+  }*/
 
   #greeting-row {
     margin-top: 0;
     padding-bottom: 0;
   }
+
+  .greeting-time {
+    height: 68px;
+  }
+
+  #greeting, #location-info {
+    height: 80px;
+  }
 }  
 
-@media (min-width: 993px) {
+/*@media (min-width: 993px) {
   .eventColumn {
   height: 650px;
   }
-}
+}*/
 
 /* Remove white space between slider and clock-row */
 @media only screen and (max-width: 600px) {
