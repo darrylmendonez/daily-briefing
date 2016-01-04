@@ -513,6 +513,15 @@ footer.page-footer {
     margin-top: 124px;
   }
 
+  .news-content {
+    max-height: 380px;
+    overflow: scroll;
+  }
+
+  #news-column {
+    height: 500px;
+  }
+
   #greeting-row {
     margin-top: 0;
     padding-bottom: 0;
