@@ -172,7 +172,7 @@ $(document).ready(function(){
           lng: position.coords.longitude
         };
         geoLocation = {lat: position.coords.latitude, lng: position.coords.longitude}
-        console.log(geoLocation);
+        getTimeZoneOfCity();
         infoWindow.setPosition(pos);
         infoWindow.setContent('Location found.');
         map.setCenter(pos);

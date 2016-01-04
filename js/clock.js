@@ -11,8 +11,8 @@ $(document).ready(function(){
   });
   
   var now_utc;
-  var timezone = "America/New_York";
-  function getTimeZoneOfCity (){
+  var timezone;
+  window.getTimeZoneOfCity = function (){
     var now = new Date();
     var now_utc = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(),  now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
     now_utc = now_utc;
