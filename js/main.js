@@ -31,16 +31,16 @@ $(document).ready(function(){
     $(window).width();
     var width = $(window).width();
     var scroll_start = 0;
-    var navColor = $('nav').css('background-color', 'rgba(0,53,95,1)');
-    var navTransparent = $('nav').css('background-color', 'transparent');
 
     if(width <= 480){
       $(window).scroll(function() { 
         scroll_start = $(this).scrollTop();
         if(scroll_start > 140) {
           $('nav').css('background-color', 'rgba(0,53,95,1)');
+          
         } else {
             $('nav').css('background-color', 'transparent');
+           
         }
       });
     } else if((width >= 481) && (width <= 767)){
@@ -77,6 +77,7 @@ $(document).ready(function(){
   $("#selected-city").keypress(function(e){
     if (e.which == 13) {
       ajaxReqForLatLon();
+      $(".wrapper").animate({backgroundColor: "#00355F"},"slow");
       setTimeout(function(){
         initMap(geoLocation);
       }, 500);
@@ -137,6 +138,7 @@ $(document).ready(function(){
   $("#selected-city").keypress(function(e){
     if (e.which == 13) {
       ajaxReqForLatLon();
+      $("<body").fade
       setTimeout(function(){
         initMap(geoLocation);
 

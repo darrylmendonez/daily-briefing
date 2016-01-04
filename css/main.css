@@ -6,7 +6,7 @@
 
 body {
   color: #565A5C;
-  background-color: #EDEFED;
+  background-color: white;
   font-family: 'Josefin Sans', sans-serif;
 }
 
@@ -193,9 +193,8 @@ video.fillWidth {
   CONTENT GRID
 ===================================================================== */
 
-.test {
+.sectionbackground {
   width: 100%;
-  /*height:500px;*/
   background-color: white;
   position: relative;
   z-index: 1;

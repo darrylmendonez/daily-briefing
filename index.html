@@ -91,8 +91,8 @@
     <div class="container">
       
       <!-- Row for Greeting and Location Info -->
-      <div id="greeting-row" class="row">
-        <div id="greeting" class="col s12 m8 fadeInDown wow section scrollspy hide-on-small-only" data-wow-delay=".1s">
+      <div id="greeting-row" class="row hide-on-med-and-down">
+        <div id="greeting" class="col s12 m8 fadeInDown wow section scrollspy" data-wow-delay=".1s">
           <div class="parallax-container " id="clock-img-container">
             <div class="parallax" class="greeting-image"><img src="images/clock.png" id="parallax-clock"></div>
           </div>
@@ -114,7 +114,7 @@
       <!-- Row for Weather -->
       <div id="weather-row" class="row">
         <div class="col s12 m12 fadeInDown wow section scrollspy" data-wow-delay=".1s">
-          <div class="test hoverable">
+          <div class="sectionbackground hoverable">
             <div class="parallax-container">
               <div class="parallax">
                 <img id="weather-image">
@@ -131,7 +131,7 @@
       <!-- Row for traffic -->
       <div id="traffic-row" class="row fadeInDown wow section scrollspy" data-wow-delay=".1s">
         <div class="col s12">
-          <div class="parallax-container test hoverable traffic-map">
+          <div class="parallax-container sectionbackground hoverable traffic-map">
             <div class="parallax-container traffic-heading">
               <div class="parallax">
                 <img src="images/traffic.png" id="traffic-image">
@@ -148,7 +148,7 @@
 
         <!-- column for news-->
         <div class="col m6 s12 fadeInDown wow" data-wow-delay=".3s">
-          <div class="test" id="news-column">
+          <div class="sectionbackground" id="news-column">
             <div class="parallax-container news-heading">
               <div class="parallax"><img src="images/newspaper.png" id="news-image"></div>
               <h1>News</h1>
@@ -162,7 +162,7 @@
         
         <!-- column for events -->
         <div class="col m6 s12 fadeInDown wow" data-wow-delay=".1s">
-          <div class="test">
+          <div class="sectionbackground">
             <div class="parallax-container events-heading">
               <div class="parallax">
                 <img src="images/event.jpg" id="events-image">
@@ -251,6 +251,8 @@
   <!-- SCRIPTS -->
   <!-- jQuery -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/i18n/jquery-ui-i18n.js"></script>
+  <script scr="https://code.jquery.com/color/jquery.color-git.js"></script>
   <!-- Slick JS -->
   <script type="text/javascript" src="js/slick.min.js"></script>
   <!-- Compiled and minified JavaScript -->
