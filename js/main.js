@@ -8,7 +8,7 @@ var city = "New York City"
 // This autoscrolls to the clock when user enters city.
 var autoScroll = function() {
   $("html, body").animate({
-    scrollTop: $("#greeting-row").offset().top - 60
+    scrollTop: $("#weather-row").offset().top - 60
   }, 1250);
 } // This is called within function ajaxReqForLatLon()
 
