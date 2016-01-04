@@ -365,6 +365,7 @@ video.fillWidth {
   padding-right: 10px;
   font-size:  15px;
   overflow: hidden;
+  text-align: justify;
 }
 
 .h-events{
