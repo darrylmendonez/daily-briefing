@@ -172,9 +172,6 @@ $(document).ready(function(){
           lng: position.coords.longitude
         };
         geoLocation = {lat: position.coords.latitude, lng: position.coords.longitude}
-        getTimeZoneOfCity();
-        bingNewsAPI();
-        weatherData();
         infoWindow.setPosition(pos);
         infoWindow.setContent('Location found.');
         map.setCenter(pos);
