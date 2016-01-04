@@ -12,17 +12,6 @@ var autoScroll = function() {
   }, 1250);
 } // This is called within function ajaxReqForLatLon()
 
-var createCityHashtag = function() {
-  var cityWithNoSpaces = city;
-  cityWithNoSpaces = cityWithNoSpaces.replace(/\s+/g, '');
-  console.log(cityWithNoSpaces);
-  var hashtagUrl = "https://twitter.com/hashtag/" + cityWithNoSpaces;
-  console.log(hashtagUrl);
-  $("#default-timeline").remove();
-  $("#tweets").append("<div id='city-timeline'><a class='twitter-timeline' href=" + hashtagUrl + " data-widget-id='683850742529146880'>Tweets about <span class='location capitalize'>" + cityWithNoSpaces + "</span></a></div>");
-  twttr.widgets.load();
-};
-
 $(document).ready(function(){
 
   /* ======================================================================
@@ -121,7 +110,6 @@ $(document).ready(function(){
         console.log(errorThrown);
       }
     });
-    createCityHashtag();
     autoScroll(); // This autoscrolls to the clock when user enters city.
   }
 
