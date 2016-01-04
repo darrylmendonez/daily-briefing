@@ -274,7 +274,7 @@ video.fillWidth {
   margin-top: -2px;
   position: relative;
   z-index: 1;
-  height: 1075px;
+  height: 760px;
 }
 
 #news-column > h1 {
@@ -411,26 +411,6 @@ td>img{
 .slick-prev, .slick-next {
   height: 775px;
 }
-/* =====================================================================
-    TWITTER TIMELINE
-====================================================================== */
-
-#tweets {
-  padding: 0;
-  margin-top: 15px;
-}
-
-.timeline {
-  margin-bottom: 10px;
-  background-color: #fff;
-  border-radius: 5px;
-  max-width: 600px;
-  height: 500px;
-}
-
-.SandboxRoot{
-  max-width: 600px;
-}
 
 /*===================================================================
     CLOCK AREA
@@ -538,6 +518,12 @@ footer.page-footer {
     padding-bottom: 0;
   }
 }  
+
+@media (min-width: 993px) {
+  .eventColumn {
+  height: 650px;
+  }
+}
 
 
 
