@@ -37,7 +37,7 @@ $(document).ready(function(){
   }, 1000);
 
   function toTimeZone(zone) {
-    var format = 'hh:mm A';
+    var format = 'h:mm A';
     var time = moment().format(format);
     var timezoneTime =  moment(time, format).tz(zone).format(format);
     $("#local-time").text(time);

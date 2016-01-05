@@ -7,9 +7,11 @@ var geoLocation = {lat: 40.7127837, lng: -74.0059413};
 var city = "New York City"
 // This autoscrolls to the clock when user enters city.
 var autoScroll = function() {
-  $("html, body").animate({
-    scrollTop: $("#weather-row").offset().top - 60
-  }, 1250);
+  if (city !== "") {
+    $("html, body").animate({
+      scrollTop: $("#weather-row").offset().top - 60
+    }, 1250);
+  }
 } // This is called within function ajaxReqForLatLon()
 
 $(document).ready(function(){
