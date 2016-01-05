@@ -111,6 +111,7 @@ $(document).ready(function(){
       }
     });
     autoScroll(); // This autoscrolls to the clock when user enters city.
+    $("#nav-location").addClass("capitalize");
   }
 
   // function will take the response from the AJAX request and take the geolocation
