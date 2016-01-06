@@ -163,15 +163,22 @@ $(document).ready(function(){
     initMap(geoLocation);
   }, 500);
 
+  var triggerOnce = true; //so the initial location only happens once
   function initMap(geoLocation) {
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 12,
       center: geoLocation,
       scrollwheel: false
     });
+
     var infoWindow = new google.maps.InfoWindow({map: map});
 
-    if (navigator.geolocation) {
+    if (navigator.geolocation && triggerOnce) {
+      triggerOnce = false;
+      weatherData();
+      bingNewsAPI();
+      googleApiSuccessHandlerEventbrite();
+      googleApiSuccessHandlerFlickr();
       navigator.geolocation.getCurrentPosition(function(position) {
         var pos = {
           lat: position.coords.latitude,
@@ -191,9 +198,9 @@ $(document).ready(function(){
 
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
       infoWindow.setPosition(pos);
-      infoWindow.setContent(browserHasGeolocation ?
-                              'Error: The Geolocation service failed.' :
-                              'Error: Your browser doesn\'t support geolocation.');
+      // infoWindow.setContent(browserHasGeolocation ?
+      //                         'Error: The Geolocation service failed.' :
+      //                         'Error: Your browser doesn\'t support geolocation.');
     }
 
     var trafficLayer = new google.maps.TrafficLayer();
@@ -270,8 +277,6 @@ $(document).ready(function(){
       skycons.play();
     })
   }; 
-
-  weatherData();
 
   //Parallax function from Materializecss
   $(document).ready(function(){
