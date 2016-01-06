@@ -167,7 +167,7 @@ $(document).ready(function(){
       scrollwheel: false
     });
 
-    // var infoWindow = new google.maps.InfoWindow({map: map});
+    var infoWindow = new google.maps.InfoWindow({map: map});
     var triggerOnce = true; //so the initial location only happens once
 
     if (navigator.geolocation && triggerOnce) {
@@ -178,8 +178,8 @@ $(document).ready(function(){
           lng: position.coords.longitude
         };
         geoLocation = {lat: position.coords.latitude, lng: position.coords.longitude}
-        infoWindow.setPosition(pos);
-        infoWindow.setContent('Location found.');
+        // infoWindow.setPosition(pos);
+        // infoWindow.setContent('Location found.');
         map.setCenter(pos);
       }, function() {
         handleLocationError(true, infoWindow, map.getCenter());
