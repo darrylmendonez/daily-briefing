@@ -489,13 +489,9 @@ footer.page-footer {
   }
 
   .news-content {
-    max-height: 380px;
+    max-height: 620px;
     overflow: scroll;
   }
-
-  /*#news-column {
-    height: 500px;
-  }*/
 
   #greeting-row {
     margin-top: 0;
@@ -509,13 +505,25 @@ footer.page-footer {
   #greeting, #location-info {
     height: 80px;
   }
+
+  #weather-row {
+    margin-top: 0px;
 }  
 
-/*@media (min-width: 993px) {
-  .eventColumn {
-  height: 650px;
+  .profile-img-padding{
+    margin-top: 15px;
+    margin-left: 9px;
+}
+
+  .darryl-profile-img{
+    margin-left: 9px;
   }
-}*/
+
+@media (min-width: 767px) and (max-width: 1199px){
+  #weather-row {
+    margin-top: -42px;
+  }    
+}
 
 /* Remove white space between slider and clock-row */
 @media only screen and (max-width: 600px) {
