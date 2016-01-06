@@ -512,9 +512,14 @@ footer.page-footer {
 
   .profile-img-padding{
     margin-top: 15px;
+    margin-left: 9px;
+}
+
+  .darryl-profile-img{
+    margin-left: 9px;
   }
 
-@media (min-width: 768px){
+@media (min-width: 481px) and (max-width: 768px){
   #weather-row {
     margin-top: -42px;
   }    
