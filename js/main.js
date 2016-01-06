@@ -81,7 +81,9 @@ $(document).ready(function(){
   $("#selected-city").keypress(function(e){
     if (e.which == 13) {
       ajaxReqForLatLon();
-      $("#container-wrap").addClass(".wrapper").fadeIn(3000);
+      setTimeout(function(){
+        $("body").addClass("wrapper");
+      }, 1000);
       setTimeout(function(){
         initMap(geoLocation);
       }, 500);
