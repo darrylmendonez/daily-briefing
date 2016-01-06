@@ -172,6 +172,7 @@ $(document).ready(function(){
 
     if (navigator.geolocation && triggerOnce) {
       triggerOnce = false;
+      console.log(position.coords.latitude);
       weatherData();
       bingNewsAPI();
       googleApiSuccessHandlerEventbrite();
