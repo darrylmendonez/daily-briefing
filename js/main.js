@@ -175,6 +175,7 @@ $(document).ready(function(){
       weatherData();
       bingNewsAPI();
       googleApiSuccessHandlerEventbrite();
+      googleApiSuccessHandlerFlickr();
       navigator.geolocation.getCurrentPosition(function(position) {
         var pos = {
           lat: position.coords.latitude,

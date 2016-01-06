@@ -1,8 +1,5 @@
 $(document).ready(function() {  
 
-  // Allows NYC location to be default for images
-  googleApiSuccessHandler();
-
 
   // Shows images from the inputted location upon hitting ENTER key
   $("#selected-city").keypress(function(e){
@@ -10,7 +7,7 @@ $(document).ready(function() {
       setTimeout(function(){
         $("#flickrRow").empty();
         $("#flickrRow").append($("<div class='newArrows'>")).append($("<div class='slick-slider'>"));
-        googleApiSuccessHandler();
+        googleApiSuccessHandlerFlickr();
       },500)  
     }
   });
@@ -33,7 +30,7 @@ $(document).ready(function() {
   }
 
   // Grabs the images from flickr based on user input
-  function googleApiSuccessHandler() {
+  window.googleApiSuccessHandlerFlickr = function () {
     var flickrApiUrl = "https://api.flickr.com/services/rest/?";
     var flickrApiParams = {
       api_key: "4878be0a0e72be523088855dc3771f33",
