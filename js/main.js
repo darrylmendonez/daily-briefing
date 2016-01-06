@@ -166,9 +166,12 @@ $(document).ready(function(){
       center: geoLocation,
       scrollwheel: false
     });
-    var infoWindow = new google.maps.InfoWindow({map: map});
 
-    if (navigator.geolocation) {
+    // var infoWindow = new google.maps.InfoWindow({map: map});
+    var triggerOnce = true; //so the initial location only happens once
+
+    if (navigator.geolocation && triggerOnce) {
+      triggerOnce = false;
       navigator.geolocation.getCurrentPosition(function(position) {
         var pos = {
           lat: position.coords.latitude,
@@ -187,10 +190,10 @@ $(document).ready(function(){
     }
 
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-      infoWindow.setPosition(pos);
-      infoWindow.setContent(browserHasGeolocation ?
-                              'Error: The Geolocation service failed.' :
-                              'Error: Your browser doesn\'t support geolocation.');
+      // infoWindow.setPosition(pos);
+      // infoWindow.setContent(browserHasGeolocation ?
+                              // 'Error: The Geolocation service failed.' :
+                              // 'Error: Your browser doesn\'t support geolocation.');
     }
 
     var trafficLayer = new google.maps.TrafficLayer();
