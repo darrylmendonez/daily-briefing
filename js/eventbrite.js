@@ -6,7 +6,7 @@ $(document).ready(function() {
       setTimeout(function(){
         $("#tableBody").empty();
         
-        googleApiSuccessHandler-eventbrite();
+        googleApiSuccessHandlerEventbrite();
       },500)  
     }
   });
