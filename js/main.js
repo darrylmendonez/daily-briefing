@@ -152,9 +152,9 @@ $(document).ready(function(){
     }
   });
 
-  if ($(window).width() < 480){
-    $("#map").height($("#map").width());
-  }
+  // if ($(window).width() < 480){
+  //   $("#map").height($("#map").width());
+  // }
 
   /*======================================================================
     MAP SETUP UPON PAGE LOAD
