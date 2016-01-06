@@ -160,6 +160,7 @@ $(document).ready(function(){
     initMap(geoLocation);
   }, 500);
 
+  var triggerOnce = true; //so the initial location only happens once
   function initMap(geoLocation) {
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 12,
@@ -168,7 +169,6 @@ $(document).ready(function(){
     });
 
     var infoWindow = new google.maps.InfoWindow({map: map});
-    var triggerOnce = true; //so the initial location only happens once
 
     if (navigator.geolocation && triggerOnce) {
       triggerOnce = false;
