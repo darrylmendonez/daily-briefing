@@ -172,12 +172,12 @@ $(document).ready(function(){
 
     if (navigator.geolocation && triggerOnce) {
       triggerOnce = false;
-      console.log(position.coords.latitude);
       weatherData();
       bingNewsAPI();
       googleApiSuccessHandlerEventbrite();
       googleApiSuccessHandlerFlickr();
       navigator.geolocation.getCurrentPosition(function(position) {
+        console.log(position.coords.latitude);
         var pos = {
           lat: position.coords.latitude,
           lng: position.coords.longitude
