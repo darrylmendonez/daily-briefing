@@ -6,7 +6,7 @@
 
 body {
   color: #565A5C;
-  background-color: white;
+  background-color: grey;
   font-family: 'Josefin Sans', sans-serif;
 }
 
@@ -427,68 +427,6 @@ td>img{
   height: 775px;
 }
 
-/*===================================================================
-    CLOCK AREA
-  ==================================================================*/
-
-#target-time {
-  display: none;
-}
-
-#greeting-row {
-  margin-top: 20px;
-}
-
-#clock-img-container{
-  height: 130px;
-}
-
-#parallax-clock {
-  width: 768px;
-}
-
-.time-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.greeting-image {
-  height: 130px;
-  width: 100%;
-  position: relative;
-  z-index: 1;
-}
-
-.greeting-time {
-  height: 130px;
-  width: 100%;
-  position: relative;
-  z-index: 1;
-  display: flex;
-  justify-content: space-around;
-}
-
-.greeting-time h1 {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-#greeting, #location-info {
-  height: 130px;
-  
-}
-
-.time {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.greeting-heading {
-  margin: 0;
-  font-size: 27px;
-}
-
 /*======================================================================
     FOOTER
 =======================================================================*/
@@ -505,6 +443,10 @@ footer.page-footer {
     MEDIA QUERIES
 =======================================================================*/
 @media (max-width: 480px) {
+
+  #eventsColumn {
+    margin-top: 20px;
+  }
   
   .flckrheader{
     font-size: 30px;
@@ -528,15 +470,6 @@ footer.page-footer {
     margin-top: 124px;
   }
 
-  .news-content {
-    max-height: 380px;
-    overflow: scroll;
-  }
-
-  /*#news-column {
-    height: 500px;
-  }*/
-
   #greeting-row {
     margin-top: 0;
     padding-bottom: 0;
@@ -549,14 +482,15 @@ footer.page-footer {
   #greeting, #location-info {
     height: 80px;
   }
-}  
 
-/*@media (min-width: 993px) {
-  .eventColumn {
-  height: 650px;
+  #traffic-row{
+    height: 442px;
   }
-}*/
 
+  #trafficColumn{
+    height: 442px;
+  }
+}  
 
 
 /* Remove white space between slider and clock-row */
