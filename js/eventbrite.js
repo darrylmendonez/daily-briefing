@@ -33,7 +33,6 @@ $(document).ready(function() {
   }
   //Function to use geoLocation and perform AJAX request to get events 1km from inputed location
   window.googleApiSuccessHandlerEventbrite = function () {
-    console.log("yo");
     var eventBriteUrl = "https://www.eventbriteapi.com/v3/";
     var token = "OO4THRQ4RMB522E4DLLG";
     $.ajax({
