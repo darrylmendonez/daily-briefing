@@ -519,7 +519,7 @@ footer.page-footer {
     margin-left: 9px;
   }
 
-@media (min-width: 481px) and (max-width: 768px){
+@media (min-width: 767px) and (max-width: 1199px){
   #weather-row {
     margin-top: -42px;
   }    
