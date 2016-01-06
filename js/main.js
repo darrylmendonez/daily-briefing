@@ -172,6 +172,9 @@ $(document).ready(function(){
 
     if (navigator.geolocation && triggerOnce) {
       triggerOnce = false;
+      weatherData();
+      bingNewsAPI();
+      googleApiSuccessHandlerEventbrite();
       navigator.geolocation.getCurrentPosition(function(position) {
         var pos = {
           lat: position.coords.latitude,
@@ -270,8 +273,6 @@ $(document).ready(function(){
       skycons.play();
     })
   }; 
-
-  weatherData();
 
   //Parallax function from Materializecss
   $(document).ready(function(){
