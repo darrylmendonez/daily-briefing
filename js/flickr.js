@@ -67,8 +67,10 @@ $(document).ready(function() {
       variableWidth: true,
       autoplay: true,
       adaptiveHeight: true,
-      appendArrows: $(".newArrows")
+      appendArrows: $(".newArrows ")
     });
+
+    $(".slick-arrow").addClass("hide-on-small-only");
   };
   
 });
