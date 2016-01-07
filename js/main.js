@@ -10,7 +10,7 @@ var autoScroll = function() {
   if (city !== "") {
     $("html, body").animate({
       scrollTop: $("#weather-row").offset().top - 60
-    }, 1250);
+    }, 500);
   }
 } // This is called within function ajaxReqForLatLon()
 
@@ -91,8 +91,9 @@ $(document).ready(function(){
     ajaxReqForLatLon();
   });
 
+  // When user clicks search button it clears the input field and puts the focus on the input field.
   $(".fa-search").on("click", function(){
-    $("#selected-city").focus();
+    $("#selected-city").val("").focus();
   });
 
   /* ============================================================
