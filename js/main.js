@@ -282,9 +282,7 @@ $(document).ready(function(){
   }; 
 
   //Parallax function from Materializecss
-  $(document).ready(function(){
-    $('.parallax').parallax();
-  });
+  $('.parallax').parallax();
 
   /*======================================================================
     NEWS
