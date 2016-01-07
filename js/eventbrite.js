@@ -1,15 +1,12 @@
 $(document).ready(function() { 
 
-  // Allows NYC location to be default for Events
-  googleApiSuccessHandler();
-
   //Updated the Events from inputted location upon hitting ENTER key
   $("#selected-city").keypress(function(e){
     if (e.which == 13) {
       setTimeout(function(){
         $("#tableBody").empty();
         
-        googleApiSuccessHandler();
+        googleApiSuccessHandlerEventbrite();
       },500)  
     }
   });
@@ -35,7 +32,7 @@ $(document).ready(function() {
     return newTr;
   }
   //Function to use geoLocation and perform AJAX request to get events 1km from inputed location
-  function googleApiSuccessHandler() {
+  window.googleApiSuccessHandlerEventbrite = function () {
     var eventBriteUrl = "https://www.eventbriteapi.com/v3/";
     var token = "OO4THRQ4RMB522E4DLLG";
     $.ajax({

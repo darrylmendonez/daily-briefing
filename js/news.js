@@ -1,6 +1,5 @@
 $(document).ready(function(){
   var city = "new york, ny";
-  bingNewsAPI();
   $("#selected-city").keypress(function(e){
     if (e.which == 13) {
       setTimeout(function(){
@@ -42,7 +41,7 @@ $(document).ready(function(){
 /*================================================================
     BING API AJAX 
   ================================================================ */
-  function bingNewsAPI(){
+  window.bingNewsAPI = function () {
     $("#news").empty();
     var city = $("#selected-city").val().trim(); //get the city inputted
 
@@ -69,7 +68,7 @@ $(document).ready(function(){
     })
   }
 
-  function bingSuccessHandler(articles){
+  window.bingSuccessHandler = function (articles) {
 
     for (var i = 0; i < articles.d.results.length ; i++) {
       var newListItem = $("<li>").addClass("hoverable");
@@ -83,7 +82,7 @@ $(document).ready(function(){
     };
   }
 
-  function base64_encode(data) {
+  window.base64_encode = function (data) {
     // http://kevin.vanzonneveld.net
     // +   original by: Tyler Akins (http://rumkin.com)
     // +   improved by: Bayron Guevara
