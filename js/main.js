@@ -1,8 +1,8 @@
 // Scripts for Daily Briefing
 
-/* ======================================================================
+/* ==============================================================
   GLOBAL VARIABLES
-  =====================================================================*/
+  =============================================================*/
 var geoLocation = {lat: 40.7127837, lng: -74.0059413};
 var city = "New York City"
 // This autoscrolls to the clock when user enters city.
@@ -16,9 +16,9 @@ var autoScroll = function() {
 
 $(document).ready(function(){
 
-  /* ======================================================================
+  /* ============================================================
    NAVIGATION
-   ===================================================================== */
+   =========================================================== */
 
   // To initiate side Nav for mobile devices
   $(".button-collapse").sideNav({ 
@@ -66,11 +66,9 @@ $(document).ready(function(){
     };
   });
 
-
-
-  /* ======================================================================
+  /* ============================================================
    SLIDER AREA
-   ===================================================================== */
+   =========================================================== */
 
   // Slider
   $('.slider').slider({full_width: true});
@@ -79,6 +77,9 @@ $(document).ready(function(){
   $("#selected-city").keypress(function(e){
     if (e.which == 13) {
       ajaxReqForLatLon();
+      setTimeout(function(){
+        $("body").addClass("wrapper");
+      }, 1000);
       setTimeout(function(){
         initMap(geoLocation);
       }, 500);
@@ -90,9 +91,13 @@ $(document).ready(function(){
     ajaxReqForLatLon();
   });
 
-  /* ======================================================================
+  $(".fa-search").on("click", function(){
+    $("#selected-city").focus();
+  });
+
+  /* ============================================================
    TRAFFIC
-   ===================================================================== */
+   =========================================================== */
 
   // this will make an AJAX request to google API and upon success, call the googleApiSuccessHandler
   function ajaxReqForLatLon(){
@@ -147,13 +152,9 @@ $(document).ready(function(){
     }
   });
 
-  if ($(window).width() < 480){
-    $("#map").height($("#map").width());
-  }
-
-  /*======================================================================
+  /*=============================================================
     MAP SETUP UPON PAGE LOAD
-    ====================================================================*/
+    ===========================================================*/
 
   // A timeout was used because on page load, the initMap function generates an error
   setTimeout(function(){
@@ -205,9 +206,9 @@ $(document).ready(function(){
     trafficLayer.setMap(map);
   }
 
-  /*======================================================================
+  /*=============================================================
     WEATHER
-    ====================================================================*/
+    ===========================================================*/
 
   // forecast.io's URL format: 
   // https://api.forecast.io/forecast/APIKEY/LATITUDE,LONGITUDE
@@ -277,13 +278,11 @@ $(document).ready(function(){
   }; 
 
   //Parallax function from Materializecss
-  $(document).ready(function(){
-    $('.parallax').parallax();
-  });
+  $('.parallax').parallax();
 
-  /*======================================================================
+  /*=============================================================
     NEWS
-    ====================================================================*/
+    ===========================================================*/
 
   $(".chevron-down").on("click", function(){
     alert("yo");
@@ -291,9 +290,9 @@ $(document).ready(function(){
     $(".chevron-down").toggle();  
   });
 
-  /*======================================================================
+  /*=============================================================
    LIKE COUNTER
-  ====================================================================*/
+  =============================================================*/
   var likeCounter = new Firebase("https://fiery-heat-8606.firebaseio.com");
 
   likeCounter.child("counter").on("value", updateDiv);

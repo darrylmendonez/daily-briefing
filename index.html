@@ -90,16 +90,17 @@
   <main>
 
     <div class="container">
+      
 
       <!-- Row for Weather -->
-      <div id="weather-row" class="row">
+      <div id="weather-row" class="row row-background">
         <div class="col s12 m12 fadeInDown wow section scrollspy" data-wow-delay=".1s">
-          <div class="test hoverable">
-            <div class="parallax-container">
+          <div class="hoverable">
+            <div class="parallax-container weather-parallax">
               <div class="parallax">
                 <img id="weather-image">
               </div>
-              <h1 class="orange-text text-darken-4">&nbsp;Weather</h1>
+              <h1 class="orange-text text-darken-4 section-title">Weather</h1>
               <h5 id="weather" class="orange-text text-darken-4"></h5>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<canvas id="weather-icon" width="128" height="128"></canvas>
               <p id="seven-day-forecast"></p>
@@ -109,14 +110,14 @@
       </div> <!-- End Weather Row -->
 
       <!-- Row for traffic -->
-      <div id="traffic-row" class="row fadeInDown wow section scrollspy" data-wow-delay=".1s">
+      <div id="traffic-row" class="row row-background fadeInDown wow section scrollspy" data-wow-delay=".1s">
         <div class="col s12">
-          <div class="parallax-container test hoverable traffic-map">
+          <div class="parallax-container hoverable traffic-map">
             <div class="parallax-container traffic-heading">
               <div class="parallax">
                 <img src="images/traffic.png" id="traffic-image">
               </div>
-              <h1>Traffic</h1>
+              <h1 class="section-title">Traffic</h1>
             </div>
             <div id="map"></div>
           </div>
@@ -127,11 +128,11 @@
       <div id="news-events-tweets-row" class="row section scrollspy">
 
         <!-- column for news-->
-        <div class="col m6 s12 fadeInDown wow" data-wow-delay=".3s">
-          <div class="test" id="news-column">
+        <div class="col m6 s12 fadeInDown wow" id="news-col" data-wow-delay=".3s">
+          <div id="news-column" class="row-background" >
             <div class="parallax-container news-heading">
               <div class="parallax"><img src="images/newspaper.png" id="news-image"></div>
-              <h1>News</h1>
+              <h1 class="section-title">News</h1>
             </div>
             <div class="news-content">
               <ul class="collapsible" id="news" data-collapsible="accordion">
@@ -141,15 +142,15 @@
         </div>
         
         <!-- column for events -->
-        <div class="col m6 s12 fadeInDown wow" data-wow-delay=".1s">
-          <div class="test">
+        <div class="col m6 s12 fadeInDown wow" id="events-col" data-wow-delay=".1s">
+          <div id="events-column" class="row-background">
             <div class="parallax-container events-heading">
               <div class="parallax">
                 <img src="images/event.jpg" id="events-image">
               </div>
-              <h1 id="eventsTitle">Events</h1>
+              <h1 id="eventsTitle" class="section-title">Events</h1>
             </div>
-            <div class="eventColumn hoverable">
+            <div class="eventColumn">
               <table id="eventTable" class="bordered">
                 <tbody id="tableBody">
                 </tbody>
@@ -160,7 +161,7 @@
       </div> <!-- End News, & Events -->
 
       <!-- row for flickr images-->
-      <div id="flickr-row" class="row fadeInDown wow section scrollspy" data-wow-delay=".3s">
+      <div id="flickr-row" class="row row-background fadeInDown wow section scrollspy" data-wow-delay=".3s">
         <div id="flickrRowMain">
           <h1 class="center-align flckrheader">Public View of <span class="location capitalize">your area</span></h1>
           <div id="flickrRow">
@@ -187,7 +188,7 @@
         <div class="col l6 s12">
           <h5 class="black-text">The Daily Briefing Team</h5>
           <div class="row center-align">
-            <div class="col l3">
+            <div class="col l3 darryl-profile-img">
               <a class="black-text text-lighten-3" href="https://darrylmendonez.herokuapp.com/" target="_blank"><img class="responsive-img circle" src="images/profile-images/darryl.jpg"></a>
               <a class="black-text text-lighten-3" href="https://darrylmendonez.herokuapp.com/" target="_blank"><br />
               Darryl<br />
@@ -197,7 +198,7 @@
               <a href="https://twitter.com/MrMendonez" target="_blank" class="black-text text-lighten-3"><i class="fa fa-twitter"></i></a>
               <a href="https://darrylmendonez.herokuapp.com/" target="_blank" class="black-text text-lighten-3"><i class="fa fa-user"></i></a>
             </div>
-            <div class="col l3 offset-l1">
+            <div class="col l3 offset-l1 profile-img-padding">
               <a class="black-text text-lighten-3" href="http://www.jmigsdesign.com/" target="_blank"><img class="responsive-img circle" src="images/profile-images/jeremy.jpg"></a>
               <a class="black-text text-lighten-3" href="http://www.jmigsdesign.com/" target="_blank"><br />
               Jeremy<br />
@@ -207,7 +208,7 @@
               <a href="https://twitter.com/jmigsdesign" target="_blank" class="black-text text-lighten-3"><i class="fa fa-twitter"></i></a>
               <a href="http://www.jmigsdesign.com/" target="_blank" class="black-text text-lighten-3"><i class="fa fa-user"></i></a>
             </div>
-            <div class="col l3 offset-l1">
+            <div class="col l3 offset-l1 profile-img-padding">
               <a class="black-text text-lighten-3" href="https://sheltered-hollows-3794.herokuapp.com/" target="_blank"><img class="responsive-img circle" src="images/profile-images/paul.jpg"></a> 
               <a class="black-text text-lighten-3" href="https://sheltered-hollows-3794.herokuapp.com/" target="_blank"><br />
               Paul<br />
