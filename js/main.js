@@ -172,17 +172,17 @@ $(document).ready(function(){
 
     if (navigator.geolocation && triggerOnce) {
       triggerOnce = false;
-      weatherData();
-      bingNewsAPI();
-      googleApiSuccessHandlerEventbrite();
-      googleApiSuccessHandlerFlickr();
       navigator.geolocation.getCurrentPosition(function(position) {
-        console.log(position.coords.latitude);
+        geoLocation.lat = position.coords.latitude;
+        geoLocation.lng = position.coords.longitude;
         var pos = {
           lat: position.coords.latitude,
           lng: position.coords.longitude
         };
-        geoLocation = {lat: position.coords.latitude, lng: position.coords.longitude}
+        weatherData();
+        bingNewsAPI();
+        googleApiSuccessHandlerFlickr();
+        googleApiSuccessHandlerEventbrite
         infoWindow.setPosition(pos);
         infoWindow.setContent('Location found.');
         map.setCenter(pos);
