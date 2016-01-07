@@ -95,6 +95,9 @@ $(document).ready(function(){
     ajaxReqForLatLon();
   });
 
+  $(".fa-search").on("click", function(){
+    $("#selected-city").focus();
+  });
   /* ======================================================================
    TRAFFIC
    ===================================================================== */
@@ -279,9 +282,7 @@ $(document).ready(function(){
   }; 
 
   //Parallax function from Materializecss
-  $(document).ready(function(){
-    $('.parallax').parallax();
-  });
+  $('.parallax').parallax();
 
   /*======================================================================
     NEWS
