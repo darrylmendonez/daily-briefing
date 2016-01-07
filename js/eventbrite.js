@@ -58,7 +58,7 @@ $(document).ready(function() {
   setTimeout(function(){
     if ($(window).width() < 408){
       console.log($(window).width());
-      $(".p-events").width($(window).width() - 105);
+      $(".p-events").width($(window).width() - 100);
     }
   }, 3000)
   
@@ -66,7 +66,7 @@ $(document).ready(function() {
   $(window).resize(function(){
     if ($(window).width() < 408){
       console.log($(window).width());
-      $(".p-events").width($(window).width() - 105);
+      $(".p-events").width($(window).width() - 100);
     }
   });
 
