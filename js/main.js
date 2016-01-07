@@ -16,6 +16,8 @@ var autoScroll = function() {
 
 $(document).ready(function(){
 
+  
+
   /* ======================================================================
    NAVIGATION
    ===================================================================== */
@@ -79,6 +81,9 @@ $(document).ready(function(){
   $("#selected-city").keypress(function(e){
     if (e.which == 13) {
       ajaxReqForLatLon();
+      setTimeout(function(){
+        $("body").addClass("wrapper");
+      }, 1000);
       setTimeout(function(){
         initMap(geoLocation);
       }, 500);
@@ -147,9 +152,7 @@ $(document).ready(function(){
     }
   });
 
-  if ($(window).width() < 480){
-    $("#map").height($("#map").width());
-  }
+  
 
   /*======================================================================
     MAP SETUP UPON PAGE LOAD
