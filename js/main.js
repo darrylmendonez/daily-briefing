@@ -10,7 +10,7 @@ var autoScroll = function() {
   if (city !== "") {
     $("html, body").animate({
       scrollTop: $("#weather-row").offset().top - 60
-    }, 1250);
+    }, 500);
   }
 } // This is called within function ajaxReqForLatLon()
 
@@ -95,7 +95,15 @@ $(document).ready(function(){
     ajaxReqForLatLon();
   });
 
+<<<<<<< Updated upstream
   /* ======================================================================
+=======
+  $(".fa-search").on("click", function(){
+    $("#selected-city").val("").focus();
+  });
+
+  /* ============================================================
+>>>>>>> Stashed changes
    TRAFFIC
    ===================================================================== */
 
