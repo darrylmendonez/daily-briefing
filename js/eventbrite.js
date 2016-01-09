@@ -23,7 +23,7 @@ $(document).ready(function() {
     var eventTime = $("<h4>").html(events.start.local);
 
     if(events.logo === null || events.logo.url === null){
-      var eventImg = $("<img>").attr("src", "https://www.bananga.com/images/default-product.png").addClass("responsive-img");
+      var eventImg = $("<img>").attr("src", "https://www.bananga.com/images/default-product.png").addClass("responsive-img event-title-img");
     }else{
       var eventImg = $("<img>").attr("src", events.logo.url ).addClass("responsive-img");
     }
@@ -53,7 +53,7 @@ $(document).ready(function() {
   function eventBriteSuccessHandler(response) { 
     var locationEvents = response.events;
     for(var i = 0; i < 15; i++) {  
-      var newTableBody = buildTable(locationEvents[i], i);
+      var newTableBody = buildTable(locationEvents[i]);
       $("#tableBody").append(newTableBody);
       
     }

@@ -457,8 +457,6 @@ ul#news.collapsible{
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  
-  
 }
 
 
@@ -473,6 +471,10 @@ td>img{
 
 #eventsTitle{
   color: white;
+}
+
+.event-title-img {
+  width: 200px;
 }
 
 /* =====================================================================
