@@ -230,7 +230,7 @@ $(document).ready(function(){
       $("#weather").html("&nbsp;&nbsp;Today: " + data.currently.summary + "<br />&nbsp;&nbsp;Currently: " + data.currently.temperature.toFixed(0) + "&deg; F" + "<br />&nbsp;&nbsp;Min: " + data.daily.data[0].temperatureMin.toFixed(0) + "&deg; F" + "<br />&nbsp;&nbsp;Max: " + data.daily.data[0].temperatureMax.toFixed(0) + "&deg; F");
       var skycons = new Skycons({"color": "#f57c00"});
       var currentWeatherIcon = data.currently.icon;
-      $("#weather-tomorrow").html("&nbsp;&nbsp;Tomorrow: " + data.daily.data[1].summary.slice(0,-1) + "<br />&nbsp;&nbsp;Min: " + data.daily.data[1].temperatureMin.toFixed(0) + "&deg; F" + "<br />&nbsp;&nbsp;Max: " + data.daily.data[1].temperatureMax.toFixed(0) + "&deg; F");
+      $("#weather-tomorrow").html("&nbsp;&nbsp;Tomorrow: " + data.daily.data[1].summary + "<br />&nbsp;&nbsp;Min: " + data.daily.data[1].temperatureMin.toFixed(0) + "&deg; F" + "<br />&nbsp;&nbsp;Max: " + data.daily.data[1].temperatureMax.toFixed(0) + "&deg; F");
       switch (currentWeatherIcon) { 
         case 'clear-day': 
           skycons.add("weather-icon", Skycons.CLEAR_DAY);
