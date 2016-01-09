@@ -65,7 +65,6 @@ $(document).ready(function() {
 //resize the event content when window size is changed below a certain width
   $(window).resize(function(){
     if ($(window).width() < 408){
-      console.log($(window).width());
       $(".p-events").width($(window).width() - 100);
     }
   });
