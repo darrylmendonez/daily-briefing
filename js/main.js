@@ -171,32 +171,39 @@ $(document).ready(function(){
     });
 
     var infoWindow = new google.maps.InfoWindow({map: map});
-
-    if (navigator.geolocation && triggerOnce) {
+    if (triggerOnce) {
       triggerOnce = false;
-      weatherData();
-      bingNewsAPI();
-      googleApiSuccessHandlerEventbrite();
-      googleApiSuccessHandlerFlickr();
-      navigator.geolocation.getCurrentPosition(function(position) {
-        var pos = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        };
-        geoLocation = {lat: position.coords.latitude, lng: position.coords.longitude}
-        infoWindow.setPosition(pos);
-        infoWindow.setContent('Location found.');
-        map.setCenter(pos);
-      }, function() {
-        handleLocationError(true, infoWindow, map.getCenter());
-      });
-    } else {
-      // Browser doesn't support Geolocation
-      handleLocationError(false, infoWindow, map.getCenter());
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          geoLocation.lat = position.coords.latitude;
+          geoLocation.lng = position.coords.longitude;
+          var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+          weatherData();
+          bingNewsAPI();
+          googleApiSuccessHandlerFlickr();
+          googleApiSuccessHandlerEventbrite();
+          infoWindow.setPosition(pos);
+          infoWindow.setContent('Location found.');
+          map.setCenter(pos);
+        }, function() {
+          handleLocationError(true, infoWindow, map.getCenter());
+        });
+      } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, infoWindow, map.getCenter());
+      }
     }
+    
 
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
       infoWindow.setPosition(pos);
+      weatherData();
+      bingNewsAPI();
+      googleApiSuccessHandlerFlickr();
+      googleApiSuccessHandlerEventbrite();
       // infoWindow.setContent(browserHasGeolocation ?
       //                         'Error: The Geolocation service failed.' :
       //                         'Error: Your browser doesn\'t support geolocation.');
@@ -220,10 +227,11 @@ $(document).ready(function(){
     var longi = geoLocation.lng;
     var data;
     $.getJSON(url + apiKey + "/" + lati + "," + longi + "?callback=?", function(data) {
-      $("#weather").html("&nbsp;&nbsp;Today: " + data.currently.summary + "<br />&nbsp;&nbsp;Current Temperature: " + data.currently.temperature.toFixed(0) + "&deg; F");
+      $("#weather").html("&nbsp;&nbsp;Today: " + data.currently.summary + "<br />&nbsp;&nbsp;Current: " + data.currently.temperature.toFixed(0) + "&deg; F" + "<br />&nbsp;&nbsp;Min: " + data.daily.data[0].temperatureMin.toFixed(0) + "&deg; F" + "<br />&nbsp;&nbsp;Max: " + data.daily.data[0].temperatureMax.toFixed(0) + "&deg; F");
       var skycons = new Skycons({"color": "#E65100"});
       var currentWeatherIcon = data.currently.icon;
-
+      $("#weather-tomorrow").html("&nbsp;&nbsp;Tomorrow: " + data.daily.data[1].summary + "<br />&nbsp;&nbsp;Min: " + data.daily.data[1].temperatureMin.toFixed(0) + "&deg; F" + "<br />&nbsp;&nbsp;Max: " + data.daily.data[1].temperatureMax.toFixed(0) + "&deg; F");
+      console.log(data);
       switch (currentWeatherIcon) { 
         case 'clear-day': 
           skycons.add("weather-icon", Skycons.CLEAR_DAY);
@@ -271,7 +279,7 @@ $(document).ready(function(){
           skycons.add("weather-icon", Skycons.RAIN);
           $("#weather-image").attr("src", "images/weather-images/rain.jpg");
           break;
-      }
+      } // End switch statement
       // Start animation
       skycons.play();
     })
@@ -310,7 +318,7 @@ $(document).ready(function(){
   });
 
   // Reset like counter to 0.
-  // 1. First uncomment the reset button in index.html on or about line 200. If it helps, search for 'reset-button' instead.
+  // 1. First uncomment the reset button in index.html. You can search for 'reset-button' to find it faster.
   // 2. Refresh local site or open local index.html in browser
   // 3. You should see the black reset button in the footer bar. Click to reset like counter to 0.
   // 4. Finally, comment out reset button.
