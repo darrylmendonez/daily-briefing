@@ -218,13 +218,21 @@ video.fillWidth {
 /* ======================================================================
   WEATHER
 ===================================================================== */
+.weather-parallax{
+  height: 385px;
+}
 
 #weather-row{
   margin-top: 20px;
 }
 
+#weather{
+  margin-top: 0;
+}
+
 .section-title{
   display: inline-block;
+  margin-bottom: 15px;
 }
 
 #weather-icon{
@@ -235,7 +243,8 @@ video.fillWidth {
 }
 
 #weather-tomorrow{
-  padding-top: 40px;
+  padding-left: 15px;
+  padding-top: 0;
 }
 
 h5#weather{
