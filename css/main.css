@@ -129,7 +129,6 @@ body {
 }
 
 
-
 nav {
 transition-duration: 1s;
 background-color:transparent;
@@ -537,6 +536,10 @@ footer.page-footer {
     MEDIA QUERIES
 =======================================================================*/
 @media (max-width: 480px) {
+
+  nav .brand-logo.center{
+    font-size: 20px;
+  }
   
   #traffic-row{
     margin-top: 30px;
