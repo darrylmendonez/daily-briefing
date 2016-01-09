@@ -191,7 +191,7 @@ $(document).ready(function(){
             $("#nav-location").html(city);
           }, 500);
           infoWindow.setPosition(pos);
-          infoWindow.setContent('Location found.');
+          infoWindow.setContent('You are here');
           map.setCenter(pos);
         }, function() {
           handleLocationError(true, infoWindow, map.getCenter());
