@@ -128,6 +128,8 @@ body {
   padding-top: 7px;
 }
 
+
+
 nav {
 transition-duration: 1s;
 background-color:transparent;
@@ -218,19 +220,33 @@ video.fillWidth {
 /* ======================================================================
   WEATHER
 ===================================================================== */
+.weather-parallax{
+  height: 385px;
+}
 
 #weather-row{
   margin-top: 20px;
-  height: 365px;
+}
 
+#weather{
+  margin-top: 0;
+}
+
+.section-title{
+  display: inline-block;
+  margin-bottom: 15px;
 }
 
 #weather-icon{
   padding-left: 15px;
+  display: inline-block;
+  position: relative;
+  top: 14px;
 }
 
-.weather-parallax{
-  height:335px;
+#weather-tomorrow{
+  padding-left: 15px;
+  padding-top: 0;
 }
 
 h5#weather{
@@ -441,16 +457,6 @@ ul#news.collapsible{
   
 }
 
-.p-events:after {
-  content: "";
-  text-align: right;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 70%;
-  height: 1.2em;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
-}
 
 .h-events{
   text-align: center;
@@ -509,6 +515,10 @@ footer.page-footer {
 =======================================================================*/
 @media (max-width: 480px) {
   
+  #traffic-row{
+    margin-top: 30px;
+  }
+
   .flckrheader{
     font-size: 30px;
     line-height: 100%;
@@ -554,7 +564,7 @@ footer.page-footer {
   } 
 
   .weather-parallax{
-    height: 330px;
+    height: 355px;
   }
 
   .profile-img-padding{
