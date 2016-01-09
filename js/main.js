@@ -188,7 +188,8 @@ $(document).ready(function(){
           googleApiSuccessHandlerEventbrite();
           setTimeout(function(){
             bingNewsAPI(); //using a timeout so the city can update before the news will run
-            $("#nav-location").html(city);
+            $(".location").html(city);
+            $("#in").html("in ");
           }, 500);
           infoWindow.setPosition(pos);
           infoWindow.setContent('You are here');
