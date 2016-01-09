@@ -212,6 +212,7 @@ video.fillWidth {
 
 .parallax-container{
   z-index: 1;
+  
 }
 
 /* ======================================================================
@@ -220,6 +221,16 @@ video.fillWidth {
 
 #weather-row{
   margin-top: 20px;
+  height: 365px;
+
+}
+
+#weather-icon{
+  padding-left: 15px;
+}
+
+.weather-parallax{
+  height:335px;
 }
 
 h5#weather{
@@ -306,7 +317,7 @@ h5#weather{
   padding-right: 11px;
   position: relative;
   z-index: 1;
-  height: 760px;
+  height: 810px;
 }
 
 #news-column > h1 {
