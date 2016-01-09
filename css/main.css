@@ -221,16 +221,21 @@ video.fillWidth {
 
 #weather-row{
   margin-top: 20px;
-  height: 365px;
+}
 
+.section-title{
+  display: inline-block;
 }
 
 #weather-icon{
   padding-left: 15px;
+  display: inline-block;
+  position: relative;
+  top: 14px;
 }
 
-.weather-parallax{
-  height:335px;
+#weather-tomorrow{
+  padding-top: 40px;
 }
 
 h5#weather{
