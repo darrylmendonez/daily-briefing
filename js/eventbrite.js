@@ -22,10 +22,10 @@ $(document).ready(function() {
     var eventDescription = $("<p>").html(events.description.text).addClass("p-events");
     var eventTime = $("<h4>").html(events.start.local);
 
-    if(events.logo.url === null){
-        var eventImg = $("<img>").attr("src", "https://www.bananga.com/images/default-product.png").addClass("responsive-img");
+    if(events.logo === null || events.logo.url === null){
+      var eventImg = $("<img>").attr("src", "https://www.bananga.com/images/default-product.png").addClass("responsive-img");
     }else{
-        eventImg = $("<img>").attr("src", events.logo.url ).addClass("responsive-img");
+      var eventImg = $("<img>").attr("src", events.logo.url ).addClass("responsive-img");
     }
     
     newTr
@@ -42,7 +42,7 @@ $(document).ready(function() {
     var token = "OO4THRQ4RMB522E4DLLG";
     $.ajax({
       type: "GET",
-      url: eventBriteUrl + "events/search/?location.within=1km&location.latitude="+geoLocation.lat+"&location.longitude="+geoLocation.lng+"&token="+token,
+      url: eventBriteUrl + "events/search/?location.within=10km&location.latitude="+geoLocation.lat+"&location.longitude="+geoLocation.lng+"&token="+token,
       success: function(response){
         eventBriteSuccessHandler(response);
       }
