@@ -17,11 +17,16 @@ $(document).ready(function() {
     
     var newTr = $("<tr>");
     var newTd = $("<td>")
-    var eventImg = $("<img>").attr("src", events.logo.url).addClass("responsive-img");
     var eventLink =$("<a>").attr("href", events.url).attr("target", "_blank");
     var eventName = $("<h5>").html(events.name.text).addClass("h-events");
     var eventDescription = $("<p>").html(events.description.text).addClass("p-events");
     var eventTime = $("<h4>").html(events.start.local);
+
+    if(events.logo.url === null){
+        var eventImg = $("<img>").attr("src", "https://www.bananga.com/images/default-product.png").addClass("responsive-img");
+    }else{
+        eventImg = $("<img>").attr("src", events.logo.url ).addClass("responsive-img");
+    }
     
     newTr
       .append(newTd
