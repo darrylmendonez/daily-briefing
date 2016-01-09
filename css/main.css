@@ -185,6 +185,10 @@ video.fillWidth {
   padding-top: 0px;
 }
 
+h5.slogan{
+  margin-top: -15px;
+}
+
 .subheading{
   margin-top: -17px;
 }
@@ -453,8 +457,17 @@ ul#news.collapsible{
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  
-  
+}
+
+.p-events:after {
+ content: "";
+ text-align: right;
+ position: absolute;
+ bottom: 0;
+ right: 0;
+ width: 70%;
+ height: 1.2em;
+ background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
 }
 
 
@@ -469,6 +482,10 @@ td>img{
 
 #eventsTitle{
   color: white;
+}
+
+.event-title-img {
+  width: 200px;
 }
 
 /* =====================================================================

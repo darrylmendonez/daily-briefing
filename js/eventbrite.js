@@ -23,7 +23,7 @@ $(document).ready(function() {
     var eventTime = $("<h4>").html(events.start.local);
 
     if(events.logo === null || events.logo.url === null){
-      var eventImg = $("<img>").attr("src", "https://www.bananga.com/images/default-product.png").addClass("responsive-img");
+      var eventImg = $("<img>").attr("src", "https://www.bananga.com/images/default-product.png").addClass("responsive-img event-title-img");
     }else{
       var eventImg = $("<img>").attr("src", events.logo.url ).addClass("responsive-img");
     }
@@ -42,7 +42,7 @@ $(document).ready(function() {
     var token = "OO4THRQ4RMB522E4DLLG";
     $.ajax({
       type: "GET",
-      url: eventBriteUrl + "events/search/?location.within=1km&location.latitude="+geoLocation.lat+"&location.longitude="+geoLocation.lng+"&token="+token,
+      url: eventBriteUrl + "events/search/?location.within=10km&location.latitude="+geoLocation.lat+"&location.longitude="+geoLocation.lng+"&token="+token,
       success: function(response){
         eventBriteSuccessHandler(response);
       }
@@ -53,7 +53,7 @@ $(document).ready(function() {
   function eventBriteSuccessHandler(response) { 
     var locationEvents = response.events;
     for(var i = 0; i < 15; i++) {  
-      var newTableBody = buildTable(locationEvents[i], i);
+      var newTableBody = buildTable(locationEvents[i]);
       $("#tableBody").append(newTableBody);
       
     }
