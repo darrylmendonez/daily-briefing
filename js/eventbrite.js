@@ -63,14 +63,14 @@ $(document).ready(function() {
   setTimeout(function(){
     if ($(window).width() < 408){
       console.log($(window).width());
-      $(".p-events").width($(window).width() - 100);
+      $(".p-events").width($(window).width() - 110);
     }
   }, 3000)
   
 //resize the event content when window size is changed below a certain width
   $(window).resize(function(){
     if ($(window).width() < 408){
-      $(".p-events").width($(window).width() - 100);
+      $(".p-events").width($(window).width() - 110);
     }
   });
 
