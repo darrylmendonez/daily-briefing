@@ -2,7 +2,7 @@ $(document).ready(function(){
 
   $("#selected-city").keypress(function(e){
     if (e.which == 13) {
-      $(".location").html(($(this).val().trim()));
+      $("#nav-location").html(city);
       $("#target-time").css("display", "flex");
       setTimeout(function(){
         getTimeZoneOfCity();

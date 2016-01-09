@@ -42,7 +42,7 @@ $(document).ready(function() {
     var token = "OO4THRQ4RMB522E4DLLG";
     $.ajax({
       type: "GET",
-      url: eventBriteUrl + "events/search/?location.within=10km&location.latitude="+geoLocation.lat+"&location.longitude="+geoLocation.lng+"&token="+token,
+      url: eventBriteUrl + "events/search/?location.within=1km&location.latitude="+geoLocation.lat+"&location.longitude="+geoLocation.lng+"&token="+token,
       success: function(response){
         eventBriteSuccessHandler(response);
       }

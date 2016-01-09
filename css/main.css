@@ -495,10 +495,16 @@ td>img{
   margin-bottom: 0px;
 }
 
-/* This makes the target area larger so the user doesn't have to click directly on the button. Clicking the entire left or right side of the carousel will allow the next or prev pic to show. */
-.slick-prev, .slick-next {
-  height: 775px;
+.slick-prev{
+  left: 30px;
+  top: 125px;
 }
+
+.slick-next{
+  right: 30px;
+  top: 125px;
+}
+
 
 /*======================================================================
     FOOTER

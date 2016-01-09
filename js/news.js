@@ -1,7 +1,8 @@
 $(document).ready(function(){
-  var city = "new york, ny";
+
   $("#selected-city").keypress(function(e){
     if (e.which == 13) {
+      city = $("#selected-city").val().trim(); //get the city inputted
       setTimeout(function(){
         bingNewsAPI();
       }, 500);
@@ -43,8 +44,7 @@ $(document).ready(function(){
   ================================================================ */
   window.bingNewsAPI = function () {
     $("#news").empty();
-    var city = $("#selected-city").val().trim(); //get the city inputted
-
+    
     var requestStr = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/News?Query=%27" + city + "%27&Latitude=" + geoLocation.lat + "&Longitude=" + geoLocation.lng + "&$top=10&$format=json"; //the request URL
 
     var appId = "xqH9UulnxWvYID2if8wODlrsrvBKXFrlnKE8TmGDdJI"; //bing api key

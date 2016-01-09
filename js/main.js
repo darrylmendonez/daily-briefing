@@ -3,8 +3,8 @@
 /* ==============================================================
   GLOBAL VARIABLES
   =============================================================*/
-var geoLocation = {lat: 40.7127837, lng: -74.0059413};
-var city = "New York City"
+var geoLocation = {lat: 40.7127837, lng: -74.0059413}; //default geolocation
+var city = "New York City" //default city
 // This autoscrolls to the clock when user enters city.
 var autoScroll = function() {
   if (city !== "") {
@@ -171,8 +171,9 @@ $(document).ready(function(){
     });
 
     var infoWindow = new google.maps.InfoWindow({map: map});
-    if (triggerOnce) {
+    if (triggerOnce) { //will only run on page load
       triggerOnce = false;
+
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
           geoLocation.lat = position.coords.latitude;
@@ -181,10 +182,14 @@ $(document).ready(function(){
             lat: position.coords.latitude,
             lng: position.coords.longitude
           };
+          reverseGeocode(); //run this function to get city name for the other functions
           weatherData();
-          bingNewsAPI();
           googleApiSuccessHandlerFlickr();
           googleApiSuccessHandlerEventbrite();
+          setTimeout(function(){
+            bingNewsAPI(); //using a timeout so the city can update before the news will run
+            $("#nav-location").html(city);
+          }, 500);
           infoWindow.setPosition(pos);
           infoWindow.setContent('Location found.');
           map.setCenter(pos);
@@ -197,8 +202,8 @@ $(document).ready(function(){
       }
     }
     
-
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+      //These function calls will run using the default geolocation and city
       infoWindow.setPosition(pos);
       weatherData();
       bingNewsAPI();
@@ -212,6 +217,27 @@ $(document).ready(function(){
     var trafficLayer = new google.maps.TrafficLayer();
     trafficLayer.setMap(map);
   }
+
+  /*===========================================================
+      REVERSE GEOCODE - will get the city name based on geocode
+    =========================================================*/
+  function reverseGeocode () {
+    var googleRevGeoApiURL = "https://maps.googleapis.com/maps/api/geocode/json?latlng="
+    googleRevGeoApiURL += geoLocation.lat + "," + geoLocation.lng;
+    googleRevGeoApiURL += "&key=AIzaSyBL0kULWrl9S6CMnmuzn8acUeNCcbBLgDs"
+
+    $.ajax({
+      type: "GET",
+      url: googleRevGeoApiURL,
+      success: function(response){
+        city = response.results[0].address_components[2].long_name; 
+      },
+      error: function(jqXHR, textStatus, errorThrown){
+        console.log(errorThrown);
+      }
+    });
+  }
+
 
   /*=============================================================
     WEATHER
