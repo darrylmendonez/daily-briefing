@@ -10,7 +10,7 @@ var autoScroll = function() {
   if (city !== "") {
     $("html, body").animate({
       scrollTop: $("#weather-row").offset().top - 60
-    }, 1250);
+    }, 500);
   }
 } // This is called within function ajaxReqForLatLon()
 
@@ -91,8 +91,9 @@ $(document).ready(function(){
     ajaxReqForLatLon();
   });
 
+  // When user clicks search button it clears the input field and puts the focus on the input field.
   $(".fa-search").on("click", function(){
-    $("#selected-city").focus();
+    $("#selected-city").val("").focus();
   });
 
   /* ============================================================
@@ -250,10 +251,10 @@ $(document).ready(function(){
     var longi = geoLocation.lng;
     var data;
     $.getJSON(url + apiKey + "/" + lati + "," + longi + "?callback=?", function(data) {
-      $("#weather").html("&nbsp;&nbsp;Today: " + data.currently.summary + "<br />&nbsp;&nbsp;Current Temperature: " + data.currently.temperature.toFixed(0) + "&deg; F");
+      $("#weather").html("&nbsp;&nbsp;Today: " + data.currently.summary + "<br />&nbsp;&nbsp;Currently: " + data.currently.temperature.toFixed(0) + "&deg; F" + "<br />&nbsp;&nbsp;Min: " + data.daily.data[0].temperatureMin.toFixed(0) + "&deg; F" + "<br />&nbsp;&nbsp;Max: " + data.daily.data[0].temperatureMax.toFixed(0) + "&deg; F");
       var skycons = new Skycons({"color": "#E65100"});
       var currentWeatherIcon = data.currently.icon;
-
+      $("#weather-tomorrow").html("&nbsp;&nbsp;Tomorrow: " + data.daily.data[1].summary + "<br />&nbsp;&nbsp;Min: " + data.daily.data[1].temperatureMin.toFixed(0) + "&deg; F" + "<br />&nbsp;&nbsp;Max: " + data.daily.data[1].temperatureMax.toFixed(0) + "&deg; F");
       switch (currentWeatherIcon) { 
         case 'clear-day': 
           skycons.add("weather-icon", Skycons.CLEAR_DAY);
@@ -301,7 +302,7 @@ $(document).ready(function(){
           skycons.add("weather-icon", Skycons.RAIN);
           $("#weather-image").attr("src", "images/weather-images/rain.jpg");
           break;
-      }
+      } // End switch statement
       // Start animation
       skycons.play();
     })
@@ -340,7 +341,7 @@ $(document).ready(function(){
   });
 
   // Reset like counter to 0.
-  // 1. First uncomment the reset button in index.html on or about line 200. If it helps, search for 'reset-button' instead.
+  // 1. First uncomment the reset button in index.html. You can search for 'reset-button' to find it faster.
   // 2. Refresh local site or open local index.html in browser
   // 3. You should see the black reset button in the footer bar. Click to reset like counter to 0.
   // 4. Finally, comment out reset button.

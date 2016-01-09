@@ -94,23 +94,22 @@
 
       <!-- Row for Weather -->
       <div id="weather-row" class="row row-background">
-        <div class="col s12 m12 fadeInDown wow section scrollspy" data-wow-delay=".1s">
+        <div class="col s12 m12 fadeInDown wow section scrollspy" data-wow-delay=".4s">
           <div class="hoverable">
             <div class="parallax-container weather-parallax">
               <div class="parallax">
                 <img id="weather-image">
               </div>
-              <h1 class="orange-text text-darken-4 section-title">Weather</h1>
-              <h5 id="weather" class="orange-text text-darken-4"></h5>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<canvas id="weather-icon" width="128" height="128"></canvas>
-              <p id="seven-day-forecast"></p>
+              <h1 class="orange-text text-darken-4 section-title">Weather <canvas id="weather-icon" width="64" height="64"></canvas></h1>
+              <h4 id="weather" class="orange-text text-darken-4"></h4>
+              <h4 id="weather-tomorrow" class="orange-text text-darken-4"></h4>
             </div>
           </div>
         </div>
       </div> <!-- End Weather Row -->
 
       <!-- Row for traffic -->
-      <div id="traffic-row" class="row row-background fadeInDown wow section scrollspy" data-wow-delay=".1s">
+      <div id="traffic-row" class="row row-background fadeInDown wow section scrollspy" data-wow-delay=".4s">
         <div class="col s12">
           <div class="parallax-container hoverable traffic-map">
             <div class="parallax-container traffic-heading">
@@ -128,7 +127,7 @@
       <div id="news-events-tweets-row" class="row section scrollspy">
 
         <!-- column for news-->
-        <div class="col m6 s12 fadeInDown wow" id="news-col" data-wow-delay=".3s">
+        <div class="col m6 s12 fadeInLeft wow" id="news-col" data-wow-delay=".4s">
           <div id="news-column" class="row-background" >
             <div class="parallax-container news-heading">
               <div class="parallax"><img src="images/newspaper.png" id="news-image"></div>
@@ -142,7 +141,7 @@
         </div>
         
         <!-- column for events -->
-        <div class="col m6 s12 fadeInDown wow" id="events-col" data-wow-delay=".1s">
+        <div class="col m6 s12 fadeInRight wow" id="events-col" data-wow-delay=".4s">
           <div id="events-column" class="row-background">
             <div class="parallax-container events-heading">
               <div class="parallax">
@@ -161,7 +160,7 @@
       </div> <!-- End News, & Events -->
 
       <!-- row for flickr images-->
-      <div id="flickr-row" class="row row-background fadeInDown wow section scrollspy" data-wow-delay=".3s">
+      <div id="flickr-row" class="row row-background fadeInDown wow section scrollspy" data-wow-delay=".4s">
         <div id="flickrRowMain">
           <h1 class="center-align flckrheader">Public View of <span class="location capitalize">your area</span></h1>
           <div id="flickrRow">
@@ -178,7 +177,7 @@
       <div id="footer-row" class="row">
         <div class="col l6 s12">
           <h5 class="black-text">Daily Briefing</h5>
-          <p class="black-text text-lighten-4">Your one-stop shop for weather, traffic, news, events, and pictures going on in your city of choice. As students of Rutgers Coding Bootcamp in Piscataway, NJ, we created the Daily Briefing as a front-end project utilizing many web tools including HTML, CSS, Javascript, jQuery, MaterializeCSS, and AJAX. API's from The Dark Sky Forecast, Google Maps, Bing (for news), EventBrite, and Flickr are also used. Firebase is used for the 'Like' button counter. </p>
+          <p class="black-text text-lighten-4">Your one-stop shop for weather, traffic, news, events, and pictures going on in your city of choice. As students of Rutgers Coding Bootcamp in Piscataway, NJ, we created Daily Briefing as a front-end project utilizing many web tools including HTML, CSS, Javascript, jQuery, MaterializeCSS, and AJAX. API's from The Dark Sky Forecast, Google Maps, Bing (for news), EventBrite, and Flickr are also used. Firebase is used for the 'Like' button counter. </p>
           <p>Like this app? Show some love...</p>
           <a id="like-counter-button" class="btn red accent-3 z-depth-3"><span id="heart-icon" class="fa fa-heart animated"></span> Like (<span id="number-of-likes">0</span>)</a> 
           <!--<a id="reset-button" class="waves-effect waves-light btn black z-depth-3"><i class="fa fa-trash"></i> Reset Like Counter to 0</a>-->
