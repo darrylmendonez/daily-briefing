@@ -183,9 +183,9 @@ $(document).ready(function(){
           reverseGeocode();
           weatherData();
           googleApiSuccessHandlerFlickr();
-          googleApiSuccessHandlerEventbrite();
           setTimeout(function(){
             bingNewsAPI();
+            googleApiSuccessHandlerEventbrite();
           }, 500);
           infoWindow.setPosition(pos);
           infoWindow.setContent('Location found.');
@@ -220,7 +220,7 @@ $(document).ready(function(){
     =========================================================*/
   function reverseGeocode () {
     var googleRevGeoApiURL = "https://maps.googleapis.com/maps/api/geocode/json?latlng="
-    googleRevGeoApiURL += geoLocation["lat"] + "," + geoLocation["lng"];
+    googleRevGeoApiURL += geoLocation.lat + "," + geoLocation.lng;
     googleRevGeoApiURL += "&key=AIzaSyBL0kULWrl9S6CMnmuzn8acUeNCcbBLgDs"
 
     $.ajax({
@@ -228,7 +228,6 @@ $(document).ready(function(){
       url: googleRevGeoApiURL,
       success: function(response){
         city = response.results[0].address_components[2].long_name;
-        console.log(city);
       },
       error: function(jqXHR, textStatus, errorThrown){
         console.log(errorThrown);
