@@ -185,6 +185,10 @@ video.fillWidth {
   padding-top: 0px;
 }
 
+h5.slogan{
+  margin-top: -15px;
+}
+
 .subheading{
   margin-top: -17px;
 }
