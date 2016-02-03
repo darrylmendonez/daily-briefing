@@ -192,6 +192,7 @@ input#selected-city{
 
 ::-webkit-input-placeholder {
    color: #666666;
+   font-size: 18px;
  }
 
 /* ======================================================================
