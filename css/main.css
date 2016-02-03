@@ -150,32 +150,9 @@ background-color:transparent;
   z-index: 0;
 }
 
-#video-container {
-  position: absolute;
-  z-index: 0;
-}
-#video-container {
-  top:0%;
-  left:0%;
-  height:100%;
-  width:100%;
-  overflow: hidden;
-  z-index: 0;
-}
-
-video {
-  position:absolute;
-  z-index:0;
-}
-video.fillWidth {
-  width: 100%;
-}
-
-.video-header{
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-  padding-top: 65px;
+.slider {
+  height: 500px;
+  margin-top: -65px;
 }
 
 .slogan {
@@ -193,7 +170,7 @@ h5.slogan{
 }
 
 #selected-city {
-  margin-top: 180px; /* this pushes the input field down to the bottom of the video-container */
+  margin-top: -180px; /* this pushes the input field down to the bottom of the video-container */
   background-color: white;
   opacity: 0.3;
 }

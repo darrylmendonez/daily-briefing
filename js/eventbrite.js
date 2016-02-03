@@ -62,7 +62,6 @@ $(document).ready(function() {
 //resize the event content to prevent horizontal scrolling at page load
   setTimeout(function(){
     if ($(window).width() < 408){
-      console.log($(window).width());
       $(".p-events").width($(window).width() - 110);
     }
   }, 3000)
