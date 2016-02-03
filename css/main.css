@@ -155,33 +155,39 @@ background-color:transparent;
   margin-top: -65px;
 }
 
-.slogan {
-  color: #fff;
-  text-align: center;
-  padding-top: 0px;
-}
 
 h5.slogan{
   margin-top: -15px;
 }
 
-.subheading{
-  margin-top: -17px;
-}
 
 #selected-city {
-  margin-top: -180px; /* this pushes the input field down to the bottom of the video-container */
+  margin-top: -360px; /* this pushes the input field down to the bottom of the video-container */
   background-color: white;
-  opacity: 0.3;
+  opacity: 0.6;
+  z-index: 9999;
+  position: relative;
 }
 
 #selected-city:focus {
   background-color: white;
-  opacity: 0.6;
+  opacity: 0.8;
 }
+
+input#selected-city{
+  text-align: center;
+  padding-left: 0px;
+  width: 100%;
+}
+
 
 #search-button:hover {
   cursor: pointer;
+}
+
+.search{
+  height:30px;
+  width: 30px;
 }
 
 ::-webkit-input-placeholder {
