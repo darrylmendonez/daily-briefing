@@ -102,7 +102,7 @@ $(document).ready(function(){
     height : 500,
     indicators: false
 
-  });
+    });
 
   $(window).resize(function(){
     if ($(window).width() < 480){
@@ -111,7 +111,7 @@ $(document).ready(function(){
         height : 270,
         indicators: false
 
-      });
+      })
     } 
   });
 
