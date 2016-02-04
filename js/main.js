@@ -99,10 +99,21 @@ $(document).ready(function(){
   // Slider
   $('.slider').slider({
     full_width: true,
-    height: 500,
+    height : 500,
     indicators: false
 
-    });
+  });
+
+  $(window).resize(function(){
+    if ($(window).width() < 480){
+      $('.slider').slider({
+        full_width: true,
+        height : 270,
+        indicators: false
+
+      });
+    } 
+  });
 
 
 

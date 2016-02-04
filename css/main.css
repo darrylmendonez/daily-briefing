@@ -151,7 +151,7 @@ background-color:transparent;
 }
 
 .slider {
-  height: 500px;
+ 
   margin-top: -65px;
 }
 
@@ -520,6 +520,14 @@ footer.page-footer {
     MEDIA QUERIES
 =======================================================================*/
 @media (max-width: 480px) {
+  
+  .slider>ul.slides{
+    height: 270px !important;
+  }
+
+  .slider>ul.slides>li {
+    height: 270px;
+  }
 
   nav .brand-logo.center{
     font-size: 20px;
@@ -539,16 +547,16 @@ footer.page-footer {
     font-size: 20px;
     line-height: 100%;
     margin: 1.46rem 0 1.168rem 0;
+    margin-top: 40px;
   }
 
-  h5.slogan {
-    font-size: 16px;
-    line-height: 100%;
-    margin-top: -10px;
-  }
+  ::-webkit-input-placeholder {
+   color: #666666;
+   font-size: 14px;
+ }
 
   #selected-city {
-    margin-top: 140px;
+    margin-top: -395px;
   }
 
   .news-content {
@@ -556,21 +564,12 @@ footer.page-footer {
     overflow: scroll;
   }
 
-  #greeting-row {
-    margin-top: 0;
-    padding-bottom: 0;
-  }
-
-  .greeting-time {
-    height: 68px;
-  }
-
   #greeting, #location-info {
     height: 80px;
   }
 
   #weather-row {
-    margin-top: 20px;
+    margin-top: -230px;
   } 
 
   .weather-parallax{
@@ -601,10 +600,30 @@ footer.page-footer {
   .eventColumn{
     margin-top: 0px;
   }
+ } 
+
+@media (min-width: 481px) and (max-width: 766px)  {
+   h3 {
+    font-size: 2.5rem;
+    margin-top: 32px;
+  }
+}
 
 @media (min-width: 767px) and (max-width: 1199px){
+  .slider>ul.slides{
+    height: 370px !important;
+  }
+
+  .slider>ul.slides>li {
+    height: 370px;
+  }
+
+  #selected-city {
+    margin-top: -370px;
+  }
+
   #weather-row {
-    margin-top: -42px;
+    margin-top: -135px;
   }    
 }
 
