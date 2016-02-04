@@ -150,65 +150,49 @@ background-color:transparent;
   z-index: 0;
 }
 
-#video-container {
-  position: absolute;
-  z-index: 0;
-}
-#video-container {
-  top:0%;
-  left:0%;
-  height:100%;
-  width:100%;
-  overflow: hidden;
-  z-index: 0;
+.slider {
+ 
+  margin-top: -65px;
 }
 
-video {
-  position:absolute;
-  z-index:0;
-}
-video.fillWidth {
-  width: 100%;
-}
-
-.video-header{
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-  padding-top: 65px;
-}
-
-.slogan {
-  color: #fff;
-  text-align: center;
-  padding-top: 0px;
-}
 
 h5.slogan{
   margin-top: -15px;
 }
 
-.subheading{
-  margin-top: -17px;
-}
 
 #selected-city {
-  margin-top: 180px; /* this pushes the input field down to the bottom of the video-container */
+  margin-top: -360px; /* this pushes the input field down to the bottom of the video-container */
   background-color: white;
-  opacity: 0.3;
+  opacity: 0.6;
+  z-index: 9999;
+  position: relative;
 }
 
 #selected-city:focus {
   background-color: white;
-  opacity: 0.6;
+  opacity: 0.8;
 }
+
+input#selected-city{
+  text-align: center;
+  padding-left: 0px;
+  width: 100%;
+}
+
 
 #search-button:hover {
   cursor: pointer;
 }
 
+.search{
+  height:30px;
+  width: 30px;
+}
+
 ::-webkit-input-placeholder {
    color: #666666;
+   font-size: 18px;
  }
 
 /* ======================================================================
@@ -536,6 +520,14 @@ footer.page-footer {
     MEDIA QUERIES
 =======================================================================*/
 @media (max-width: 480px) {
+  
+  .slider>ul.slides{
+    height: 270px !important;
+  }
+
+  .slider>ul.slides>li {
+    height: 270px;
+  }
 
   nav .brand-logo.center{
     font-size: 20px;
@@ -555,16 +547,16 @@ footer.page-footer {
     font-size: 20px;
     line-height: 100%;
     margin: 1.46rem 0 1.168rem 0;
+    margin-top: 40px;
   }
 
-  h5.slogan {
-    font-size: 16px;
-    line-height: 100%;
-    margin-top: -10px;
-  }
+  ::-webkit-input-placeholder {
+   color: #666666;
+   font-size: 14px;
+ }
 
   #selected-city {
-    margin-top: 140px;
+    margin-top: -395px;
   }
 
   .news-content {
@@ -572,21 +564,12 @@ footer.page-footer {
     overflow: scroll;
   }
 
-  #greeting-row {
-    margin-top: 0;
-    padding-bottom: 0;
-  }
-
-  .greeting-time {
-    height: 68px;
-  }
-
   #greeting, #location-info {
     height: 80px;
   }
 
   #weather-row {
-    margin-top: 20px;
+    margin-top: -230px;
   } 
 
   .weather-parallax{
@@ -617,10 +600,30 @@ footer.page-footer {
   .eventColumn{
     margin-top: 0px;
   }
+ } 
+
+@media (min-width: 481px) and (max-width: 766px)  {
+   h3 {
+    font-size: 2.5rem;
+    margin-top: 32px;
+  }
+}
 
 @media (min-width: 767px) and (max-width: 1199px){
+  .slider>ul.slides{
+    height: 370px !important;
+  }
+
+  .slider>ul.slides>li {
+    height: 370px;
+  }
+
+  #selected-city {
+    margin-top: -370px;
+  }
+
   #weather-row {
-    margin-top: -42px;
+    margin-top: -135px;
   }    
 }
 
