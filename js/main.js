@@ -280,6 +280,7 @@ $(document).ready(function(){
       var skycons = new Skycons({"color": "#f57c00"});
       var currentWeatherIcon = data.currently.icon;
       $("#weather-tomorrow").html("&nbsp;&nbsp;Tomorrow: " + data.daily.data[1].summary.slice(0,-1) + "<br />&nbsp;&nbsp;Low: " + data.daily.data[1].temperatureMin.toFixed(0) + "&deg; F" + "<br />&nbsp;&nbsp;High: " + data.daily.data[1].temperatureMax.toFixed(0) + "&deg; F");
+      console.log(data);
       switch (currentWeatherIcon) { 
         case 'clear-day': 
           skycons.add("weather-icon", Skycons.CLEAR_DAY);

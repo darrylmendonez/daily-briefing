@@ -213,6 +213,7 @@ input#selected-city{
 
 #weather-row{
   margin-top: 20px;
+  text-shadow: black 0.1em 0.1em 0.1em; 
 }
 
 #weather{
