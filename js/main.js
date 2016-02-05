@@ -34,6 +34,9 @@ $(document).ready(function(){
   // Smooth Scrolling from Nav Links to sections
   $('.scrollspy').scrollSpy();
 
+  // Tooltip msg when hovering over icon on navbar
+  $('.tooltipped').tooltip({delay: 50});
+
   $(function() {
     $(window).width();
     var width = $(window).width();
