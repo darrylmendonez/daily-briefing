@@ -18,27 +18,6 @@ $(document).ready(function(){
 
 
 
-   /* ============================================================
-   PREVENT VIDEO LOAD ON MOBILE
-   =========================================================== */
-   var check = false;
-      window.mobilecheck = function() {
-      // Check for mobile here
-      if (check === true) {
-        // Device is mobile
-        var sources = document.querySelectorAll('video#headerVideo source');
-        // Define the video object this source is contained inside
-        var video = document.querySelector('video#headerVideo');
-        for(var i = 0; i<sources.length;i++) {
-        sources[i].setAttribute('src', sources[i].getAttribute('data-src'));
-        } 
-      } else {
-        video.load();  
-    };
-  };
-
-
-
 
 
 
@@ -355,7 +334,7 @@ $(document).ready(function(){
     })
   }; 
 
-  //Parallax function from Materializecss
+  //Parallax and Materialboxed function from Materializecss
   $('.parallax').parallax();
 
   /*=============================================================
