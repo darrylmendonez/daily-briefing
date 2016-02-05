@@ -16,6 +16,11 @@ var autoScroll = function() {
 
 $(document).ready(function(){
 
+
+
+
+
+
   /* ============================================================
    NAVIGATION
    =========================================================== */
@@ -71,7 +76,25 @@ $(document).ready(function(){
    =========================================================== */
 
   // Slider
-  $('.slider').slider({full_width: true});
+  $('.slider').slider({
+    full_width: true,
+    height : 500,
+    indicators: false
+
+    });
+
+  $(window).resize(function(){
+    if ($(window).width() < 480){
+      $('.slider').slider({
+        full_width: true,
+        height : 270,
+        indicators: false
+
+      })
+    } 
+  });
+
+
 
    // this event listener will wait for the enter button to be pressed and alert the value in the field
   $("#selected-city").keypress(function(e){
@@ -310,7 +333,7 @@ $(document).ready(function(){
     })
   }; 
 
-  //Parallax function from Materializecss
+  //Parallax and Materialboxed function from Materializecss
   $('.parallax').parallax();
 
   /*=============================================================
