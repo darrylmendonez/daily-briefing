@@ -195,6 +195,11 @@ input#selected-city{
    font-size: 18px;
  }
 
+ .main-header{
+  margin-top: -65px;
+  background-image: url("images/city.png");
+ }
+
 /* ======================================================================
   CONTENT GRID
 ===================================================================== */
@@ -545,10 +550,13 @@ footer.page-footer {
   } 
 
   h3 {
+    padding-top: 75px;
+    text-align: center;
     font-size: 20px;
     line-height: 100%;
-    margin: 1.46rem 0 1.168rem 0;
-    margin-top: 40px;
+    color: #fff;
+    margin-top: 0;
+   
   }
 
   ::-webkit-input-placeholder {
@@ -557,7 +565,7 @@ footer.page-footer {
  }
 
   #selected-city {
-    margin-top: -395px;
+    margin-top: -115px;
   }
 
   .news-content {
@@ -570,7 +578,7 @@ footer.page-footer {
   }
 
   #weather-row {
-    margin-top: -230px;
+    margin-top: -20px;
   } 
 
   .weather-parallax{
@@ -600,6 +608,12 @@ footer.page-footer {
 
   .eventColumn{
     margin-top: 0px;
+  }
+
+  .main-header{
+    min-height: 200px;
+    background-image: url("../images/cityxsm.png") ;
+
   }
  } 
 

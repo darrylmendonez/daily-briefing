@@ -87,11 +87,11 @@ $(document).ready(function(){
     });
 
   $(window).resize(function(){
-    if ($(window).width() < 480){
+    if ($(window).width() < 1200){
       $('.slider').slider({
-        full_width: true,
-        height : 270,
-        indicators: false
+        
+        height : 370
+       
 
       })
     } 
