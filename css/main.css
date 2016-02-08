@@ -180,7 +180,6 @@ input#selected-city{
   width: 100%;
 }
 
-
 #search-button:hover {
   cursor: pointer;
 }
@@ -197,8 +196,16 @@ input#selected-city{
 
  .main-header{
   margin-top: -65px;
-  background-image: url("images/city.png");
+  min-height: 500px;
+  background-image: url("../images/city.png");
  }
+
+ h3.main-header{
+  padding-top: 100px;
+  text-align: center;
+  color: #fff;
+  margin-top: 0;
+  }
 
 /* ======================================================================
   CONTENT GRID
@@ -549,14 +556,13 @@ footer.page-footer {
     margin: 10px;
   } 
 
-  h3 {
+  h3.main-header {
     padding-top: 75px;
     text-align: center;
     font-size: 20px;
     line-height: 100%;
     color: #fff;
     margin-top: 0;
-   
   }
 
   ::-webkit-input-placeholder {
@@ -578,7 +584,7 @@ footer.page-footer {
   }
 
   #weather-row {
-    margin-top: -20px;
+    margin-top: 20px;
   } 
 
   .weather-parallax{
@@ -612,8 +618,11 @@ footer.page-footer {
 
   .main-header{
     min-height: 200px;
-    background-image: url("../images/cityxsm.png") ;
+    background-image: url("../images/cityxsm.png");
+  }
 
+  #video-container{
+    height: 200px;
   }
  } 
 
