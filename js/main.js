@@ -90,7 +90,7 @@ $(document).ready(function(){
     if ($(window).width() < 480){
       $('.slider').slider({
         full_width: true,
-        height : 270,
+        height : 200,
         indicators: false
 
       })

@@ -6,7 +6,7 @@
 
 body {
   color: #565A5C;
-  background-color: #EDEFED;
+  background-color: #00355F;
   font-family: 'Josefin Sans', sans-serif;
 }
 
@@ -18,19 +18,6 @@ body {
   background-color: white;
   padding-top: 15px;
   padding-bottom: 15px;
-}
-
-.wrapper{
-    background-color: #00355F;
-    -webkit-transition: background-color 500ms linear;
-    -moz-transition: background-color 500ms linear;
-    -o-transition: background-color 500ms linear;
-    -ms-transition: background-color 500ms linear;
-    transition: background-color 500ms linear;
-    -webkit-animation-direction: alternate; /* Chrome, Safari, Opera */
-    animation-direction: alternate;
-    -webkit-animation-iteration-count: 2; /* Chrome, Safari, Opera */
-    animation-iteration-count: 2;
 }
 
 .section-title{
@@ -151,7 +138,6 @@ background-color:transparent;
 }
 
 .slider {
- 
   margin-top: -65px;
 }
 
@@ -180,7 +166,6 @@ input#selected-city{
   width: 100%;
 }
 
-
 #search-button:hover {
   cursor: pointer;
 }
@@ -194,6 +179,20 @@ input#selected-city{
    color: #666666;
    font-size: 18px;
  }
+
+ .main-header{
+  margin-top: -65px;
+  height: 500px;
+  background-image: url("../images/city.png");
+ }
+
+ h3.main-heading{
+  padding-top: 100px;
+  text-align: center;
+  color: #fff;
+  margin-top: 0;
+
+  }
 
 /* ======================================================================
   CONTENT GRID
@@ -544,11 +543,13 @@ footer.page-footer {
     margin: 10px;
   } 
 
-  h3 {
-    font-size: 20px;
+  h3.main-heading {
+    padding-top: 75px;
+    text-align: center;
+    font-size: 28px;
     line-height: 100%;
-    margin: 1.46rem 0 1.168rem 0;
-    margin-top: 40px;
+    color: #fff;
+    margin-top: 0;
   }
 
   ::-webkit-input-placeholder {
@@ -557,7 +558,7 @@ footer.page-footer {
  }
 
   #selected-city {
-    margin-top: -395px;
+    margin-top: -100px;
   }
 
   .news-content {
@@ -570,7 +571,7 @@ footer.page-footer {
   }
 
   #weather-row {
-    margin-top: -230px;
+    margin-top: 20px;
   } 
 
   .weather-parallax{
@@ -601,31 +602,55 @@ footer.page-footer {
   .eventColumn{
     margin-top: 0px;
   }
+
+  .main-header{
+    height: 200px;
+    background-image: url("../images/cityxsm.png");
+  }
+
+  #video-container{
+    height: 200px;
+  }
  } 
 
 @media (min-width: 481px) and (max-width: 766px)  {
-   h3 {
-    font-size: 2.5rem;
-    margin-top: 32px;
+   .main-header{
+    height: 300px;
+    background-image: url("../images/citysm.png");
+   }
+
+   h3.main-heading {
+    padding-top: 85px;
+    text-align: center;
+    font-size: 40px;
+    line-height: 100%;
+    color: #fff;
+    margin-top: 0;
+  }
+
+  #selected-city{
+    margin-top: -170px;
   }
 }
 
-@media (min-width: 767px) and (max-width: 1199px){
-  .slider>ul.slides{
-    height: 370px !important;
+@media (min-width: 767px) and (max-width: 992px){
+  .main-header{
+    height: 350px;
+    background-image: url("../images/citysm.png");
+   }
+
+   h3.main-heading {
+    padding-top: 85px;
+    text-align: center;
+    font-size: 40px;
+    line-height: 100%;
+    color: #fff;
+    margin-top: 0;
   }
 
-  .slider>ul.slides>li {
-    height: 370px;
+  #selected-city{
+    margin-top: -225px;
   }
-
-  #selected-city {
-    margin-top: -370px;
-  }
-
-  #weather-row {
-    margin-top: -135px;
-  }    
 }
 
 /* Remove white space between slider and clock-row */
