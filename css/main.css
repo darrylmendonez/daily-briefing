@@ -185,8 +185,8 @@ input#selected-city{
   height: 500px;
   background-image: url("../images/city.png");
   background-repeat: no-repeat;
-
   background-position: center;
+  background-size: cover;
  }
 
  h3.main-heading{
