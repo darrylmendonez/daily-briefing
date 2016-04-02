@@ -184,6 +184,9 @@ input#selected-city{
   margin-top: -65px;
   height: 500px;
   background-image: url("../images/city.png");
+  background-repeat: no-repeat;
+
+  background-position: center;
  }
 
  h3.main-heading{
@@ -200,7 +203,7 @@ input#selected-city{
 
 .parallax-container{
   z-index: 1;
-  
+
 }
 
 /* ======================================================================
@@ -212,7 +215,7 @@ input#selected-city{
 
 #weather-row{
   margin-top: 20px;
-  text-shadow: black 0.1em 0.1em 0.1em; 
+  text-shadow: black 0.1em 0.1em 0.1em;
 }
 
 #weather{
@@ -450,7 +453,7 @@ ul#news.collapsible{
  right: 0;
  width: 70%;
  height: 1.2em;
- 
+
 }
 
 
@@ -478,7 +481,7 @@ td>img{
   padding-right: 30px;
   padding-left: 30px;
   height: 660px;
-  
+
 }
 
 .slick-slide img {
@@ -520,7 +523,7 @@ footer.page-footer {
     MEDIA QUERIES
 =======================================================================*/
 @media (max-width: 480px) {
-  
+
   .slider>ul.slides{
     height: 270px !important;
   }
@@ -532,7 +535,7 @@ footer.page-footer {
   nav .brand-logo.center{
     font-size: 20px;
   }
-  
+
   #traffic-row{
     margin-top: 30px;
   }
@@ -541,7 +544,7 @@ footer.page-footer {
     font-size: 30px;
     line-height: 100%;
     margin: 10px;
-  } 
+  }
 
   h3.main-heading {
     padding-top: 75px;
@@ -572,7 +575,7 @@ footer.page-footer {
 
   #weather-row {
     margin-top: 20px;
-  } 
+  }
 
   .weather-parallax{
     height: 375px;
@@ -611,7 +614,7 @@ footer.page-footer {
   #video-container{
     height: 200px;
   }
- } 
+ }
 
 @media (min-width: 481px) and (max-width: 766px)  {
    .main-header{
